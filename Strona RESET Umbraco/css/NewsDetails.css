@@ -1,0 +1,109 @@
+﻿.lecture-name {
+    margin-top: 50px;
+}
+
+.lecture-description {
+    margin-top: 20px;
+}
+
+.calendar-icon {
+    font-size: 4em;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.clock-icon {
+    font-size: 4em;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.localize-icon {
+    font-size: 4em;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.lecture-time-box {
+    margin-top: 50px;
+}
+
+.teacher-desc {
+    color: white;
+    margin-top: 20px;
+}
+
+.teacher-box {
+    background: #3399cc;
+    margin-top: 50px;
+}
+
+.teacher-profession {
+    color: white;
+}
+
+.about {
+    margin: 20px 0;
+    padding: 2% 2%;
+}
+
+.teacher_img img {
+    width: 100%;
+}
+
+.soc_icons ul {
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+    .soc_icons ul li {
+        display: inline-block;
+        margin-left: -3px;
+    }
+
+        .soc_icons ul li a {
+            color: #ffffff;
+            font-size: 24px;
+            display: block;
+        }
+
+            .soc_icons ul li a i {
+                line-height: 52px;
+                width: 52px;
+                height: 52px;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+
+                .soc_icons ul li a i.fa-facebook {
+                    background: #3660A0;
+                }
+
+                .soc_icons ul li a i.fa-twitter {
+                    background: #2CAAE1;
+                }
+
+                .soc_icons ul li a i.fa-linkedin {
+                    background: #0A6C9B;
+                }
+
+                .soc_icons ul li a i:hover {
+                    background: #323232;
+                }
+
+.purchase3 {
+    background: url(../images/parallax/bg-03.png);
+    background-attachment: fixed;
+    background-position: 50% 30%;
+    padding: 150px 0;
+}
+
+.fb-icon {
+    font-size: 5em;
+    color: white;
+}
+.fb-event{
+    color:white;
+}
