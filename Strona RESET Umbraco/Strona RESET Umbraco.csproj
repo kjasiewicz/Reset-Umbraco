@@ -675,9 +675,6 @@
     <Content Include="App_Data\cache\f\6\c\a\7\c\f6ca7cf469fcda7f858fc5ed03f5a2f44c43a4df.jpg" />
     <Content Include="App_Data\cache\f\a\f\c\f\5\fafcf5d89f3d5ed1e27df99f770e0169dc4174d1.jpg" />
     <Content Include="App_Data\cache\f\c\d\8\6\7\fcd8670bc7af334eaa7e5584426f18f78d51dd33.jpg" />
-    <Content Include="App_Data\Logs\UmbracoTraceLog.Bukkaka-PC.txt" />
-    <Content Include="App_Data\TEMP\ClientDependency\BUKKAKA-PC-efc7e628182233a8cb9eaa2b7cc73695-map.xml" />
-    <Content Include="App_Data\TEMP\DistCache\BUKKAKA-PC\LMW3SVC2ROOT-lastsynced.txt" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -964,58 +961,6 @@
     <Content Include="scripts\gallery\jquery.magnific-popup.min.js" />
     <Content Include="App_Data\Models\models.hash" />
     <Content Include="App_Data\packages\installed\installedPackages.config" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_06be04f7e5764cb59fc4ace5e63efa29.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_3191c44e6fce464cadc33c3d08fa4018.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_570891263975480fbe6e299d0356fe33.cdC" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_58dbeb33762f43619020e8a168c3495d.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_708657e9c10e4f5f87f5813054dfa13e.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_911bbfd9a7d5491584827da4e2bcaa65.cdC" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_b54b1a5fbfe3464ba10fd0b9d33b3b23.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_cbc0d58c74dc4fa983a1319a7fc59911.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_ce425e1fc1124aaba5ccae1a25066b69.cdC" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_fa0570bb5bc8470c929528c6fba71e64.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\292653118_fde3dbea72734253a23e4adaa1d23692.cdJ" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\segments_30" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.fdt" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.fdx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.fnm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.frq" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.nrm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.prx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.tii" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.tis" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.tvd" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.tvf" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2k.tvx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2l.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2m.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2n.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2o.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\External\Index\_2p.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\InternalMember\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\InternalMember\Index\segments_2" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\segments_3g" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.fdt" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.fdx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.fnm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.frq" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.nrm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.prx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.tii" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.tis" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.tvd" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.tvf" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_31.tvx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_32.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_33.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_34.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_35.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\BUKKAKA-PC\Internal\Index\_36.cfs" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.BUKKAKA-PC.hash" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.BUKKAKA-PC.list" />
-    <Content Include="App_Data\umbraco.config" />
     <Content Include="App_Browsers\Form.browser" />
     <Content Include="App_Browsers\w3cvalidator.browser" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
@@ -3499,8 +3444,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\packages\created\" />
-    <Folder Include="App_Data\TEMP\FileUploads\" />
-    <Folder Include="App_Data\TEMP\Install\" />
     <Folder Include="scripts\js\" />
   </ItemGroup>
   <PropertyGroup>
