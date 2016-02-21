@@ -588,6 +588,9 @@
     <Content Include="Views\home.cshtml" />
     <Content Include="Views\Layout.cshtml" />
     <Content Include="Views\Wydarzenia.cshtml" />
+    <Content Include="Views\Aktualnosci.cshtml" />
+    <Content Include="Views\Kontakt.cshtml" />
+    <Content Include="Views\Projekty.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

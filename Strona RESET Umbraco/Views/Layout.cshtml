@@ -124,19 +124,19 @@
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="@((int)ViewBag.ActivePage == 0 ? "active" : "")" href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a>
+                                <a href="/" class="@(ViewBag.ActivePage==0 ? "active" : "")"><i class="fa fa-home"></i></a>
                             </li>
                             <li>
-                                @Html.ActionLink("AKTUALNOŚCI", "News", "Home", null, new { @class = (int)ViewBag.ActivePage == 1 ? "active" : "" })
+									<a href="/aktualnosci" class="@(ViewBag.ActivePage==1 ? "active" : "")">AKTUALNOŚCI</a>
                             </li>
                             <li>
-                                @Html.ActionLink("GALERIA", "Gallery", "Home", null, new { @class = (int)ViewBag.ActivePage == 2 ? "active" : "" })
+									<a href="/galeria" class="@(ViewBag.ActivePage==2 ? "active" : "")">GALERIA</a>
                             </li>
                             <li>
                                 <a href="#">WYDARZENIA</a>
                                 <ul class="dropdown">
                                     <li>
-                                        @Html.ActionLink("2016", "Events", "Home", null, new { @class = (int)ViewBag.ActivePage == 5 ? "active" : "" })
+									<a href="/wydarzenia" class="@(ViewBag.ActivePage==5 ? "active" : "")">2016</a>
                                     </li>
                                     <li>
                                         <a href="#">2015</a>
@@ -147,10 +147,10 @@
                                 </ul>
                             </li>
                             <li>
-                                @Html.ActionLink("PROJEKTY", "Projects", "Home", null, new { @class = (int)ViewBag.ActivePage == 4 ? "active" : "" })
+									<a href="/projekty" class="@(ViewBag.ActivePage==4 ? "active" : "")">PROJEKTY</a>
                             </li>
                             <li>
-                                @Html.ActionLink("KONTAKT", "Core", "Home", null, new { @class = (int)ViewBag.ActivePage == 3 ? "active" : "" })
+									<a href="/kontakt" class="@(ViewBag.ActivePage==3 ? "active" : "")">KONTAKT</a>
                             </li>
                         </ul>
                         <!-- End Navigation List -->
@@ -159,19 +159,19 @@
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a class="@((int)ViewBag.ActivePage == 0 ? "active" : "")" href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a>
+                                <a href="/" class="@(ViewBag.ActivePage==0 ? "active" : "")"><i class="fa fa-home"></i></a>
                     </li>
                     <li>
-                     @Html.ActionLink("AKTUALNOŚCI", "News", "Home", null, new { @class = (int)ViewBag.ActivePage == 1 ? "active" : "" })
+									<a href="/aktualnosci" class="@(ViewBag.ActivePage==1 ? "active" : "")">AKTUALNOŚCI</a>
                     </li>
                     <li>
-                        <a href="#">GALERIA</a>
+									<a href="/galeria" class="@(ViewBag.ActivePage==2 ? "active" : "")">GALERIA</a>
                     </li>
                     <li>
                         <a href="#">WYDARZENIA</a>
                         <ul class="dropdown">
                             <li>
-                                <a href="#">2016</a>
+									<a href="/wydarzenia" class="@(ViewBag.ActivePage==5 ? "active" : "")">2016</a>
                             </li>
                             <li>
                                 <a href="#">2015</a>
@@ -182,19 +182,11 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#">PROJEKTY</a>
+									<a href="/projekty" class="@(ViewBag.ActivePage==4 ? "active" : "")">PROJEKTY</a>
                     </li>
-                    <li>
-                        <a href="#">KONTAKT</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="#">ZARZĄD</a>
+                     <li>
+									<a href="/kontakty" class="@(ViewBag.ActivePage==3 ? "active" : "")">KONTAKT</a>
                             </li>
-                            <li>
-                                <a href="#">CZŁONKOWIE</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <!-- Mobile Menu End -->
             </div>
