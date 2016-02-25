@@ -591,6 +591,9 @@
     <Content Include="Views\Aktualnosci.cshtml" />
     <Content Include="Views\Kontakt.cshtml" />
     <Content Include="Views\Projekty.cshtml" />
+    <Content Include="Views\AktualnosciSzczegoly.cshtml" />
+    <Content Include="Views\GaleriaSzczegoly.cshtml" />
+    <Content Include="Views\ProjektySzczegoly.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
