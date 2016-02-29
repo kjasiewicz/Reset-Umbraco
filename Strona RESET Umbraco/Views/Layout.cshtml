@@ -65,7 +65,7 @@
                             <!-- Start Contact Info -->
                             <ul class="contact-details">
                                 <li>
-                                    <a href="#">KOŁO INFORMATYCZNE, AKADEMIA TECHNICZNO-HUMANISTYCZNA</a>
+                                    <a href="#">fdsfsdfd</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fa fa-envelope-o"></i> reset@ath.bielsko.pl</a>
@@ -196,7 +196,7 @@
             <!-- End Header Logo & Naviagtion -->
         </header>
         <!-- End Header Section -->
-        <!-- Start Home Page Slider -->
+    <!-- Start Home Page Slider -->
         <section id="home">
             <!-- Carousel -->
             <div id="main-slide" class="carousel slide" data-ride="carousel">
@@ -207,17 +207,20 @@
                     <li data-target="#main-slide" data-slide-to="2"></li>
                 </ol>
                 <!--/ Indicators end-->
+
+           
+
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
-                    <div class="item active">
-                       <img class="img-responsive" src="~/media/1163/bg1.png" alt="slider">
+                       <div class="item active">
+                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage1").ToString()).Url" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
-                                    <span>IT ACADEMIC DAY 2015 <strong>ZA NAMI !</strong></span>
+                                    <span>@Umbraco.Field("bannerText1")</span>
                                 </h2>
                                 <h3 class="animated3">
-                                    <span>ZOBACZ JAK SPĘDZILIŚMY TEGOROCZNĄ EDYCJĘ</span>
+                                    <span>@Umbraco.Field("bannerText1Inner")</span>
                                 </h3>
                                 <p class="animated4">
                                     <a href="#" class="button-reset-default">GALERIA</a>
@@ -227,40 +230,40 @@
                     </div>
                     <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="~/media/1164/bg2.png" alt="slider">
+                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage2").ToString()).Url" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
-                                <h2 class="animated4">
-                                    <span><strong>EKIPA RESET ATH</strong> NAJLEPSZA W CAŁEJ POLSCE !</span>
+                                <h2 class="animated2">
+                                    <span>@Umbraco.Field("bannerText2")</span>
                                 </h2>
-                                <h3 class="animated5">
-                                    <span>WYNIKI MIĘDZYNARODOWEGO KONKURSU <br /> NIGHT OF THE LIVING DEVS 2015</span>
+                                <h3 class="animated3">
+                                    <span>@Umbraco.Field("bannerText2Inner")</span>
                                 </h3>
-                                <p class="animated6">
-                                    <a href="#" class="button-reset-default">WIĘCEJ</a>
+                                <p class="animated4">
+                                    <a href="#" class="button-reset-default">GALERIA</a>
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <!--/ Carousel item end -->
+                        <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="~/media/1162/bg3.png" alt="slider">
+                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage3").ToString()).Url" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
-                                <h2 class="animated7 white">
-                                    <span>smartPARKING </span>
+                                <h2 class="animated2">
+                                    <span>@Umbraco.Field("bannerText3")</span>
                                 </h2>
-                                <h3 class="animated8 white">
-                                    <span>PŁAĆ ZBLIŻENIOWO I OTWIERAJ BRAMĘ SMARTFONEM</span>
+                                <h3 class="animated3">
+                                    <span>@Umbraco.Field("bannerText3Inner")</span>
                                 </h3>
-                                <div class="">
-                                    <a href="#" class="button-reset-default">PRZEJDŹ DO APLIKACJI</a>
-                                </div>
+                                <p class="animated4">
+                                    <a href="#" class="button-reset-default">GALERIA</a>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <!--/ Carousel item end -->
-                </div>
+                        <!--/ Carousel item end -->
+                    </div>
                 <!-- Carousel inner end-->
                 <!-- Controls -->
                 <a class="left carousel-control" href="#main-slide" data-slide="prev">
