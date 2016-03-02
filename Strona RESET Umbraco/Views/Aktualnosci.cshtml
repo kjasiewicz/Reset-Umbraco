@@ -1,5 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Aktualnosci>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
 @{
 	Layout = "Layout.cshtml";
 	ViewBag.ActivePage = 1;
@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-xs-12 text-center">
                 <p class="reset-font-large">
-                    <strong>@Umbraco.Field("pageTitle")AKTUALNOŚCI</strong>
+                    <strong>@Umbraco.Field("AktualnosciHeader")</strong>
                 </p> <br />
                 <p class="reset-font-small">PRZECZYTAJ O NASZYCH SPOTKANIACH, KONFERENCJACH I SUKCESACH</p>
             </div>
