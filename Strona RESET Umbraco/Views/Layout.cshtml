@@ -124,7 +124,7 @@
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="/" class="@(ViewBag.ActivePage==0 ? "active" : "")"><i class="fa fa-home"></i></a>
+                                <a href="/home" class="@(ViewBag.ActivePage==0 ? "active" : "")"><i class="fa fa-home"></i></a>
                             </li>
                             <li>
 									<a href="/aktualnosci" class="@(ViewBag.ActivePage==1 ? "active" : "")">AKTUALNOŚCI</a>
@@ -208,19 +208,17 @@
                 </ol>
                 <!--/ Indicators end-->
 
-           
-
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
                        <div class="item active">
-                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage1").ToString()).Url" alt="slider">
+                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage1", recursive: true).ToString()).Url" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
-                                    <span>@Umbraco.Field("bannerText1")</span>
+                                    <span>@Umbraco.Field("bannerText1", recursive: true)</span>
                                 </h2>
                                 <h3 class="animated3">
-                                    <span>@Umbraco.Field("bannerText1Inner")</span>
+                                    <span>@Umbraco.Field("bannerText1Inner", recursive: true)</span>
                                 </h3>
                                 <p class="animated4">
                                     <a href="#" class="button-reset-default">GALERIA</a>
@@ -230,14 +228,14 @@
                     </div>
                     <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage2").ToString()).Url" alt="slider">
+                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage2", recursive: true).ToString()).Url" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
-                                    <span>@Umbraco.Field("bannerText2")</span>
+                                    <span>@Umbraco.Field("bannerText2", recursive: true)</span>
                                 </h2>
                                 <h3 class="animated3">
-                                    <span>@Umbraco.Field("bannerText2Inner")</span>
+                                    <span>@Umbraco.Field("bannerText2Inner", recursive: true)</span>
                                 </h3>
                                 <p class="animated4">
                                     <a href="#" class="button-reset-default">GALERIA</a>
@@ -247,14 +245,14 @@
                     </div>
                         <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage3").ToString()).Url" alt="slider">
+                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage3", recursive: true).ToString()).Url" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
-                                    <span>@Umbraco.Field("bannerText3")</span>
+                                    <span>@Umbraco.Field("bannerText3", recursive: true)</span>
                                 </h2>
                                 <h3 class="animated3">
-                                    <span>@Umbraco.Field("bannerText3Inner")</span>
+                                    <span>@Umbraco.Field("bannerText3Inner", recursive: true)</span>
                                 </h3>
                                 <p class="animated4">
                                     <a href="#" class="button-reset-default">GALERIA</a>
