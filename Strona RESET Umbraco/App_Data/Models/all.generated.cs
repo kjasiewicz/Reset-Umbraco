@@ -191,12 +191,48 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// AktualnosciHeader
+		/// AktualnosciDesc: Podpis pod tytułem strony
+		///</summary>
+		[ImplementPropertyType("aktualnosciDesc")]
+		public IHtmlString AktualnosciDesc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("aktualnosciDesc"); }
+		}
+
+		///<summary>
+		/// AktualnosciHeader: Tytuł podstrony
 		///</summary>
 		[ImplementPropertyType("aktualnosciHeader")]
 		public IHtmlString AktualnosciHeader
 		{
 			get { return this.GetPropertyValue<IHtmlString>("aktualnosciHeader"); }
+		}
+
+		///<summary>
+		/// AktualnosciIcon: Ikona kategorii aktualności
+		///</summary>
+		[ImplementPropertyType("aktualnosciIcon")]
+		public IHtmlString AktualnosciIcon
+		{
+			get { return this.GetPropertyValue<IHtmlString>("aktualnosciIcon"); }
+		}
+
+		///<summary>
+		/// AktualnosciShortDesc: Krótki opis aktualności
+		///</summary>
+		[ImplementPropertyType("aktualnosciShortDesc")]
+		public IHtmlString AktualnosciShortDesc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("aktualnosciShortDesc"); }
+		}
+
+		///<summary>
+		/// AktualnosciTitle: Tytuł aktualności np. wykład Jana Kowalskiego
+		///</summary>
+		[ImplementPropertyType("aktualnosciTitle")]
+		public IHtmlString AktualnosciTitle
+		{
+			get { return this.GetPropertyValue<IHtmlString>("aktualnosciTitle"); }
 		}
 	}
 
