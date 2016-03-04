@@ -194,33 +194,6 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<IHtmlString>("aktualnosciHeader"); }
 		}
-
-		///<summary>
-		/// AktualnosciIcon: Ikona kategorii aktualności
-		///</summary>
-		[ImplementPropertyType("aktualnosciIcon")]
-		public IHtmlString AktualnosciIcon
-		{
-			get { return this.GetPropertyValue<IHtmlString>("aktualnosciIcon"); }
-		}
-
-		///<summary>
-		/// AktualnosciShortDesc: Krótki opis aktualności
-		///</summary>
-		[ImplementPropertyType("aktualnosciShortDesc")]
-		public IHtmlString AktualnosciShortDesc
-		{
-			get { return this.GetPropertyValue<IHtmlString>("aktualnosciShortDesc"); }
-		}
-
-		///<summary>
-		/// AktualnosciTitle: Tytuł aktualności np. wykład Jana Kowalskiego
-		///</summary>
-		[ImplementPropertyType("aktualnosciTitle")]
-		public IHtmlString AktualnosciTitle
-		{
-			get { return this.GetPropertyValue<IHtmlString>("aktualnosciTitle"); }
-		}
 	}
 
 	/// <summary>AktualnosciSzczegoly</summary>
@@ -246,6 +219,285 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AktualnosciSzczegoly, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// DateAndHour
+		///</summary>
+		[ImplementPropertyType("dateAndHour")]
+		public DateTime DateAndHour
+		{
+			get { return this.GetPropertyValue<DateTime>("dateAndHour"); }
+		}
+
+		///<summary>
+		/// EventFbLink: Link do wydarzenia na FB
+		///</summary>
+		[ImplementPropertyType("eventFbLink")]
+		public string EventFbLink
+		{
+			get { return this.GetPropertyValue<string>("eventFbLink"); }
+		}
+
+		///<summary>
+		/// EventRoom
+		///</summary>
+		[ImplementPropertyType("eventRoom")]
+		public IHtmlString EventRoom
+		{
+			get { return this.GetPropertyValue<IHtmlString>("eventRoom"); }
+		}
+
+		///<summary>
+		/// MainDesc
+		///</summary>
+		[ImplementPropertyType("mainDesc")]
+		public IHtmlString MainDesc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("mainDesc"); }
+		}
+
+		///<summary>
+		/// MainTitle
+		///</summary>
+		[ImplementPropertyType("mainTitle")]
+		public IHtmlString MainTitle
+		{
+			get { return this.GetPropertyValue<IHtmlString>("mainTitle"); }
+		}
+
+		///<summary>
+		/// newsIcon: Ikona dla danej aktualności
+		///</summary>
+		[ImplementPropertyType("newsIcon")]
+		public object NewsIcon
+		{
+			get { return this.GetPropertyValue("newsIcon"); }
+		}
+
+		///<summary>
+		/// ShortDesc: Opis wyświetlany na stronie głównej oraz na liście aktualności
+		///</summary>
+		[ImplementPropertyType("shortDesc")]
+		public IHtmlString ShortDesc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("shortDesc"); }
+		}
+
+		///<summary>
+		/// ShortTitle: Tytuł wyświetlany na stronie głównej oraz na liście aktualności
+		///</summary>
+		[ImplementPropertyType("shortTitle")]
+		public IHtmlString ShortTitle
+		{
+			get { return this.GetPropertyValue<IHtmlString>("shortTitle"); }
+		}
+
+		///<summary>
+		/// Speaker1Desc: Opis prelegenta
+		///</summary>
+		[ImplementPropertyType("speaker1Desc")]
+		public IHtmlString Speaker1Desc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speaker1Desc"); }
+		}
+
+		///<summary>
+		/// Speaker1FbLink: Link do facebook'a prelegenta
+		///</summary>
+		[ImplementPropertyType("speaker1FbLink")]
+		public string Speaker1FbLink
+		{
+			get { return this.GetPropertyValue<string>("speaker1FbLink"); }
+		}
+
+		///<summary>
+		/// Speaker1Img: Zdjęcie prelegenta
+		///</summary>
+		[ImplementPropertyType("speaker1Img")]
+		public object Speaker1Img
+		{
+			get { return this.GetPropertyValue("speaker1Img"); }
+		}
+
+		///<summary>
+		/// Speaker1LinkedInLink: Link do LinkedIn prelegenta
+		///</summary>
+		[ImplementPropertyType("speaker1LinkedInLink")]
+		public string Speaker1LinkedInLink
+		{
+			get { return this.GetPropertyValue<string>("speaker1LinkedInLink"); }
+		}
+
+		///<summary>
+		/// Speaker1Name: Imię i Nazwisko prelegenta
+		///</summary>
+		[ImplementPropertyType("speaker1Name")]
+		public IHtmlString Speaker1Name
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speaker1Name"); }
+		}
+
+		///<summary>
+		/// Speaker1TwitterLink: Link do twittera prelegenta
+		///</summary>
+		[ImplementPropertyType("speaker1TwitterLink")]
+		public string Speaker1TwitterLink
+		{
+			get { return this.GetPropertyValue<string>("speaker1TwitterLink"); }
+		}
+
+		///<summary>
+		/// Speaker1WorkPosition: Stanowisko prelegenta
+		///</summary>
+		[ImplementPropertyType("speaker1WorkPosition")]
+		public IHtmlString Speaker1WorkPosition
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speaker1WorkPosition"); }
+		}
+
+		///<summary>
+		/// Speaker2Desc
+		///</summary>
+		[ImplementPropertyType("speaker2Desc")]
+		public IHtmlString Speaker2Desc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speaker2Desc"); }
+		}
+
+		///<summary>
+		/// Speaker2FbLink
+		///</summary>
+		[ImplementPropertyType("speaker2FbLink")]
+		public string Speaker2FbLink
+		{
+			get { return this.GetPropertyValue<string>("speaker2FbLink"); }
+		}
+
+		///<summary>
+		/// Speaker2Img
+		///</summary>
+		[ImplementPropertyType("speaker2Img")]
+		public object Speaker2Img
+		{
+			get { return this.GetPropertyValue("speaker2Img"); }
+		}
+
+		///<summary>
+		/// Speaker2LinkedInLink
+		///</summary>
+		[ImplementPropertyType("speaker2LinkedInLink")]
+		public string Speaker2LinkedInLink
+		{
+			get { return this.GetPropertyValue<string>("speaker2LinkedInLink"); }
+		}
+
+		///<summary>
+		/// Speaker2Name
+		///</summary>
+		[ImplementPropertyType("speaker2Name")]
+		public IHtmlString Speaker2Name
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speaker2Name"); }
+		}
+
+		///<summary>
+		/// Speaker2TwitterLink
+		///</summary>
+		[ImplementPropertyType("speaker2TwitterLink")]
+		public string Speaker2TwitterLink
+		{
+			get { return this.GetPropertyValue<string>("speaker2TwitterLink"); }
+		}
+
+		///<summary>
+		/// Speaker2WorkPosition
+		///</summary>
+		[ImplementPropertyType("speaker2WorkPosition")]
+		public IHtmlString Speaker2WorkPosition
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speaker2WorkPosition"); }
+		}
+
+		///<summary>
+		/// Speaker3Desc
+		///</summary>
+		[ImplementPropertyType("speaker3Desc")]
+		public IHtmlString Speaker3Desc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speaker3Desc"); }
+		}
+
+		///<summary>
+		/// Speaker3FbLink
+		///</summary>
+		[ImplementPropertyType("speaker3FbLink")]
+		public string Speaker3FbLink
+		{
+			get { return this.GetPropertyValue<string>("speaker3FbLink"); }
+		}
+
+		///<summary>
+		/// Speaker3Img
+		///</summary>
+		[ImplementPropertyType("speaker3Img")]
+		public object Speaker3Img
+		{
+			get { return this.GetPropertyValue("speaker3Img"); }
+		}
+
+		///<summary>
+		/// Speaker3LinkedInLink
+		///</summary>
+		[ImplementPropertyType("speaker3LinkedInLink")]
+		public string Speaker3LinkedInLink
+		{
+			get { return this.GetPropertyValue<string>("speaker3LinkedInLink"); }
+		}
+
+		///<summary>
+		/// Speaker3Name
+		///</summary>
+		[ImplementPropertyType("speaker3Name")]
+		public IHtmlString Speaker3Name
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speaker3Name"); }
+		}
+
+		///<summary>
+		/// Speaker3TwitterLink
+		///</summary>
+		[ImplementPropertyType("speaker3TwitterLink")]
+		public string Speaker3TwitterLink
+		{
+			get { return this.GetPropertyValue<string>("speaker3TwitterLink"); }
+		}
+
+		///<summary>
+		/// Speaker3WorkPosition
+		///</summary>
+		[ImplementPropertyType("speaker3WorkPosition")]
+		public IHtmlString Speaker3WorkPosition
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speaker3WorkPosition"); }
+		}
+
+		///<summary>
+		/// TypeDropdown: Kategoria aktualności
+		///</summary>
+		[ImplementPropertyType("typeDropdown")]
+		public object TypeDropdown
+		{
+			get { return this.GetPropertyValue("typeDropdown"); }
+		}
+
+		///<summary>
+		/// YearDropdown: Rok dodania aktualności
+		///</summary>
+		[ImplementPropertyType("yearDropdown")]
+		public object YearDropdown
+		{
+			get { return this.GetPropertyValue("yearDropdown"); }
 		}
 	}
 
