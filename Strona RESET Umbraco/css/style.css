@@ -44,7 +44,7 @@
 /*	     01 - General & Basic Styles
 /*------------------------------------------*/
 
-.filter-button{
+.filter-button {
     border: 1px solid;
     font-family: 'Segoe UI';
     display: inline-block;
@@ -52,54 +52,77 @@
     padding: 6px 20px;
     text-decoration: none;
     margin-bottom: 10px;
-    padding-left:10px;
-    padding-right:10px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 18px;
 }
-.filter-button.gray {
-    border-color: darkgray;
-    color: darkgray;
-}
 
-.filter-button.gray:hover, .filter-button.gray.active{
-    background-color: darkgray;
-    color: white;
-}
-.filter-button.blue {
-    border-color: #0099ff;
-    color:  #0099ff;
-}
-.filter-button.blue:hover, .filter-button.blue.active{
-    background-color: #0099ff;
-    color: white;
-}
-.filter-button.violet {
-    border-color: #660033;
-    color:#660033;
-}
-.filter-button.violet:hover, .filter-button.violet.active{
-    background-color: #660033;
-    color: white;
-}
-.filter-button.green {
-    border-color: #669933;
-    color:#669933;
-}
-.filter-button.green:hover, .filter-button.green.active{
-    background-color: #669933;
-    color: white;
-}
+    .filter-button.gray {
+        border-color: darkgray;
+        color: darkgray;
+    }
 
-.service-box.service-center:hover .news-icon.blue {
+        .filter-button.gray:hover, .filter-button.gray.active {
+            background-color: darkgray;
+            color: white;
+        }
+
+    .filter-button.blue {
+        border-color: #0099ff;
+        color: #0099ff;
+    }
+
+        .filter-button.blue:hover, .filter-button.blue.active {
+            background-color: #0099ff;
+            color: white;
+        }
+
+    .filter-button.violet {
+        border-color: #660033;
+        color: #660033;
+    }
+
+        .filter-button.violet:hover, .filter-button.violet.active {
+            background-color: #660033;
+            color: white;
+        }
+
+    .filter-button.green {
+        border-color: #669933;
+        color: #669933;
+    }
+
+        .filter-button.green:hover, .filter-button.green.active {
+            background-color: #669933;
+            color: white;
+        }
+.icon-color {
+    color: gray;
+    font-size: 3em;
+}
+.category-lectures:hover .news-icon, .category-lectures .icon-color:hover {
     color: #0099ff;
 }
 
-.service-box.service-center:hover .news-icon.violet {
+.category-conference:hover .news-icon,  .category-conference .icon-color:hover  {
     color: #660033;
 }
 
-.service-box.service-center:hover .news-icon.green {
+.category-success:hover .news-icon,  .category-success .icon-color:hover {
     color: #669933;
+}
+
+
+.category-lectures .title-border {
+    border-color: #0099ff;
+}
+
+.category-conference .title-border {
+    border-color: #660033;
+}
+
+.category-success .title-border {
+    border-color: #669933;
 }
 
 .news-icon {
@@ -114,32 +137,7 @@
         text-decoration: underline;
     }
 
-.icon_color_blue {
-    color: gray;
-    font-size: 3em;
-}
 
-    .icon_color_blue:hover {
-        color: #0099ff;
-    }
-
-.icon_color_violet {
-    color: gray;
-    font-size: 3em;
-}
-
-    .icon_color_violet:hover {
-        color: #660033;
-    }
-
-.icon_color_green {
-    color: gray;
-    font-size: 3em;
-}
-
-    .icon_color_green:hover {
-        color: #669933;
-    }
 
 .title-border {
     text-align: center;
@@ -148,17 +146,7 @@
 }
 
 
-    .title-border.blue {
-        border-color: #0099ff;
-    }
 
-    .title-border.violet {
-        border-color: #660033;
-    }
-
-    .title-border.green {
-        border-color: #669933;
-    }
 
 
 .reset-font-large {
@@ -166,7 +154,8 @@
     font-size: 36px;
     color: black;
 }
-.reset-font-large-bold{
+
+.reset-font-large-bold {
     font-family: Montserrat-Bold;
     font-size: 36px;
     color: black;
@@ -178,11 +167,12 @@
     color: black;
 }
 
-.reset-font-small {
+.reset-font-small, .reset-font-small p {
     font-family: Montserrat-Regular;
     font-size: 16px;
     color: black;
 }
+
 .reset-font-extra-small {
     font-family: Montserrat-Regular;
     font-size: 14px;
@@ -204,21 +194,23 @@
         background-color: white;
         color: black;
     }
-    .button-reset-default.black {
-    background-color: none;
-    border: 1px solid black;
-    display: inline-block;
-    cursor: pointer;
-    padding: 6px 20px;
-    text-decoration: none;
-    color: black;
-    margin-top: 20px;
-}
 
-    .button-reset-default.black:hover {
-        background-color: black;
-        color: white;
+    .button-reset-default.black {
+        background-color: none;
+        border: 1px solid black;
+        display: inline-block;
+        cursor: pointer;
+        padding: 6px 20px;
+        text-decoration: none;
+        color: black;
+        margin-top: 20px;
     }
+
+        .button-reset-default.black:hover {
+            background-color: black;
+            color: white;
+        }
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
@@ -4439,7 +4431,7 @@ footer {
     }
 
 .contact-widget {
-    background: url(../images/map.png) center bottom no-repeat;
+    background: url(/media/1092/map.png) center bottom no-repeat;
 }
 
     .contact-widget span {
@@ -6123,7 +6115,7 @@ ul.footer-nav {
     background-attachment: fixed;
     background-position: 50% 30%;
     padding: 100px 0;
- }
+}
 
 .purchase2 {
     background: url(../media/1135/bg-02.png);
@@ -6131,14 +6123,16 @@ ul.footer-nav {
     background-position: 50% 30%;
     padding: 100px 0;
     margin: 20px 0;
-  }
+}
+
 .purchase4 {
     background: url(/media/1151/utwisted_bg.png);
     background-attachment: fixed;
     background-position: 50% 30%;
     padding: 250px 0;
     margin: 20px 0;
-  }
+}
+
 .navbar-collapse {
     max-height: 340px;
 }

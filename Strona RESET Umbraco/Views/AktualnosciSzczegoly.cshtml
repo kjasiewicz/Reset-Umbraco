@@ -1,28 +1,19 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
 @{
-	Layout = "Layout.cshtml";
-	ViewBag.ActivePage = 1;
+    Layout = "Layout.cshtml";
+    ViewBag.ActivePage = 1;
+    var date = DateTime.Parse(Umbraco.Field("dateAndHour", removeParagraphTags: true).ToString());
 }
 <link href="/css/NewsDetails.css" rel="stylesheet" />
-
 <div class="container">
     <div class="row">
         <div class="col-md-6">
             <h4 class="reset-font-medium lecture-name">
-                Nie powtarzaj się! <br />
-                Czyli o AOP słów kilka.
+                @Umbraco.Field("mainTitle", removeParagraphTags: true)
             </h4>
-            <p class="reset-font-small lecture-description">
-                W trakcie tej prezentacji dowiesz czym właściwie jest AOP
-                i do czego może się przydać w praktyce.
-                W trakcie tej prezentacji dowiesz czym właściwie jest AOP
-                i do czego może się przydać w praktyce.
-                W trakcie tej prezentacji dowiesz czym właściwie jest AOP
-                i do czego może się przydać w praktyce.
-                W trakcie tej prezentacji dowiesz czym właściwie jest AOP
-                i do czego może się przydać w praktyce.
-            </p>
+            <div class="reset-font-small lecture-description">
+                @Umbraco.Field("mainDesc", removeParagraphTags: true)
+            </div>
         </div>
         <div class="row">
             <div class="lecture-time-box ">
@@ -33,7 +24,7 @@
                     <div class="service-content">
                         <h4 class="reset-font-medium">
                             <strong>
-                                13.01.2016
+                                @date.ToString("dd-MM-yyyy")
                             </strong>
                         </h4>
                     </div>
@@ -45,7 +36,7 @@
                     <div class="service-content">
                         <h4 class="reset-font-medium ">
                             <strong>
-                                17:00
+                                @date.ToString("t")
                             </strong>
                         </h4>
                     </div>
@@ -57,7 +48,7 @@
                     <div class="service-content">
                         <h4 class="reset-font-medium ">
                             <strong>
-                                L 120
+                                @Umbraco.Field("eventRoom", removeParagraphTags: true)
                             </strong>
                         </h4>
                     </div>
@@ -71,27 +62,84 @@
     <div class="container">
         <div class="row about">
             <div class="col-md-3 teacher_img">
-                <img src="/media/1094/member-01.jpg" alt="" class="img-circle img-responsive" />
+                <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker1Img").ToString()).Url" alt="" class="img-circle img-responsive" />
             </div>
             <div class="col-md-9 about_text">
-                <p class="reset-font-medium"><strong>Prelegent: </strong>Rafał Łopatka</p>
-                <p class="reset-font-small teacher-profession">Programista w firmie EUVIC</p>
+                <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker1Name", removeParagraphTags: true)</p>
+                <p class="reset-font-small teacher-profession">@Umbraco.Field("speaker1WorkPosition", removeParagraphTags: true)</p>
                 <p class="teacher-desc">
-                    Człowiek od dawna związany z  Akademią Techniczno-HUmanistyczną
-                    w Bielsku-Białej oraz Kołem RESET. W latach 2012-2014 pełnił funckję
-                    Microsoft Student Partnera. Na co dzień związany z firmą EUVIC, gdzie pracuje
-                    jako programista.
+                    @Umbraco.Field("speaker1Desc", removeParagraphTags: true)
                 </p>
                 <div class="soc_icons navbar-right">
                     <ul class="list-unstyled text-center">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        @if (!Umbraco.Field("speaker1FbLink", removeParagraphTags: true).ToString().IsEmpty())
+                        {
+                            <li><a href="@Umbraco.Field("speaker1FbLink", removeParagraphTags: true)"><i class="fa fa-facebook"></i></a></li>
+                        }
+                        @if (!Umbraco.Field("speaker1TwitterLink", removeParagraphTags: true).ToString().IsEmpty())
+                        {
+                            <li><a href="@Umbraco.Field("speaker1TwitterLink", removeParagraphTags: true)"><i class="fa fa-twitter"></i></a></li>
+                        }
+                        @if (!Umbraco.Field("speaker1LinkedInLink", removeParagraphTags: true).ToString().IsEmpty())
+                        {
+                            <li><a href="@Umbraco.Field("speaker1LinkedInLink", removeParagraphTags: true)"><i class="fa fa-linkedin"></i></a></li>
+                        }
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+    @if (Umbraco.Field("speaker2Name", removeParagraphTags: true).ToString() != "")
+    {
+        <div class="container">
+            <div class="row about">
+                <div class="col-md-3 teacher_img">
+                    <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker2Img").ToString()).Url" alt="" class="img-circle img-responsive" />
+                </div>
+                <div class="col-md-9 about_text">
+                    <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker2Name", removeParagraphTags: true)</p>
+                    <p class="reset-font-small teacher-profession">@Umbraco.Field("speaker2WorkPosition", removeParagraphTags: true)</p>
+                    <p class="teacher-desc">
+                        @Umbraco.Field("speaker2Desc", removeParagraphTags: true)
+                    </p>
+                    <div class="soc_icons navbar-right">
+                        <ul class="list-unstyled text-center">
+                            <li><a href="@Umbraco.Field("speaker2FbLink", removeParagraphTags: true)"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="@Umbraco.Field("speaker2TwitterLink", removeParagraphTags: true)"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="@Umbraco.Field("speaker2LinkedInLink", removeParagraphTags: true)"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Umbraco.Field("speaker3Name", removeParagraphTags: true).ToString() != "")
+    {
+        <div class="container">
+            <div class="row about">
+                <div class="col-md-3 teacher_img">
+                    <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker3Img").ToString()).Url" alt="" class="img-circle img-responsive" />
+                </div>
+                <div class="col-md-9 about_text">
+                    <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker3Name", removeParagraphTags: true)</p>
+                    <p class="reset-font-small teacher-profession">@Umbraco.Field("speaker3WorkPosition", removeParagraphTags: true)</p>
+                    <p class="teacher-desc">
+                        @Umbraco.Field("speaker3Desc", removeParagraphTags: true)
+                    </p>
+                    <div class="soc_icons navbar-right">
+                        <ul class="list-unstyled text-center">
+                            <li><a href="@Umbraco.Field("speaker3FbLink", removeParagraphTags: true)"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="@Umbraco.Field("speaker3TwitterLink", removeParagraphTags: true)"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="@Umbraco.Field("speaker3LinkedInLink", removeParagraphTags: true)"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    }
+
 </div>
 <div class="section purchase3 ">
     <div class="container text-center">
@@ -107,11 +155,12 @@
             <br />
             <br />
 
-
         </h2>
-        <div class=" reset-font-medium button-reset-default">
-            DOŁĄCZ DO WYDARZENIA<br />I BĄDŹ NA BIEŻĄCO
-        </div>
+        <a href="@Umbraco.Field("eventFbLink", removeParagraphTags: true)">
+            <div class=" reset-font-medium button-reset-default">
+                DOŁĄCZ DO WYDARZENIA<br />I BĄDŹ NA BIEŻĄCO
+            </div>
+        </a>
     </div>
     <!-- .container -->
 </div>

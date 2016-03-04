@@ -1,8 +1,10 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using Strona_RESET_Umbraco.FrontendHelpers
+@inherits UmbracoTemplatePage
 
 @{
-	Layout = "Layout.cshtml";
-	ViewBag.ActivePage = 1;
+    Layout = "Layout.cshtml";
+    ViewBag.ActivePage = 1;
+    var childrens = CurrentPage.Children;
 }
 <div class="section service">
     <div class="container">
@@ -31,224 +33,34 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="row" id="sortList">
             <!-- Start Service Icon 1 -->
-            <div class="col-md-3 col-sm-6 service-box service-center mix category-lectures year-2015 all" data-animation="fadeIn" data-animation-delay="01">
-                <div class="news-icon blue">
-                    @Umbraco.Field("aktualnosciIcon", removeParagraphTags: true)
-                </div>
-                <div class="service-content">
-                    <div class="title-border blue"></div>
-                    <h4 class="reset-font-small ">
-                        <strong>
-                           @Umbraco.Field("aktualnosciTitle", removeParagraphTags: true)
-                        </strong>
-
-                    </h4>
-                    <p>
-                   @Umbraco.Field("aktualnosciShortDesc", removeParagraphTags: true)
-                    </p>
-                    <i class="fa fa-ellipsis-h icon_color_blue"></i>
-                </div>
-
-            </div>
-            <!-- End Service Icon 1 -->
-            <!-- Start Service Icon 2 -->
-            <div class="col-md-3 col-sm-6 service-box service-center mix category-conference year-2016 all" data-animation="fadeIn" data-animation-delay="01">
-                <div class="news-icon violet">
-                    <i class="fa fa-group"></i>
-                </div>
-                <div class="service-content">
-                    <div class="title-border violet"></div>
-                    <h4 class="reset-font-small">
-                        <strong>
-                            Nie powtarzaj się !
-                            Czyli o AOP słów kilka.
-
-                        </strong>
-
-                    </h4>
-                    <p>
-                        W trakcie tej prezentacji dowiesz się
-                        czym właściwie jest AOP i do czego może się
-                        przydać w praktyce.
-
-                    </p>
-                    <i class="fa fa-ellipsis-h icon_color_violet"></i>
+            @foreach (var children in CurrentPage.Children)
+            {
+                var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
+                <div class="col-md-3 col-sm-6 service-box service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true)) all" data-animation="fadeIn" data-animation-delay="01">
+                    <div class="news-icon">
+                        <i class="fa @innerUmbracoHelper.Field("newsIcon", removeParagraphTags: true)"></i>
+                    </div>
+                    <div class="service-content">
+                        <div class="title-border"></div>
+                        <h4 class="reset-font-small ">
+                            <strong>
+                                @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
+                            </strong>
+                        </h4>
+                        <p>
+                            @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
+                        </p>
+                        <a href="@children.Url"><i class="fa fa-ellipsis-h icon-color"></i></a>
+                    </div>
 
                 </div>
+            }
 
-            </div>
-            <!-- End Service Icon 2 -->
-            <!-- Start Service Icon 3 -->
-            <div class="col-md-3 col-sm-6 service-box service-center mix category-success year-2016 all" data-animation="fadeIn" data-animation-delay="01">
-                <div class="news-icon green">
-                    <i class="fa fa-commenting"></i>
 
-                </div>
-                <div class="service-content">
-                    <div class="title-border green"></div>
-                    <h4 class="reset-font-small">
-                        <strong>
-                            Nie powtarzaj się !
-                            Czyli o AOP słów kilka.
 
-                        </strong>
-
-                    </h4>
-                    <p>
-                        W trakcie tej prezentacji dowiesz się
-                        czym właściwie jest AOP i do czego może się
-                        przydać w praktyce.
-
-                    </p>
-                    <i class="fa fa-ellipsis-h icon_color_green"></i>
-
-                </div>
-
-            </div>
-            <!-- End Service Icon 3 -->
-            <!-- Start Service Icon 4 -->
-            <div class="col-md-3 col-sm-6 service-box service-center mix category-lectures year-2015 all" data-animation="fadeIn" data-animation-delay="01">
-                <div class="news-icon blue">
-                    <i class="fa fa-graduation-cap"></i>
-
-                </div>
-                <div class="service-content">
-                    <div class="title-border blue"></div>
-                    <h4 class="reset-font-small">
-                        <strong>
-                            Nie powtarzaj się !
-                            Czyli o AOP słów kilka.
-
-                        </strong>
-
-                    </h4>
-                    <p>
-                        W trakcie tej prezentacji dowiesz się
-                        czym właściwie jest AOP i do czego może się
-                        przydać w praktyce.
-
-                    </p>
-                    <i class="fa fa-ellipsis-h icon_color_blue"></i>
-
-                </div>
-
-            </div>
-            <!-- End Service Icon 4 -->
-            <!-- Start Service Icon 5 -->
-            <div class="col-md-3 col-sm-6 service-box service-center category-conference mix year-2015 all" data-animation="fadeIn" data-animation-delay="01">
-                <div class="news-icon violet">
-                    <i class="fa fa-group"></i>
-
-                </div>
-                <div class="service-content">
-                    <div class="title-border violet"></div>
-                    <h4 class="reset-font-small ">
-                        <strong>
-                            Nie powtarzaj się !
-                            Czyli o AOP słów kilka.
-
-                        </strong>
-
-                    </h4>
-                    <p>
-                        W trakcie tej prezentacji dowiesz się
-                        czym właściwie jest AOP i do czego może się
-                        przydać w praktyce.
-
-                    </p>
-                    <i class="fa fa-ellipsis-h icon_color_violet"></i>
-
-                </div>
-
-            </div>
-            <!-- End Service Icon 5 -->
-            <!-- Start Service Icon 6 -->
-            <div class="col-md-3 col-sm-6 service-box service-center category-success mix year-2015 all" data-animation="fadeIn" data-animation-delay="01">
-                <div class="news-icon green">
-                    <i class="fa fa-commenting"></i>
-
-                </div>
-                <div class="service-content">
-                    <div class="title-border green"></div>
-                    <h4 class="reset-font-small">
-                        <strong>
-                            Nie powtarzaj się !
-                            Czyli o AOP słów kilka.
-
-                        </strong>
-
-                    </h4>
-                    <p>
-                        W trakcie tej prezentacji dowiesz się
-                        czym właściwie jest AOP i do czego może się
-                        przydać w praktyce.
-
-                    </p>
-                    <i class="fa fa-ellipsis-h icon_color_green"></i>
-
-                </div>
-
-            </div>
-            <!-- End Service Icon 6 -->
-            <!-- Start Service Icon 7 -->
-            <div class="col-md-3 col-sm-6 service-box service-center category-lectures mix year-2014 all" data-animation="fadeIn" data-animation-delay="01">
-                <div class="news-icon blue">
-                    <i class="fa fa-graduation-cap"></i>
-
-                </div>
-                <div class="service-content">
-                    <div class="title-border blue"></div>
-                    <h4 class="reset-font-small">
-                        <strong>
-                            Nie powtarzaj się !
-                            Czyli o AOP słów kilka.
-
-                        </strong>
-
-                    </h4>
-                    <p>
-                        W trakcie tej prezentacji dowiesz się
-                        czym właściwie jest AOP i do czego może się
-                        przydać w praktyce.
-
-                    </p>
-                    <i class="fa fa-ellipsis-h icon_color_blue"></i>
-
-                </div>
-
-            </div>
-            <!-- End Service Icon 7 -->
-            <!-- Start Service Icon 8 -->
-            <div class="col-md-3 col-sm-6 service-box service-center category-lectures mix year-2014 all" data-animation="fadeIn" data-animation-delay="01">
-                <div class="news-icon blue">
-                    <i class="fa fa-graduation-cap"></i>
-
-                </div>
-                <div class="service-content">
-                    <div class="title-border blue"></div>
-                    <h4 class="reset-font-small">
-                        <strong>
-                            Nie powtarzaj się !
-                            Czyli o AOP słów kilka.
-
-                        </strong>
-
-                    </h4>
-                    <p>
-                        W trakcie tej prezentacji dowiesz się
-                        czym właściwie jest AOP i do czego może się
-                        przydać w praktyce.
-
-                    </p>
-                    <i class="fa fa-ellipsis-h icon_color_blue"></i>
-
-                </div>
-
-            </div>
-            <!-- End Service Icon 8 -->
             <!-- .row -->
 
         </div>

@@ -1,8 +1,11 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using Umbraco.Web.Models
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
     Layout = "Layout.cshtml";
     ViewBag.ActivePage = 0;
+    DynamicPublishedContentList test = CurrentPage.Parent.Children;
+    var aktualnosciChildren = test.First(x => x.Name == "Aktualnosci").Children;
 }
 
 <!-- Start Services Section -->
@@ -35,7 +38,7 @@
                         czym właściwie jest AOP i do czego może się
                         przydać w praktyce.
                     </p>
-                    <i class="fa fa-ellipsis-h icon_color_blue"></i>
+                    <i class="fa fa-ellipsis-h icon-color"></i>
                 </div>
             </div>
             <!-- End Service Icon 1 -->
