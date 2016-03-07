@@ -21,7 +21,7 @@
                         {
                             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
                                 <div class="img-box">
-                                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("contactImg")).Url" class="img-responsive">
+                                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("contactImg").ToString()).Url" class="img-responsive">
                                     <ul class="text-center">
                                         <li>
                                             <a href="@innerUmbracoHelper.Field("contactFbLink", removeParagraphTags: true)">
@@ -64,7 +64,7 @@
                         {
                             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
                                 <div class="img-box">
-                                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("contactImg")).Url" class="img-responsive">
+                                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("contactImg").ToString()).Url" class="img-responsive">
                                     <ul class="text-center">
                                         <li>
                                             <a href="@innerUmbracoHelper.Field("contactFbLink", removeParagraphTags: true)">

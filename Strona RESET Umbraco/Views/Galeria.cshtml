@@ -1,7 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = "Layout.cshtml";
-	ViewBag.ActivePage = 2;
+    Layout = "Layout.cshtml";
+    ViewBag.ActivePage = 2;
+    var childrens = CurrentPage.Children;
 }
 <link href="/css/Gallery.css" rel="stylesheet" />
 <section class="gallery">
@@ -15,109 +16,48 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="/media/1087/konferencja_itad2015.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-6">
-                <h3 class="reset-font-medium">Konferencja IT Academic Day 2015 </h3>
-                <h4 class="reset-font-small">20 listopada 2015</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="button-reset-default black" href="/galeria/1">ZOBACZ GALERIĘ<span class="glyphicon glyphicon-chevron-right"></span></a>
+            @foreach (var children in childrens)
+            {
+                var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
+                <div class="col-md-6">
+                    <img class="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("galleryMainImg").ToString()).Url" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="reset-font-medium">@innerUmbracoHelper.Field("galleryTitle", removeParagraphTags: true)</h3>
+                    <h4 class="reset-font-small">@innerUmbracoHelper.Field("galleryDate", removeParagraphTags: true)</h4>
+                    <p>@innerUmbracoHelper.Field("galleryDesc", removeParagraphTags: true)</p>
+                    <a class="button-reset-default black" href="@children.Url">ZOBACZ GALERIĘ<span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            }
+        </div>
+            <hr>
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#">&laquo;</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">5</a>
+                        </li>
+                        <li>
+                            <a href="#">&raquo;</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <hr>
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="/media/1131/wyklad_jcommerce.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-6">
-                <h3 class="reset-font-medium">Wykład Jcommerce </h3>
-                <h4 class="reset-font-small">10 luty 2015</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="button-reset-default black" href="#">ZOBACZ GALERIĘ<span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="/media/1132/wyklad_wwrobel.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-6">
-                <h3 class="reset-font-medium">Wykład Wojciecha Wróbla </h3>
-                <h4 class="reset-font-small">12 grudnia 2013</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="button-reset-default black" href="#">ZOBACZ GALERIĘ<span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="/media/1131/wyklad_jcommerce.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-6">
-                <h3 class="reset-font-medium">Wykład Jcommerce </h3>
-                <h4 class="reset-font-small">10 luty 2015</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="button-reset-default black" href="#">ZOBACZ GALERIĘ<span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <img class="img-responsive" src="/media/1131/wyklad_jcommerce.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-6">
-                <h3 class="reset-font-medium">Wykład Jcommerce </h3>
-                <h4 class="reset-font-small">10 luty 2015</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="button-reset-default black" href="#">ZOBACZ GALERIĘ<span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-</section>
+    </section>

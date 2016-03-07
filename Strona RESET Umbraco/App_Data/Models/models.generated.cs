@@ -525,6 +525,60 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// GalleryDate: Data wydarzenia, z którego pochodzi galeria
+		///</summary>
+		[ImplementPropertyType("galleryDate")]
+		public string GalleryDate
+		{
+			get { return this.GetPropertyValue<string>("galleryDate"); }
+		}
+
+		///<summary>
+		/// GalleryDesc: Krótki opis wydarzenia, z którego pochodzi galeria
+		///</summary>
+		[ImplementPropertyType("galleryDesc")]
+		public IHtmlString GalleryDesc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("galleryDesc"); }
+		}
+
+		///<summary>
+		/// GalleryMainImg: Zdjęcie główne galerii wyświetla na głównej podstronie GALERIA
+		///</summary>
+		[ImplementPropertyType("galleryMainImg")]
+		public object GalleryMainImg
+		{
+			get { return this.GetPropertyValue("galleryMainImg"); }
+		}
+
+		///<summary>
+		/// GalleryPhotos: Zdjęcia w galerii
+		///</summary>
+		[ImplementPropertyType("galleryPhotos")]
+		public string GalleryPhotos
+		{
+			get { return this.GetPropertyValue<string>("galleryPhotos"); }
+		}
+
+		///<summary>
+		/// GalleryPhotosMini: Zdjęcie w podglądzie galerii
+		///</summary>
+		[ImplementPropertyType("galleryPhotosMini")]
+		public string GalleryPhotosMini
+		{
+			get { return this.GetPropertyValue<string>("galleryPhotosMini"); }
+		}
+
+		///<summary>
+		/// GalleryTitle: Nazwa wydarzenia, z którego pochodzi galeria
+		///</summary>
+		[ImplementPropertyType("galleryTitle")]
+		public string GalleryTitle
+		{
+			get { return this.GetPropertyValue<string>("galleryTitle"); }
+		}
 	}
 
 	/// <summary>ProjektySzczegoly</summary>
@@ -550,6 +604,150 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ProjektySzczegoly, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// ProjectBigImg: Baner z np. screenem aplikacji
+		///</summary>
+		[ImplementPropertyType("projectBigImg")]
+		public object ProjectBigImg
+		{
+			get { return this.GetPropertyValue("projectBigImg"); }
+		}
+
+		///<summary>
+		/// ProjectCoTo: Projekt - kolumna "Co to takiego?"
+		///</summary>
+		[ImplementPropertyType("projectCoTo")]
+		public IHtmlString ProjectCoTo
+		{
+			get { return this.GetPropertyValue<IHtmlString>("projectCoTo"); }
+		}
+
+		///<summary>
+		/// ProjectDlaKogo: Projekt - kolumna "Dla kogo?"
+		///</summary>
+		[ImplementPropertyType("projectDlaKogo")]
+		public IHtmlString ProjectDlaKogo
+		{
+			get { return this.GetPropertyValue<IHtmlString>("projectDlaKogo"); }
+		}
+
+		///<summary>
+		/// ProjectFirstDetails: Informacje np. o ilości osób jakie wzięły udział w projekcie
+		///</summary>
+		[ImplementPropertyType("projectFirstDetails")]
+		public string ProjectFirstDetails
+		{
+			get { return this.GetPropertyValue<string>("projectFirstDetails"); }
+		}
+
+		///<summary>
+		/// ProjectFirstDetailsDesc: Opis do pierwszej szczegółowej informacji
+		///</summary>
+		[ImplementPropertyType("projectFirstDetailsDesc")]
+		public string ProjectFirstDetailsDesc
+		{
+			get { return this.GetPropertyValue<string>("projectFirstDetailsDesc"); }
+		}
+
+		///<summary>
+		/// ProjectLogo: Logo aplikacji
+		///</summary>
+		[ImplementPropertyType("projectLogo")]
+		public object ProjectLogo
+		{
+			get { return this.GetPropertyValue("projectLogo"); }
+		}
+
+		///<summary>
+		/// ProjectMainImg: Obrazek poszczególnego projektu na głównej stronie projektów
+		///</summary>
+		[ImplementPropertyType("projectMainImg")]
+		public object ProjectMainImg
+		{
+			get { return this.GetPropertyValue("projectMainImg"); }
+		}
+
+		///<summary>
+		/// ProjectMainTitle: Pełna nazwa projektu wyświetlana w szczegółach projektu
+		///</summary>
+		[ImplementPropertyType("projectMainTitle")]
+		public IHtmlString ProjectMainTitle
+		{
+			get { return this.GetPropertyValue<IHtmlString>("projectMainTitle"); }
+		}
+
+		///<summary>
+		/// ProjectPoco: Projekt - kolumna "Po co?"
+		///</summary>
+		[ImplementPropertyType("projectPoco")]
+		public IHtmlString ProjectPoco
+		{
+			get { return this.GetPropertyValue<IHtmlString>("projectPoco"); }
+		}
+
+		///<summary>
+		/// ProjectScreen: Mockup ze screenem aplikacji/systemu
+		///</summary>
+		[ImplementPropertyType("projectScreen")]
+		public object ProjectScreen
+		{
+			get { return this.GetPropertyValue("projectScreen"); }
+		}
+
+		///<summary>
+		/// ProjectSecondDetails: Informacje np. o ilości osób jakie wzięły udział projekcie
+		///</summary>
+		[ImplementPropertyType("projectSecondDetails")]
+		public string ProjectSecondDetails
+		{
+			get { return this.GetPropertyValue<string>("projectSecondDetails"); }
+		}
+
+		///<summary>
+		/// ProjectSecondDetailsDesc: Opis do drugiej szczegółowej informacji
+		///</summary>
+		[ImplementPropertyType("projectSecondDetailsDesc")]
+		public string ProjectSecondDetailsDesc
+		{
+			get { return this.GetPropertyValue<string>("projectSecondDetailsDesc"); }
+		}
+
+		///<summary>
+		/// ProjectshortDesc: Krótki opis projektu na stronie projektów
+		///</summary>
+		[ImplementPropertyType("projectShortDesc")]
+		public IHtmlString ProjectShortDesc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("projectShortDesc"); }
+		}
+
+		///<summary>
+		/// ProjectThirdDetails: Informacje np. o ilości osób jakie wzięły udział w projekcie
+		///</summary>
+		[ImplementPropertyType("projectThirdDetails")]
+		public string ProjectThirdDetails
+		{
+			get { return this.GetPropertyValue<string>("projectThirdDetails"); }
+		}
+
+		///<summary>
+		/// ProjectThirdDetailsDesc: Opis do trzeciej szczegółowej informacji
+		///</summary>
+		[ImplementPropertyType("projectThirdDetailsDesc")]
+		public string ProjectThirdDetailsDesc
+		{
+			get { return this.GetPropertyValue<string>("projectThirdDetailsDesc"); }
+		}
+
+		///<summary>
+		/// ProjectTitle: Nazwa projektu na stronie projektów
+		///</summary>
+		[ImplementPropertyType("projectTitle")]
+		public string ProjectTitle
+		{
+			get { return this.GetPropertyValue<string>("projectTitle"); }
 		}
 	}
 
@@ -695,6 +893,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// ContactImg: Zdjęcie kontaktu
+		///</summary>
+		[ImplementPropertyType("contactImg")]
+		public object ContactImg
+		{
+			get { return this.GetPropertyValue("contactImg"); }
+		}
+
+		///<summary>
 		/// ContactLinkedInLink: Link do LinkedIn kontaktu
 		///</summary>
 		[ImplementPropertyType("contactLinkedInLink")]
@@ -746,15 +953,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public object ContactType
 		{
 			get { return this.GetPropertyValue("contactType"); }
-		}
-
-		///<summary>
-		/// ContactImg: Zdjęcie kontaktu
-		///</summary>
-		[ImplementPropertyType("contaktImg")]
-		public object ContaktImg
-		{
-			get { return this.GetPropertyValue("contaktImg"); }
 		}
 	}
 

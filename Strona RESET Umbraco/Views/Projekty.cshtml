@@ -1,8 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
-	Layout = "Layout.cshtml";
-	ViewBag.ActivePage = 4;
+    Layout = "Layout.cshtml";
+    ViewBag.ActivePage = 4;
+    var childrens = CurrentPage.Children;
+
 }
 <link href="/css/Projects.css" rel="stylesheet" />
 <link href="~/Content/css/prettyPhoto.css" rel="stylesheet" />
@@ -37,66 +39,24 @@
 <div class="container">
     <div class="portfolio">
         <div class="row pt-md text-center">
-            <div class="col-sm-4 col-xs-12 profile">
-                <div class="img-box">
-                    <img src="/media/1154/portfolio_01.jpg" class="img-responsive">
-                    <ul class="text-center">
-                        <a href="#"><li><i class="fa fa-plus"></i></li></a>
-                    </ul>
+            @foreach (var children in childrens)
+            {
+                var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
+                <div class="col-sm-4 col-xs-12 profile">
+                    <div class="img-box">
+                        <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("projectMainImg").ToString()).Url" class="img-responsive">
+                        <ul class="text-center">
+                            <li>
+                                <a href="@children.Url">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h1 class="reset-font-extra-small">@innerUmbracoHelper.Field("projectTitle", removeParagraphTags: true)</h1>
+                    <h2 class="reset-font-extra-small">@innerUmbracoHelper.Field("projectShortDesc", removeParagraphTags: true)</h2>
                 </div>
-                <h1 class="reset-font-extra-small">nazwa projektu</h1>
-                <h2 class="reset-font-extra-small">krótki opis</h2>
-            </div>
-            <div class="col-sm-4 col-xs-12 profile">
-                <div class="img-box">
-                    <img src="/media/1155/portfolio_02.jpg" class="img-responsive">
-                    <ul class="text-center">
-                        <a href="#"><li><i class="fa fa-plus"></i></li></a>
-                    </ul>
-                </div>
-                <h1 class="reset-font-extra-small">nazwa projektu</h1>
-                <h2 class="reset-font-extra-small">krótki opis</h2>
-            </div>
-            <div class="col-sm-4 col-xs-12 profile">
-                <div class="img-box">
-                    <img src="/media/1156/portfolio_03.jpg" class="img-responsive">
-                    <ul class="text-center">
-                        <a href="#"><li><i class="fa fa-plus"></i></li></a>
-                    </ul>
-                </div>
-                <h1 class="reset-font-extra-small">nazwa projektu</h1>
-                <h2 class="reset-font-extra-small">krótki opis</h2>
-            </div>
-            <div class="col-sm-4 col-xs-12 profile">
-                <div class="img-box">
-                    <img src="/media/1157/portfolio_04.jpg" class="img-responsive">
-                    <ul class="text-center">
-                        <a href="#"><li><i class="fa fa-plus"></i></li></a>
-                    </ul>
-                </div>
-                <h1 class="reset-font-extra-small">nazwa projektu</h1>
-                <h2 class="reset-font-extra-small">krótki opis</h2>
-            </div>
-            <div class="col-sm-4 col-xs-12 profile">
-                <div class="img-box">
-                    <img src="/media/1158/portfolio_05.jpg" class="img-responsive">
-                    <ul class="text-center">
-                        <a href="#"><li><i class="fa fa-plus"></i></li></a>
-                    </ul>
-                </div>
-                <h1 class="reset-font-extra-small">nazwa projektu</h1>
-                <h2 class="reset-font-extra-small">krótki opis</h2>
-            </div>
-            <div class="col-sm-4 col-xs-12 profile">
-                <div class="img-box">
-                    <img src="/media/1159/portfolio_06.jpg" class="img-responsive">
-                    <ul class="text-center">
-                        <a href="#"><li><i class="fa fa-plus"></i></li></a>
-                    </ul>
-                </div>
-                <h1 class="reset-font-extra-small">nazwa projektu</h1>
-                <h2 class="reset-font-extra-small">krótki opis</h2>
-            </div>
+            }
         </div>
     </div>
 </div>
