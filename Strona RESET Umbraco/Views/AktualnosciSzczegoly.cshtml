@@ -1,4 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using Strona_RESET_Umbraco.FrontendHelpers
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Layout.cshtml";
     ViewBag.ActivePage = 1;
@@ -57,110 +58,114 @@
         </div>
     </div>
 </div>
-<div class="teacher-box" id="about">
-    <!-- start about us -->
-    <div class="container">
-        <div class="row about">
-            <div class="col-md-3 teacher_img">
-                <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker1Img").ToString()).Url" alt="" class="img-circle img-responsive" />
-            </div>
-            <div class="col-md-9 about_text">
-                <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker1Name", removeParagraphTags: true)</p>
-                <p class="reset-font-small teacher-profession">@Umbraco.Field("speaker1WorkPosition", removeParagraphTags: true)</p>
-                <p class="teacher-desc">
-                    @Umbraco.Field("speaker1Desc", removeParagraphTags: true)
-                </p>
-                <div class="soc_icons navbar-right">
-                    <ul class="list-unstyled text-center">
-                        @if (!Umbraco.Field("speaker1FbLink", removeParagraphTags: true).ToString().IsEmpty())
-                        {
-                            <li><a href="@Umbraco.Field("speaker1FbLink", removeParagraphTags: true)"><i class="fa fa-facebook"></i></a></li>
-                        }
-                        @if (!Umbraco.Field("speaker1TwitterLink", removeParagraphTags: true).ToString().IsEmpty())
-                        {
-                            <li><a href="@Umbraco.Field("speaker1TwitterLink", removeParagraphTags: true)"><i class="fa fa-twitter"></i></a></li>
-                        }
-                        @if (!Umbraco.Field("speaker1LinkedInLink", removeParagraphTags: true).ToString().IsEmpty())
-                        {
-                            <li><a href="@Umbraco.Field("speaker1LinkedInLink", removeParagraphTags: true)"><i class="fa fa-linkedin"></i></a></li>
-                        }
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    @if (Umbraco.Field("speaker2Name", removeParagraphTags: true).ToString() != "")
-    {
+@if (Umbraco.Field("speaker1Name", removeParagraphTags: true).ToString() != "")
+{
+    <div class="teacher-box" id="about">
+        <!-- start about us -->
         <div class="container">
             <div class="row about">
                 <div class="col-md-3 teacher_img">
-                    <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker2Img").ToString()).Url" alt="" class="img-circle img-responsive" />
+                    <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker1Img").ToString()).Url" alt="" class="img-circle img-responsive" />
                 </div>
                 <div class="col-md-9 about_text">
-                    <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker2Name", removeParagraphTags: true)</p>
-                    <p class="reset-font-small teacher-profession">@Umbraco.Field("speaker2WorkPosition", removeParagraphTags: true)</p>
+                    <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker1Name", removeParagraphTags: true)</p>
+                    <p class="reset-font-small teacher-profession">@Umbraco.Field("speaker1WorkPosition", removeParagraphTags: true)</p>
                     <p class="teacher-desc">
-                        @Umbraco.Field("speaker2Desc", removeParagraphTags: true)
+                        @Umbraco.Field("speaker1Desc", removeParagraphTags: true)
                     </p>
                     <div class="soc_icons navbar-right">
                         <ul class="list-unstyled text-center">
-                            <li><a href="@Umbraco.Field("speaker2FbLink", removeParagraphTags: true)"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="@Umbraco.Field("speaker2TwitterLink", removeParagraphTags: true)"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="@Umbraco.Field("speaker2LinkedInLink", removeParagraphTags: true)"><i class="fa fa-linkedin"></i></a></li>
+                            @if (!Umbraco.Field("speaker1FbLink", removeParagraphTags: true).ToString().IsEmpty())
+                            {
+                                <li><a href="@Umbraco.Field("speaker1FbLink", removeParagraphTags: true)"><i class="fa fa-facebook"></i></a></li>
+                            }
+                            @if (!Umbraco.Field("speaker1TwitterLink", removeParagraphTags: true).ToString().IsEmpty())
+                            {
+                                <li><a href="@Umbraco.Field("speaker1TwitterLink", removeParagraphTags: true)"><i class="fa fa-twitter"></i></a></li>
+                            }
+                            @if (!Umbraco.Field("speaker1LinkedInLink", removeParagraphTags: true).ToString().IsEmpty())
+                            {
+                                <li><a href="@Umbraco.Field("speaker1LinkedInLink", removeParagraphTags: true)"><i class="fa fa-linkedin"></i></a></li>
+                            }
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    }
-    @if (Umbraco.Field("speaker3Name", removeParagraphTags: true).ToString() != "")
-    {
-        <div class="container">
-            <div class="row about">
-                <div class="col-md-3 teacher_img">
-                    <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker3Img").ToString()).Url" alt="" class="img-circle img-responsive" />
-                </div>
-                <div class="col-md-9 about_text">
-                    <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker3Name", removeParagraphTags: true)</p>
-                    <p class="reset-font-small teacher-profession">@Umbraco.Field("speaker3WorkPosition", removeParagraphTags: true)</p>
-                    <p class="teacher-desc">
-                        @Umbraco.Field("speaker3Desc", removeParagraphTags: true)
-                    </p>
-                    <div class="soc_icons navbar-right">
-                        <ul class="list-unstyled text-center">
-                            <li><a href="@Umbraco.Field("speaker3FbLink", removeParagraphTags: true)"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="@Umbraco.Field("speaker3TwitterLink", removeParagraphTags: true)"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="@Umbraco.Field("speaker3LinkedInLink", removeParagraphTags: true)"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+        @if (Umbraco.Field("speaker2Name", removeParagraphTags: true).ToString() != "")
+        {
+            <div class="container">
+                <div class="row about">
+                    <div class="col-md-3 teacher_img">
+                        <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker2Img").ToString()).Url" alt="" class="img-circle img-responsive" />
+                    </div>
+                    <div class="col-md-9 about_text">
+                        <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker2Name", removeParagraphTags: true)</p>
+                        <p class="reset-font-small teacher-profession">@Umbraco.Field("speaker2WorkPosition", removeParagraphTags: true)</p>
+                        <p class="teacher-desc">
+                            @Umbraco.Field("speaker2Desc", removeParagraphTags: true)
+                        </p>
+                        <div class="soc_icons navbar-right">
+                            <ul class="list-unstyled text-center">
+                                <li><a href="@Umbraco.Field("speaker2FbLink", removeParagraphTags: true)"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="@Umbraco.Field("speaker2TwitterLink", removeParagraphTags: true)"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="@Umbraco.Field("speaker2LinkedInLink", removeParagraphTags: true)"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-    }
-
-</div>
-<div class="section purchase3 ">
-    <div class="container text-center">
-        <div class="fb-icon hvr-wobble-vertical">
-            <i class="fa fa-facebook-square"></i>
-        </div>
-        <br />
-        <br />
-        <h2 class="reset-font-large fb-event">
-            ŚLEDŹ WYDARZENIE
-            NA FACEBOOK
-            <br />
-            <br />
-            <br />
-
-        </h2>
-        <a href="@Umbraco.Field("eventFbLink", removeParagraphTags: true)">
-            <div class=" reset-font-medium button-reset-default">
-                DOŁĄCZ DO WYDARZENIA<br />I BĄDŹ NA BIEŻĄCO
+        }
+        @if (Umbraco.Field("speaker3Name", removeParagraphTags: true).ToString() != "")
+        {
+            <div class="container">
+                <div class="row about">
+                    <div class="col-md-3 teacher_img">
+                        <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker3Img").ToString()).Url" alt="" class="img-circle img-responsive" />
+                    </div>
+                    <div class="col-md-9 about_text">
+                        <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker3Name", removeParagraphTags: true)</p>
+                        <p class="reset-font-small teacher-profession">@Umbraco.Field("speaker3WorkPosition", removeParagraphTags: true)</p>
+                        <p class="teacher-desc">
+                            @Umbraco.Field("speaker3Desc", removeParagraphTags: true)
+                        </p>
+                        <div class="soc_icons navbar-right">
+                            <ul class="list-unstyled text-center">
+                                <li><a href="@Umbraco.Field("speaker3FbLink", removeParagraphTags: true)"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="@Umbraco.Field("speaker3TwitterLink", removeParagraphTags: true)"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="@Umbraco.Field("speaker3LinkedInLink", removeParagraphTags: true)"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </a>
+
+
+        }
+
     </div>
-    <!-- .container -->
-</div>
+    <div class="section purchase3 ">
+        <div class="container text-center">
+            <div class="fb-icon hvr-wobble-vertical">
+                <i class="fa fa-facebook-square"></i>
+            </div>
+            <br />
+            <br />
+            <h2 class="reset-font-large fb-event">
+                ŚLEDŹ WYDARZENIE
+                NA FACEBOOK
+                <br />
+                <br />
+                <br />
+
+            </h2>
+            <a href="@Umbraco.Field("eventFbLink", removeParagraphTags: true)">
+                <div class=" reset-font-medium button-reset-default">
+                    DOŁĄCZ DO WYDARZENIA<br />I BĄDŹ NA BIEŻĄCO
+                </div>
+            </a>
+        </div>
+        <!-- .container -->
+    </div>
+}
+
