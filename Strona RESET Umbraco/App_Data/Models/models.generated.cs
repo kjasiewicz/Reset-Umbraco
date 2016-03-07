@@ -660,6 +660,104 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
+	/// <summary>KontaktNode</summary>
+	[PublishedContentModel("kontaktNode")]
+	public partial class KontaktNode : Kontakt
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "kontaktNode";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public KontaktNode(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<KontaktNode, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// ContactFbLink: Link do Fb kontaktu (lub do Fb Resetowego)
+		///</summary>
+		[ImplementPropertyType("contactFbLink")]
+		public string ContactFbLink
+		{
+			get { return this.GetPropertyValue<string>("contactFbLink"); }
+		}
+
+		///<summary>
+		/// ContactLinkedInLink: Link do LinkedIn kontaktu
+		///</summary>
+		[ImplementPropertyType("contactLinkedInLink")]
+		public string ContactLinkedInLink
+		{
+			get { return this.GetPropertyValue<string>("contactLinkedInLink"); }
+		}
+
+		///<summary>
+		/// ContactMail: Mail kontaktowy
+		///</summary>
+		[ImplementPropertyType("contactMail")]
+		public string ContactMail
+		{
+			get { return this.GetPropertyValue<string>("contactMail"); }
+		}
+
+		///<summary>
+		/// ContactName: Imię, Nazwisko, stopień naukowy kontaktu
+		///</summary>
+		[ImplementPropertyType("contactName")]
+		public string ContactName
+		{
+			get { return this.GetPropertyValue<string>("contactName"); }
+		}
+
+		///<summary>
+		/// ContactRole: Rola pełniona w Resecie
+		///</summary>
+		[ImplementPropertyType("contactRole")]
+		public string ContactRole
+		{
+			get { return this.GetPropertyValue<string>("contactRole"); }
+		}
+
+		///<summary>
+		/// ContactTwitterLink: Link do Twittera kontaktu (lub do Twiitera Resetowego)
+		///</summary>
+		[ImplementPropertyType("contactTwitterLink")]
+		public string ContactTwitterLink
+		{
+			get { return this.GetPropertyValue<string>("contactTwitterLink"); }
+		}
+
+		///<summary>
+		/// ContactType: Typ Kontaktu -  zarząd lub członek Koła
+		///</summary>
+		[ImplementPropertyType("contactType")]
+		public object ContactType
+		{
+			get { return this.GetPropertyValue("contactType"); }
+		}
+
+		///<summary>
+		/// ContactImg: Zdjęcie kontaktu
+		///</summary>
+		[ImplementPropertyType("contaktImg")]
+		public object ContaktImg
+		{
+			get { return this.GetPropertyValue("contaktImg"); }
+		}
+	}
+
 	/// <summary>Folder</summary>
 	[PublishedContentModel("Folder")]
 	public partial class Folder : PublishedContentModel

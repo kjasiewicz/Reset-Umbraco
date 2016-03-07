@@ -1,8 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
-	Layout = "Layout.cshtml";
-	ViewBag.ActivePage = 3;
+    Layout = "Layout.cshtml";
+    ViewBag.ActivePage = 3;
+    var childrens = CurrentPage.Children;
+
 }
 <link href="/css/Contact.css" rel="stylesheet" />
 
@@ -12,58 +14,39 @@
             <div class="col-lg-12">
                 <div class="description reset-font-medium">ZARZĄD KOŁA <strong>RESET ATH</strong></div>
                 <div class="row pt-md text-center">
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                        <div class="img-box">
-                            <img src="/media/1140/zarzad_szymon.png" class="img-responsive">
-                            <ul class="text-center">
-                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                            </ul>
-                        </div>
-                        <h1 class="reset-font-extra-small">dr inż. Szymon Tengler</h1>
-                        <h2 class="reset-font-extra-small">Opiekun Sekcji .NET</h2>
-                        <p>stengler@ath.bielsko.pl</p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                        <div class="img-box">
-                            <img src="/media/1141/zarzad_tomaszg.png" class="img-responsive">
-                            <ul class="text-center">
-                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                            </ul>
-                        </div>
-                        <h1 class="reset-font-extra-small">dr inż. Tomasz Gancarczyk</h1>
-                        <h2 class="reset-font-extra-small">Opiekun Sekcji Systemy Operacyjne</h2>
-                        <p>tgan@ath.bielsko.pl</p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                        <div class="img-box">
-                            <img src="/media/1139/zarzad_pawełf.png" class="img-responsive">
-                            <ul class="text-center">
-                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                            </ul>
-                        </div>
-                        <h1 class="reset-font-extra-small">dr inż. Paweł Fałat</h1>
-                        <h2 class="reset-font-extra-small">Opiekun Sekcji Aplikacji Mobilnych</h2>
-                        <p>falat@ath.bielsko.pl</p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                        <div class="img-box">
-                            <img src="/media/1138/zarzad_marcin.png" class="img-responsive">
-                            <ul class="text-center">
-                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                            </ul>
-                        </div>
-                        <h1 class="reset-font-extra-small">Marcin Wadoń</h1>
-                        <h2 class="reset-font-extra-small">Microsoft Student Partner</h2>
-                        <p>marcin@wadon.net </p>
-                    </div>
+                    @foreach (var children in childrens)
+                    {
+                        var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
+                        if (innerUmbracoHelper.Field("contactType").ToString() == "Zarząd")
+                        {
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+                                <div class="img-box">
+                                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("contactImg")).Url" class="img-responsive">
+                                    <ul class="text-center">
+                                        <li>
+                                            <a href="@innerUmbracoHelper.Field("contactFbLink", removeParagraphTags: true)">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@innerUmbracoHelper.Field("contactTwitterLink",removeParagraphTags: true)">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@innerUmbracoHelper.Field("contactLinkedInLink", removeParagraphTags: true)">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h1 class="reset-font-extra-small">@innerUmbracoHelper.Field("contactName", removeParagraphTags: true)</h1>
+                                <h2 class="reset-font-extra-small">@innerUmbracoHelper.Field("contactRole", removeParagraphTags: true)</h2>
+                                <p>@innerUmbracoHelper.Field("contactMail", removeParagraphTags: true)</p>
+                            </div>
+                        }
+
+                    }
 
                 </div>
             </div>
@@ -73,72 +56,41 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="col-lg-12">
                 <div class="description reset-font-medium">CZŁONKOWIE KOŁA <strong>RESET ATH</strong></div>
-                <div class="row text-center">
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                        <div class="img-box">
-                            <img src="/media/1136/czlonkowie_tomaszk.png" class="img-responsive">
-                            <ul class="text-center">
-                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                            </ul>
-                        </div>
-                        <h1 class="reset-font-extra-small">Tomasz Kamiński</h1>
-                        <h2 class="reset-font-extra-small">Student IV roku Informatyki</h2>
-                        <p>tkaminski93@gmail.com </p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                        <div class="img-box">
-                            <img src="/media/1137/zarzad_kasia.png" class="img-responsive">
-                            <ul class="text-center">
-                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                            </ul>
-                        </div>
-                        <h1 class="reset-font-extra-small">Katarzyna Jasiewicz</h1>
-                        <h2 class="reset-font-extra-small">Przewodnicząca Koła</h2>
-                        <p>katarzynajasiewicz.93@gmail.com</p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                        <div class="img-box">
-                            <img src="/media/1142/czlonkowie_artur.png" class="img-responsive">
-                            <ul class="text-center">
-                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                            </ul>
-                        </div>
-                        <h1 class="reset-font-extra-small">Artur Loska</h1>
-                        <h2 class="reset-font-extra-small">Student IV roku Informatyki</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                        <div class="img-box">
-                            <img src="/media/1144/czlonkowie_damian.png" class="img-responsive">
-                            <ul class="text-center">
-                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                            </ul>
-                        </div>
-                        <h1 class="reset-font-extra-small">Damian Kowalczyk</h1>
-                        <h2 class="reset-font-extra-small">Student III roku Informatyki</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                        <div class="img-box">
-                            <img src="/media/1143/czlonkowie_bartosz.png" class="img-responsive">
-                            <ul class="text-center">
-                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                            </ul>
-                        </div>
-                        <h1 class="reset-font-extra-small">Bartosz Szczepański</h1>
-                        <h2 class="reset-font-extra-small">Student III roku Informatyki</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
+                <div class="row pt-md text-center">
+                    @foreach (var children in childrens)
+                    {
+                        var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
+                        if (innerUmbracoHelper.Field("contactType").ToString() == "Członek")
+                        {
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+                                <div class="img-box">
+                                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("contactImg")).Url" class="img-responsive">
+                                    <ul class="text-center">
+                                        <li>
+                                            <a href="@innerUmbracoHelper.Field("contactFbLink", removeParagraphTags: true)">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@innerUmbracoHelper.Field("contactTwitterLink",removeParagraphTags: true)">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@innerUmbracoHelper.Field("contactLinkedInLink", removeParagraphTags: true)">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h1 class="reset-font-extra-small">@innerUmbracoHelper.Field("contactName", removeParagraphTags: true)</h1>
+                                <h2 class="reset-font-extra-small">@innerUmbracoHelper.Field("contactRole", removeParagraphTags: true)</h2>
+                                <p>@innerUmbracoHelper.Field("contactMail", removeParagraphTags: true)</p>
+                            </div>
+                        }
+
+                    }
+
                 </div>
             </div>
         </div>

@@ -594,6 +594,7 @@
     <Content Include="Views\AktualnosciSzczegoly.cshtml" />
     <Content Include="Views\GaleriaSzczegoly.cshtml" />
     <Content Include="Views\ProjektySzczegoly.cshtml" />
+    <Content Include="Views\kontaktNode.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3455,7 +3456,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\packages\created\" />
-    <Folder Include="App_Plugins\FontAwesomeIconPicker\" />
     <Folder Include="scripts\js\" />
   </ItemGroup>
   <PropertyGroup>
