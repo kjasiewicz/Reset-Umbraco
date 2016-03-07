@@ -39,21 +39,28 @@
             @foreach (var children in CurrentPage.Children)
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
-                <div class="col-md-3 col-sm-6 service-box service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true)) all" data-animation="fadeIn" data-animation-delay="01">
-                    <div class="news-icon">
-                        <i class="fa @innerUmbracoHelper.Field("newsIcon", removeParagraphTags: true)"></i>
-                    </div>
-                    <div class="service-content">
-                        <div class="title-border"></div>
-                        <h4 class="reset-font-small ">
-                            <strong>
-                                @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
-                            </strong>
-                        </h4>
-                        <p>
-                            @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
-                        </p>
-                        <a href="@children.Url"><i class="fa fa-ellipsis-h icon-color"></i></a>
+                <div class="col-xs-12 service-box service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true)) all" data-animation="fadeIn" data-animation-delay="01">
+
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image">
+                                <i class="fa @innerUmbracoHelper.Field("newsIcon", removeParagraphTags: true)"></i>
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
+                                </div>
+                                <p id="title-desc">
+                                    @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
+                                </p>
+                                <div class="more pull-right">
+                                    <a href="@children.Url" class="newsdetails-link">
+                                        <i class="glyphicon glyphicon-plus">
+                                        </i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>                  
                     </div>
 
                 </div>

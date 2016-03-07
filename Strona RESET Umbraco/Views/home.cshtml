@@ -13,36 +13,62 @@
 <div class="section service">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 text-center">
-                <p class="reset-font-large">
-                    <strong>AKTUALNOŚCI</strong>
-                </p> <br />
-                <p class="reset-font-small">dgdfgdfgdf</p>
+            <div class="description reset-font-medium">AKTUALNOŚCI</div>
+        </div>
+        <div id="Filters">
+            <div class="row">
+                <ul class="text-center" id="filter-list">
+                    <li class="filter-button gray filter" data-filter=".year-2016">2016</li>
+                    <li class="filter-button gray filter" data-filter=".year-2015">2015</li>
+                    <li class="filter-button gray filter" data-filter=".year-2014">2014</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul class="text-center">
+                    <li class="filter-button gray filter active" data-filter=".all">WSZYSTKIE</li>
+                    <li class="filter-button blue filter" data-filter=".category-lectures">WYKŁADY</li>
+                    <li class="filter-button violet filter" data-filter=".category-conference">KONFERENCJE</li>
+                    <li class="filter-button green filter" data-filter=".category-success">SUKCESY</li>
+                </ul>
             </div>
         </div>
-        <div class="row">
+
+        <div class="row" id="sortList">
+            <!-- Start Service Icon 1 -->
             @foreach (var children in aktualnosciChildren)
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
-                <div class="col-md-3 col-sm-6 service-box service-center @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true))" data-animation="fadeIn" data-animation-delay="01">
-                    <div class="news-icon">
-                        <i class="fa @innerUmbracoHelper.Field("newsIcon", removeParagraphTags: true)"></i>
-                    </div>
-                    <div class="service-content">
-                        <div class="title-border"></div>
-                        <h4 class="reset-font-small ">
-                            <strong>
-                                @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
-                            </strong>
-                        </h4>
-                        <p>
-                            @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
-                        </p>
-                        <a href="@children.Url"><i class="fa fa-ellipsis-h icon-color"></i></a>
+                <div class="col-xs-12 service-box service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true)) all" data-animation="fadeIn" data-animation-delay="01">
+
+                    <div class="box">
+                        <div class="icon">
+                            <div class="image">
+                                <i class="fa @innerUmbracoHelper.Field("newsIcon", removeParagraphTags: true)"></i>
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
+                                </div>
+                                <p id="title-desc">
+                                    @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
+                                </p>
+                                <div class="more pull-right">
+                                    <a href="@children.Url" class="newsdetails-link">
+                                        <i class="glyphicon glyphicon-plus">
+                                        </i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             }
+
+
+
+            <!-- .row -->
+
         </div>
         <div class="row">
             <a href="#">
@@ -52,56 +78,4 @@
         <!-- .container -->
     </div>
 </div>
-<div class="section purchase">
-    <div class="container">
-
-        <!-- Start Video Section Content -->
-        <div class="section-video-content text-center">
-            <!-- Start Animations Text -->
-            <h1 class="fittext wite-text uppercase tlt">
-                <span class="texts reset-font-medium">
-                    <span></span>
-                    <span>WYMARZONA</span>
-                    <span>DOBRA</span>
-                    <span>ROZWIJAJĄCA</span>
-                    <span>WARTOŚCIOWA</span>
-                </span>
-                <br />
-                PRACA Z <strong>RESET ATH !</strong>
-            </h1>
-            <!-- End Animations Text -->
-            <!-- Start Buttons -->
-            <p class="animated4">
-                <a href="#" class="button-reset-default">ZOBACZ OFERTY</a>
-            </p>
-        </div>
-        <!-- End Section Content -->
-
-    </div>
-    <!-- .container -->
-</div>
-<!-- Start Portfolio Section -->
-<div class="section purchase2">
-    <div class="container">
-        <!-- Start Video Section Content -->
-        <div class="section-video-content text-center">
-            <!-- Start Animations Text -->
-            <p class="">
-                <img src="~/media/1126/smartpark_logo.png" />
-            </p>
-            <br />
-            <p class="wite-text reset-font-medium">
-                OTWIERAJ BRAMĘ NA ATH <strong>SMARTFONEM !</strong>
-            </p>
-            <!-- End Animations Text -->
-            <!-- Start Buttons -->
-            <p class="animated4">
-                <a href="#" class="button-reset-default">POZNAJ SZCZEGÓŁY</a>
-            </p>
-        </div>
-        <!-- End Section Content -->
-    </div>
-    <!-- .container -->
-</div>
-<!-- End Client/Partner Section -->
 
