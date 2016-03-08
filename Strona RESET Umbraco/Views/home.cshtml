@@ -38,42 +38,34 @@
             @foreach (var children in aktualnosciChildren)
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
-                <div class="col-xs-12 service-box service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true)) all" data-animation="fadeIn" data-animation-delay="01">
-
-                    <div class="box">
-                        <div class="icon">
-                            <div class="image">
-                                <i class="fa @innerUmbracoHelper.Field("newsIcon", removeParagraphTags: true)"></i>
-                            </div>
-                            <div class="info">
-                                <div class="title">
-                                    @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
-                                </div>
-                                <p id="title-desc">
-                                    @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
+                <div class="service-box service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true)) all" data-animation="fadeIn" data-animation-delay="01">
+                    <div class="col-md-3">
+                        <img src="~/media/1191/wyklad_infografik.png" class="img-responsive" />
+                    </div>
+                    <div class="col-md-8 col-md-offset-1 news-box">
+                        <p class="news-title">
+                            @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
+                        </p>
+                        <p class="news-date">
+                            @innerUmbracoHelper.Field("shortDate", removeParagraphTags: true)
+                        </p>
+                        <p class="news-desc">
+                            @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
+                        </p> 
+                        <div class="read-more-box pull-right">
+                            <a href="@children.Url">
+                                <p class="news-details hvr-float">
+                                    KLIKNIJ po więcej szczegółów
+                                    <i class="fa fa-angle-double-right">
+                                    </i>
                                 </p>
-                                <div class="more pull-right">
-                                    <a href="@children.Url" class="newsdetails-link">
-                                        <i class="glyphicon glyphicon-plus">
-                                        </i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                            </a>
+                        </div>      
                     </div>
 
                 </div>
             }
-
-
-
             <!-- .row -->
-
-        </div>
-        <div class="row">
-            <a href="#">
-                <p class="reset-font-small text-center all_news_text">WSZYSTKIE AKTUALNOŚCI</p>
-            </a>
         </div>
         <!-- .container -->
     </div>

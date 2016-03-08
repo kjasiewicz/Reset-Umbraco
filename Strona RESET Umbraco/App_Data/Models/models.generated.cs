@@ -276,6 +276,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// ShortDate: Data, kiedy odbywa się wydarzenie
+		///</summary>
+		[ImplementPropertyType("shortDate")]
+		public string ShortDate
+		{
+			get { return this.GetPropertyValue<string>("shortDate"); }
+		}
+
+		///<summary>
 		/// ShortDesc: Opis wyświetlany na stronie głównej oraz na liście aktualności
 		///</summary>
 		[ImplementPropertyType("shortDesc")]

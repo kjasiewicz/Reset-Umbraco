@@ -301,6 +301,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Umbraco.sdf" />
+    <Content Include="media\1191\wyklad_infografik.png" />
+    <Content Include="media\1191\wyklad_infografik_big-thumb.jpg" />
+    <Content Include="media\1191\wyklad_infografik_big-thumb.png" />
+    <Content Include="media\1191\wyklad_infografik_thumb.jpg" />
+    <Content Include="media\1191\wyklad_infografik_thumb.png" />
     <Content Include="media\Contact\Czlonkowie_Artur.png" />
     <Content Include="media\Contact\Czlonkowie_Bartosz.png" />
     <Content Include="media\Contact\Czlonkowie_Damian.png" />
