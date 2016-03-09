@@ -280,15 +280,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// newsIcon: Ikona dla danej aktualności
-		///</summary>
-		[ImplementPropertyType("newsIcon")]
-		public object NewsIcon
-		{
-			get { return this.GetPropertyValue("newsIcon"); }
-		}
-
-		///<summary>
 		/// ShortDate: Data, kiedy odbywa się wydarzenie
 		///</summary>
 		[ImplementPropertyType("shortDate")]
@@ -304,6 +295,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString ShortDesc
 		{
 			get { return this.GetPropertyValue<IHtmlString>("shortDesc"); }
+		}
+
+		///<summary>
+		/// AktualnosciInfografika
+		///</summary>
+		[ImplementPropertyType("shortIcon")]
+		public object ShortIcon
+		{
+			get { return this.GetPropertyValue("shortIcon"); }
 		}
 
 		///<summary>
