@@ -44,44 +44,110 @@
 /*	     01 - General & Basic Styles
 /*------------------------------------------*/
 /*aktualnoœci box*/
-.read-more-box {
-    bottom: 0;
+
+@media(min-width: 768px) {
+    .news-details {
+        font-family: Montserrat;
+        font-size: 14px;
+        color: #549093;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        text-align: left;
+    }
+
+    .news-box {
+        border: 1px solid #e0e0e0;
+        padding: 30px;
+        float: none;
+        display: table-cell;
+    }
+
+    .news-img {
+        float: none;
+        display: table-cell !important;
+        vertical-align: top;
+    }
+
+    .news-title {
+        font-family: Montserrat;
+        font-size: 24px;
+        color: black;
+        text-align: left;
+        font-weight: 500;
+    }
+
+    .news-date {
+        font-family: Montserrat;
+        font-size: 14px;
+        color: gray;
+        text-align: left;
+        margin-top: 5px;
+    }
+
+    .news-desc {
+        font-family: Montserrat;
+        font-size: 16px;
+        color: gray;
+        text-align: left;
+        margin-top: 5px;
+    }
+
+    .read-more-box {
+        bottom: 0;
+        text-align: right;
+    }
 }
 
-.news-details {
-    font-family: Montserrat;
-    font-size: 14px;
-    color: #549093;
+@media(max-width: 768px) {
+    .news-details {
+        font-family: Montserrat;
+        font-size: 14px;
+        color: #549093;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .news-box {
+        border: 1px solid #e0e0e0;
+        padding: 30px;
+        margin-top: 20px;
+    }
+
+    .news-title {
+        font-family: Montserrat;
+        font-size: 24px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .news-date {
+        font-family: Montserrat;
+        font-size: 14px;
+        color: gray;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .news-desc {
+        font-family: Montserrat;
+        font-size: 16px;
+        color: gray;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .read-more-box {
+        bottom: 0;
+        text-align: center;
+    }
 }
 
-.news-box {
-    border: 1px solid #e0e0e0;
-    padding: 30px;
-}
 
-.news-title {
-    font-family: Montserrat;
-    font-size: 24px;
-    color: black;
-    text-align: left;
-    font-weight: 500;
-}
 
-.news-date {
-    font-family: Montserrat;
-    font-size: 14px;
-    color: gray;
-    text-align: left;
-    margin-top: 5px;
-}
 
-.news-desc {
-    font-family: Montserrat;
-    font-size: 16px;
-    color: gray;
-    text-align: left;
-    margin-top: 5px;
-}
+
 
 
 .filter-button {

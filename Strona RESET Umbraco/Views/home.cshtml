@@ -38,11 +38,11 @@
             @foreach (var children in aktualnosciChildren)
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
-                <div class="service-box service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true)) all" data-animation="fadeIn" data-animation-delay="01">
-                    <div class="col-md-3">
+                <div class="service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true)) all" data-animation="fadeIn" data-animation-delay="01" style="display:table">
+                    <div class="col-sm-3 col-xs-12 news-img hidden-xs" style="display:table-cell !important">
                         <img src="~/media/1191/wyklad_infografik.png" class="img-responsive" />
                     </div>
-                    <div class="col-md-8 col-md-offset-1 news-box">
+                    <div class="col-sm-8 col-sm-offset-1 col-xs-12 news-box">
                         <p class="news-title">
                             @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
                         </p>
@@ -52,7 +52,7 @@
                         <p class="news-desc">
                             @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
                         </p> 
-                        <div class="read-more-box pull-right">
+                        <div class="read-more-box">
                             <a href="@children.Url">
                                 <p class="news-details hvr-float">
                                     KLIKNIJ po więcej szczegółów
