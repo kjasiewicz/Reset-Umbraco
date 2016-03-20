@@ -74,32 +74,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>Wydarzenia</summary>
-	[PublishedContentModel("wydarzenia")]
-	public partial class Wydarzenia : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "wydarzenia";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Wydarzenia(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Wydarzenia, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-	}
-
 	/// <summary>Projekty</summary>
 	[PublishedContentModel("projekty")]
 	public partial class Projekty : PublishedContentModel
@@ -222,7 +196,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// DateAndHour
+		/// Data i godzina: Data i godzina wydarzenia
 		///</summary>
 		[ImplementPropertyType("dateAndHour")]
 		public DateTime DateAndHour
@@ -231,7 +205,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// EventFbLink: Link do wydarzenia na FB
+		/// Link Facebook: Link do wydarzenia na FB
 		///</summary>
 		[ImplementPropertyType("eventFbLink")]
 		public string EventFbLink
@@ -240,7 +214,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// EventRoom
+		/// Miejsce wydarzenia: Gdzie odbywa się wydarzenie np. L128, ATH
 		///</summary>
 		[ImplementPropertyType("eventRoom")]
 		public IHtmlString EventRoom
@@ -249,7 +223,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// MainDesc
+		/// Opis aktualności: Opis aktualności w szczegółach
 		///</summary>
 		[ImplementPropertyType("mainDesc")]
 		public IHtmlString MainDesc
@@ -258,7 +232,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// MainTitle
+		/// Tytuł aktualności: Tytuł aktualności w szczegółach
 		///</summary>
 		[ImplementPropertyType("mainTitle")]
 		public IHtmlString MainTitle
@@ -267,7 +241,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ShortDate: Data, kiedy odbywa się wydarzenie
+		/// Data: Data, kiedy odbywa się wydarzenie
 		///</summary>
 		[ImplementPropertyType("shortDate")]
 		public string ShortDate
@@ -276,7 +250,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ShortDesc: Opis wyświetlany na stronie głównej oraz na liście aktualności
+		/// Krótki opis aktualności: Opis wyświetlany na stronie głównej oraz na liście aktualności
 		///</summary>
 		[ImplementPropertyType("shortDesc")]
 		public IHtmlString ShortDesc
@@ -285,7 +259,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// AktualnosciInfografika
+		/// Infografika
 		///</summary>
 		[ImplementPropertyType("shortIcon")]
 		public object ShortIcon
@@ -294,7 +268,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ShortTitle: Tytuł wyświetlany na stronie głównej oraz na liście aktualności
+		/// Tytuł aktualności: Tytuł wyświetlany na stronie głównej oraz na liście aktualności
 		///</summary>
 		[ImplementPropertyType("shortTitle")]
 		public IHtmlString ShortTitle
@@ -303,7 +277,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker1Desc: Opis prelegenta
+		/// Opis: Opis prelegenta 1
 		///</summary>
 		[ImplementPropertyType("speaker1Desc")]
 		public IHtmlString Speaker1Desc
@@ -312,7 +286,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker1FbLink: Link do facebook'a prelegenta
+		/// Prelegent 1 link Facebook: Link do facebook'a prelegenta 1
 		///</summary>
 		[ImplementPropertyType("speaker1FbLink")]
 		public string Speaker1FbLink
@@ -321,7 +295,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker1Img: Zdjęcie prelegenta
+		/// Zdjęcie prelegenta 1: Zdjęcie prelegenta 1
 		///</summary>
 		[ImplementPropertyType("speaker1Img")]
 		public object Speaker1Img
@@ -330,7 +304,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker1LinkedInLink: Link do LinkedIn prelegenta
+		/// Prelegent 1 link LinkedIn: Link do LinkedIn prelegenta 1
 		///</summary>
 		[ImplementPropertyType("speaker1LinkedInLink")]
 		public string Speaker1LinkedInLink
@@ -339,7 +313,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker1Name: Imię i Nazwisko prelegenta
+		/// Imię i Nazwisko: Imię i Nazwisko prelegenta 1
 		///</summary>
 		[ImplementPropertyType("speaker1Name")]
 		public IHtmlString Speaker1Name
@@ -348,7 +322,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker1TwitterLink: Link do twittera prelegenta
+		/// Prelegent 1 link Twitter: Link do twittera prelegenta 1
 		///</summary>
 		[ImplementPropertyType("speaker1TwitterLink")]
 		public string Speaker1TwitterLink
@@ -357,7 +331,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker1WorkPosition: Stanowisko prelegenta
+		/// Stanowisko: Stanowisko prelegenta 1
 		///</summary>
 		[ImplementPropertyType("speaker1WorkPosition")]
 		public IHtmlString Speaker1WorkPosition
@@ -366,7 +340,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker2Desc
+		/// Opis: Opis prelegenta 2
 		///</summary>
 		[ImplementPropertyType("speaker2Desc")]
 		public IHtmlString Speaker2Desc
@@ -375,7 +349,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker2FbLink
+		/// Prelegent 2 link Facebook: Link do facebook'a prelegenta 2
 		///</summary>
 		[ImplementPropertyType("speaker2FbLink")]
 		public string Speaker2FbLink
@@ -384,7 +358,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker2Img
+		/// Zdjęcie prelegenta 2: Zdjęcie prelegenta 2
 		///</summary>
 		[ImplementPropertyType("speaker2Img")]
 		public object Speaker2Img
@@ -393,7 +367,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker2LinkedInLink
+		/// Prelegent 2 link LinkedIn: Link do LinkedIn prelegenta 2
 		///</summary>
 		[ImplementPropertyType("speaker2LinkedInLink")]
 		public string Speaker2LinkedInLink
@@ -402,7 +376,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker2Name
+		/// Imię i Nazwisko: Imię i Nazwisko prelegenta 2
 		///</summary>
 		[ImplementPropertyType("speaker2Name")]
 		public IHtmlString Speaker2Name
@@ -411,7 +385,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker2TwitterLink
+		/// Prelegent 2 link Twitter: Link do twittera prelegenta 2
 		///</summary>
 		[ImplementPropertyType("speaker2TwitterLink")]
 		public string Speaker2TwitterLink
@@ -420,7 +394,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker2WorkPosition
+		/// Stanowisko: Stanowisko prelegenta 2
 		///</summary>
 		[ImplementPropertyType("speaker2WorkPosition")]
 		public IHtmlString Speaker2WorkPosition
@@ -429,7 +403,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker3Desc
+		/// Opis: Opis prelegenta 3
 		///</summary>
 		[ImplementPropertyType("speaker3Desc")]
 		public IHtmlString Speaker3Desc
@@ -438,7 +412,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker3FbLink
+		/// Prelegent 3 link Facebook: Link do facebook'a prelegenta 3
 		///</summary>
 		[ImplementPropertyType("speaker3FbLink")]
 		public string Speaker3FbLink
@@ -447,7 +421,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker3Img
+		/// Zdjęcie prelegenta 3: Zdjęcie prelegenta 3
 		///</summary>
 		[ImplementPropertyType("speaker3Img")]
 		public object Speaker3Img
@@ -456,7 +430,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker3LinkedInLink
+		/// Prelegent 3 link LinkedIn: Link do LinkedIn prelegenta 3
 		///</summary>
 		[ImplementPropertyType("speaker3LinkedInLink")]
 		public string Speaker3LinkedInLink
@@ -465,7 +439,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker3Name
+		/// Imię i Nazwisko: Imię i Nazwisko prelegenta 3
 		///</summary>
 		[ImplementPropertyType("speaker3Name")]
 		public IHtmlString Speaker3Name
@@ -474,7 +448,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker3TwitterLink
+		/// Prelegent 3 link Twitter: Link do twittera prelegenta 3
 		///</summary>
 		[ImplementPropertyType("speaker3TwitterLink")]
 		public string Speaker3TwitterLink
@@ -483,7 +457,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Speaker3WorkPosition
+		/// Stanowisko: Stanowisko prelegenta 3
 		///</summary>
 		[ImplementPropertyType("speaker3WorkPosition")]
 		public IHtmlString Speaker3WorkPosition
@@ -492,21 +466,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// TypeDropdown: Kategoria aktualności
+		/// Kategoria: Kategoria aktualności
 		///</summary>
 		[ImplementPropertyType("typeDropdown")]
 		public object TypeDropdown
 		{
 			get { return this.GetPropertyValue("typeDropdown"); }
-		}
-
-		///<summary>
-		/// YearDropdown: Rok dodania aktualności
-		///</summary>
-		[ImplementPropertyType("yearDropdown")]
-		public object YearDropdown
-		{
-			get { return this.GetPropertyValue("yearDropdown"); }
 		}
 	}
 
@@ -536,7 +501,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// GalleryDate: Data wydarzenia, z którego pochodzi galeria
+		/// Data: Data wydarzenia, z którego pochodzi galeria
 		///</summary>
 		[ImplementPropertyType("galleryDate")]
 		public string GalleryDate
@@ -545,7 +510,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// GalleryDesc: Krótki opis wydarzenia, z którego pochodzi galeria
+		/// Opis galerii: Krótki opis wydarzenia, z którego pochodzi galeria
 		///</summary>
 		[ImplementPropertyType("galleryDesc")]
 		public IHtmlString GalleryDesc
@@ -554,7 +519,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// GalleryMainImg: Zdjęcie główne galerii wyświetla na głównej podstronie GALERIA
+		/// Główne zdjęcie: Zdjęcie główne galerii wyświetlane na głównej podstronie GALERIA
 		///</summary>
 		[ImplementPropertyType("galleryMainImg")]
 		public object GalleryMainImg
@@ -563,7 +528,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// GalleryPhotos: Zdjęcia w galerii
+		/// Zdjęcia: Zdjęcia w galerii
 		///</summary>
 		[ImplementPropertyType("galleryPhotos")]
 		public string GalleryPhotos
@@ -572,7 +537,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// GalleryPhotosMini: Zdjęcie w podglądzie galerii
+		/// Zdjęcie podgląd: Zdjęcie w podglądzie galerii
 		///</summary>
 		[ImplementPropertyType("galleryPhotosMini")]
 		public string GalleryPhotosMini
@@ -581,7 +546,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// GalleryTitle: Nazwa wydarzenia, z którego pochodzi galeria
+		/// Nazwa galerii: Nazwa wydarzenia, z którego pochodzi galeria
 		///</summary>
 		[ImplementPropertyType("galleryTitle")]
 		public string GalleryTitle
@@ -616,7 +581,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectBigImg: Baner z np. screenem aplikacji
+		/// Projekt Banner: Baner z np. screenem aplikacji
 		///</summary>
 		[ImplementPropertyType("projectBigImg")]
 		public object ProjectBigImg
@@ -625,7 +590,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectCoTo: Projekt - kolumna "Co to takiego?"
+		/// Project "Co To?": Projekt - kolumna "Co to takiego?"
 		///</summary>
 		[ImplementPropertyType("projectCoTo")]
 		public IHtmlString ProjectCoTo
@@ -634,7 +599,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectDlaKogo: Projekt - kolumna "Dla kogo?"
+		/// Project "Dla Kogo?": Projekt - kolumna "Dla kogo?"
 		///</summary>
 		[ImplementPropertyType("projectDlaKogo")]
 		public IHtmlString ProjectDlaKogo
@@ -643,7 +608,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectFirstDetails: Informacje np. o ilości osób jakie wzięły udział w projekcie
+		/// Projekt w liczbach1: Informacje np. o ilości osób jakie wzięły udział w projekcie
 		///</summary>
 		[ImplementPropertyType("projectFirstDetails")]
 		public string ProjectFirstDetails
@@ -652,7 +617,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectFirstDetailsDesc: Opis do pierwszej szczegółowej informacji
+		/// Projekt w liczbach1 opis: Opis do pierwszej szczegółowej informacji
 		///</summary>
 		[ImplementPropertyType("projectFirstDetailsDesc")]
 		public string ProjectFirstDetailsDesc
@@ -661,7 +626,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectLogo: Logo aplikacji
+		/// Projekt Logo: Logo aplikacji
 		///</summary>
 		[ImplementPropertyType("projectLogo")]
 		public object ProjectLogo
@@ -670,7 +635,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectMainImg: Obrazek poszczególnego projektu na głównej stronie projektów
+		/// Projekt Grafika: Grafika poszczególnego projektu na głównej stronie projektów
 		///</summary>
 		[ImplementPropertyType("projectMainImg")]
 		public object ProjectMainImg
@@ -679,7 +644,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectMainTitle: Pełna nazwa projektu wyświetlana w szczegółach projektu
+		/// Nazwa Projektu: Pełna nazwa projektu wyświetlana w szczegółach projektu
 		///</summary>
 		[ImplementPropertyType("projectMainTitle")]
 		public IHtmlString ProjectMainTitle
@@ -688,7 +653,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectPoco: Projekt - kolumna "Po co?"
+		/// Project "Po Co?": Projekt - kolumna "Po co?"
 		///</summary>
 		[ImplementPropertyType("projectPoco")]
 		public IHtmlString ProjectPoco
@@ -697,7 +662,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectScreen: Mockup ze screenem aplikacji/systemu
+		/// Projekt Screen: Mockup ze screenem aplikacji/systemu
 		///</summary>
 		[ImplementPropertyType("projectScreen")]
 		public object ProjectScreen
@@ -706,7 +671,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectSecondDetails: Informacje np. o ilości osób jakie wzięły udział projekcie
+		/// Projekt w liczbach2: Informacje np. o ilości osób jakie wzięły udział projekcie
 		///</summary>
 		[ImplementPropertyType("projectSecondDetails")]
 		public string ProjectSecondDetails
@@ -715,7 +680,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectSecondDetailsDesc: Opis do drugiej szczegółowej informacji
+		/// Projekt w liczbach2 opis: Opis do drugiej szczegółowej informacji
 		///</summary>
 		[ImplementPropertyType("projectSecondDetailsDesc")]
 		public string ProjectSecondDetailsDesc
@@ -724,7 +689,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectshortDesc: Krótki opis projektu na stronie projektów
+		/// Krótki opis: Krótki opis projektu na stronie projektów
 		///</summary>
 		[ImplementPropertyType("projectShortDesc")]
 		public IHtmlString ProjectShortDesc
@@ -733,7 +698,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectThirdDetails: Informacje np. o ilości osób jakie wzięły udział w projekcie
+		/// Projekt w liczbach3: Informacje np. o ilości osób jakie wzięły udział w projekcie
 		///</summary>
 		[ImplementPropertyType("projectThirdDetails")]
 		public string ProjectThirdDetails
@@ -742,7 +707,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectThirdDetailsDesc: Opis do trzeciej szczegółowej informacji
+		/// Projekt w liczbach3 opis: Opis do trzeciej szczegółowej informacji
 		///</summary>
 		[ImplementPropertyType("projectThirdDetailsDesc")]
 		public string ProjectThirdDetailsDesc
@@ -751,7 +716,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectTitle: Nazwa projektu na stronie projektów
+		/// Nazwa Projektu: Nazwa projektu na stronie projektów
 		///</summary>
 		[ImplementPropertyType("projectTitle")]
 		public string ProjectTitle
@@ -786,7 +751,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// bannerSlideImage1
+		/// Baner 1: Baner nr 1
 		///</summary>
 		[ImplementPropertyType("bannerSlideImage1")]
 		public object BannerSlideImage1
@@ -795,7 +760,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// bannerSlideImage2
+		/// Baner 2: Baner 2
 		///</summary>
 		[ImplementPropertyType("bannerSlideImage2")]
 		public object BannerSlideImage2
@@ -804,7 +769,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// bannerSlideImage3
+		/// Baner 3: Baner 3
 		///</summary>
 		[ImplementPropertyType("bannerSlideImage3")]
 		public object BannerSlideImage3
@@ -813,7 +778,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Banner text 1
+		/// Banner 1 tekst: Tekst główny
 		///</summary>
 		[ImplementPropertyType("bannerText1")]
 		public string BannerText1
@@ -822,7 +787,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Banner text 1 inner
+		/// Banner 1 tekst 2: Tekst mniejszy
 		///</summary>
 		[ImplementPropertyType("bannerText1Inner")]
 		public string BannerText1Inner
@@ -831,7 +796,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Banner text 2
+		/// Banner 2 tekst: Tekst główny
 		///</summary>
 		[ImplementPropertyType("bannerText2")]
 		public string BannerText2
@@ -840,7 +805,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Banner text 2 inner
+		/// Banner 2 tekst 2: Tekst mniejszy
 		///</summary>
 		[ImplementPropertyType("bannerText2Inner")]
 		public string BannerText2Inner
@@ -849,7 +814,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Banner text 3
+		/// Banner 3 tekst: Tekst główny
 		///</summary>
 		[ImplementPropertyType("bannerText3")]
 		public string BannerText3
@@ -858,7 +823,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Banner text 3 inner
+		/// Banner 3 tekst 2: Tekst mniejszy
 		///</summary>
 		[ImplementPropertyType("bannerText3Inner")]
 		public string BannerText3Inner
@@ -893,7 +858,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ContactFbLink: Link do Fb kontaktu (lub do Fb Resetowego)
+		/// Kontakt Link Facebook: Link do Fb kontaktu (opcjonalnie do Fb Resetowego)
 		///</summary>
 		[ImplementPropertyType("contactFbLink")]
 		public string ContactFbLink
@@ -902,7 +867,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ContactImg: Zdjęcie kontaktu
+		/// Zdjęcie kontaktu: Zdjęcie kontaktu
 		///</summary>
 		[ImplementPropertyType("contactImg")]
 		public object ContactImg
@@ -911,7 +876,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ContactLinkedInLink: Link do LinkedIn kontaktu
+		/// Kontakt Link LinkedIn: Link do LinkedIn kontaktu
 		///</summary>
 		[ImplementPropertyType("contactLinkedInLink")]
 		public string ContactLinkedInLink
@@ -920,7 +885,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ContactMail: Mail kontaktowy
+		/// Mail: Mail kontaktowy
 		///</summary>
 		[ImplementPropertyType("contactMail")]
 		public string ContactMail
@@ -929,7 +894,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ContactName: Imię, Nazwisko, stopień naukowy kontaktu
+		/// Imię i Nazwisko: Imię, Nazwisko, stopień naukowy kontaktu np. dr inż. Jan Kowalski
 		///</summary>
 		[ImplementPropertyType("contactName")]
 		public string ContactName
@@ -938,7 +903,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ContactRole: Rola pełniona w Resecie
+		/// Rola: Rola pełniona w Resecie
 		///</summary>
 		[ImplementPropertyType("contactRole")]
 		public string ContactRole
@@ -947,7 +912,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ContactTwitterLink: Link do Twittera kontaktu (lub do Twiitera Resetowego)
+		/// Kontakt Link Twitter: Link do Twittera kontaktu (lub do Twiitera Resetowego)
 		///</summary>
 		[ImplementPropertyType("contactTwitterLink")]
 		public string ContactTwitterLink
@@ -956,12 +921,109 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ContactType: Typ Kontaktu -  zarząd lub członek Koła
+		/// Typ Kontaktu: Typ Kontaktu -  zarząd lub członek Koła
 		///</summary>
 		[ImplementPropertyType("contactType")]
 		public object ContactType
 		{
 			get { return this.GetPropertyValue("contactType"); }
+		}
+	}
+
+	/// <summary>Oferty Pracy</summary>
+	[PublishedContentModel("ofertyPracy")]
+	public partial class OfertyPracy : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "ofertyPracy";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public OfertyPracy(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<OfertyPracy, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>OfertyPracyNode</summary>
+	[PublishedContentModel("ofertyPracyNode")]
+	public partial class OfertyPracyNode : OfertyPracy
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "ofertyPracyNode";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public OfertyPracyNode(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<OfertyPracyNode, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// OfertaPracyFirma: Nazwa firmy, od której pochodzi oferta pracy
+		///</summary>
+		[ImplementPropertyType("JobOfferFirm")]
+		public string JobOfferFirm
+		{
+			get { return this.GetPropertyValue<string>("JobOfferFirm"); }
+		}
+
+		///<summary>
+		/// OfertaPracyImg: Oferta Pracy - grafika, zdjęcie
+		///</summary>
+		[ImplementPropertyType("JobOfferImg")]
+		public object JobOfferImg
+		{
+			get { return this.GetPropertyValue("JobOfferImg"); }
+		}
+
+		///<summary>
+		/// OfertaPracyInfografika: Główna infografika oferty pracy
+		///</summary>
+		[ImplementPropertyType("JobOfferMainImg")]
+		public object JobOfferMainImg
+		{
+			get { return this.GetPropertyValue("JobOfferMainImg"); }
+		}
+
+		///<summary>
+		/// OfertaPracyStanowisko: Nazwa stanowiska, którego dotyczy ogłoszenie
+		///</summary>
+		[ImplementPropertyType("JobOfferPosition")]
+		public string JobOfferPosition
+		{
+			get { return this.GetPropertyValue<string>("JobOfferPosition"); }
+		}
+
+		///<summary>
+		/// OfertaPracyOpis: Krótki opis ogłoszenia
+		///</summary>
+		[ImplementPropertyType("JobOfferShortDesc")]
+		public IHtmlString JobOfferShortDesc
+		{
+			get { return this.GetPropertyValue<IHtmlString>("JobOfferShortDesc"); }
 		}
 	}
 

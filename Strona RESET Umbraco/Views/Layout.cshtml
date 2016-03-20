@@ -1,6 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = null;
+    Layout = null;
 }
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/animate.css" media="screen">
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="~/css/colors/red.css" title="red" media="screen" />
-    <link rel="stylesheet" href="~/css/hover.css"  />
+    <link rel="stylesheet" href="~/css/hover.css" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="~/Favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="~/Favicons/apple-icon-60x60.png">
@@ -125,19 +125,19 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="/home" class="@(ViewBag.ActivePage==0 ? "active" : "")"><i class="fa fa-home"></i></a>
-                            </li>                   
-                            <li>
-									<a href="/galeria" class="@(ViewBag.ActivePage==2 ? "active" : "")">GALERIA</a>
-                            </li>
-  
-                            <li>
-									<a href="/projekty" class="@(ViewBag.ActivePage==4 ? "active" : "")">PROJEKTY</a>
                             </li>
                             <li>
-									<a href="/kontakt" class="@(ViewBag.ActivePage==3 ? "active" : "")">KONTAKT</a>
+                                <a href="/galeria" class="@(ViewBag.ActivePage==2 ? "active" : "")">GALERIA</a>
                             </li>
-										<li>
-									<a href="#" class="@(ViewBag.ActivePage==6 ? "active" : "")">OFERTY PRACY</a>
+
+                            <li>
+                                <a href="/projekty" class="@(ViewBag.ActivePage==4 ? "active" : "")">PROJEKTY</a>
+                            </li>
+                            <li>
+                                <a href="/kontakt" class="@(ViewBag.ActivePage==3 ? "active" : "")">KONTAKT</a>
+                            </li>
+                            <li>
+                                <a href="/ofertypracy" class="@(ViewBag.ActivePage==5 ? "active" : "")">OFERTY PRACY</a>
                             </li>
                         </ul>
                         <!-- End Navigation List -->
@@ -146,41 +146,27 @@
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                                <a href="/" class="@(ViewBag.ActivePage==0 ? "active" : "")"><i class="fa fa-home"></i></a>
+                        <a href="/" class="@(ViewBag.ActivePage==0 ? "active" : "")"><i class="fa fa-home"></i></a>
                     </li>
                     <li>
-									<a href="/aktualnosci" class="@(ViewBag.ActivePage==1 ? "active" : "")">AKTUALNOŚCI</a>
+                        <a href="/galeria" class="@(ViewBag.ActivePage==2 ? "active" : "")">GALERIA</a>
                     </li>
                     <li>
-									<a href="/galeria" class="@(ViewBag.ActivePage==2 ? "active" : "")">GALERIA</a>
+                        <a href="/projekty" class="@(ViewBag.ActivePage==4 ? "active" : "")">PROJEKTY</a>
                     </li>
                     <li>
-                        <a href="#">WYDARZENIA</a>
-                        <ul class="dropdown">
-                            <li>
-									<a href="/wydarzenia" class="@(ViewBag.ActivePage==5 ? "active" : "")">2016</a>
-                            </li>
-                            <li>
-                                <a href="#">2015</a>
-                            </li>
-                            <li>
-                                <a href="#">2014</a>
-                            </li>
-                        </ul>
+                        <a href="/kontakty" class="@(ViewBag.ActivePage==3 ? "active" : "")">KONTAKT</a>
                     </li>
                     <li>
-									<a href="/projekty" class="@(ViewBag.ActivePage==4 ? "active" : "")">PROJEKTY</a>
+                        <a href="/ofertypracy" class="@(ViewBag.ActivePage==5 ? "active" : "")">OFERTY PRACY</a>
                     </li>
-                     <li>
-									<a href="/kontakty" class="@(ViewBag.ActivePage==3 ? "active" : "")">KONTAKT</a>
-                            </li>
                 </ul>
                 <!-- Mobile Menu End -->
             </div>
             <!-- End Header Logo & Naviagtion -->
         </header>
         <!-- End Header Section -->
-    <!-- Start Home Page Slider -->
+        <!-- Start Home Page Slider -->
         <section id="home">
             <!-- Carousel -->
             <div id="main-slide" class="carousel slide" data-ride="carousel">
@@ -191,10 +177,9 @@
                     <li data-target="#main-slide" data-slide-to="2"></li>
                 </ol>
                 <!--/ Indicators end-->
-
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
-                       <div class="item active">
+                    <div class="item active">
                         <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage1", recursive: true).ToString()).Url" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
@@ -227,7 +212,7 @@
                             </div>
                         </div>
                     </div>
-                        <!--/ Carousel item end -->
+                    <!--/ Carousel item end -->
                     <div class="item">
                         <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage3", recursive: true).ToString()).Url" alt="slider">
                         <div class="slider-content">
@@ -244,8 +229,8 @@
                             </div>
                         </div>
                     </div>
-                        <!--/ Carousel item end -->
-                    </div>
+                    <!--/ Carousel item end -->
+                </div>
                 <!-- Carousel inner end-->
                 <!-- Controls -->
                 <a class="left carousel-control" href="#main-slide" data-slide="prev">
@@ -426,12 +411,12 @@
     <!-- End Full Body Container -->
     <!-- Go To Top Link -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-<div id="loader">
-    <div class="spinner">
-        <div class="dot1"></div>
-        <div class="dot2"></div>
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
     </div>
-</div>
     <!-- Margo JS  -->
     <script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery.migrate.js"></script>
@@ -458,6 +443,6 @@
     <script type="text/javascript" src="~/scripts/script.js"></script>
     <script src="~/scripts/custom.js"></script>
 
-    @RenderSection("Scripts",false)
+    @RenderSection("Scripts", false)
 </body>
 </html>

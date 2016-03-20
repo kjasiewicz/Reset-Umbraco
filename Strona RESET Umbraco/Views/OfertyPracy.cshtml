@@ -1,0 +1,49 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    Layout = "Layout.cshtml";
+    ViewBag.ActivePage = 5;
+    var childrens = CurrentPage.Children;
+}
+<link href="~/css/OfertyPracy.css" rel="stylesheet" />
+<div class="container">
+    <div class="row">
+        <div class="description reset-font-medium">OFERTY PRACY</div>
+    </div>
+    <div class="row">
+        @foreach (var children in childrens)
+        {
+            var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
+            <div class="col-md-4" data-toggle="modal" data-target="#myModal" href="">
+                <div id="picture">
+                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("JobOfferMainImg").ToString()).Url" class="img-responsive">
+                    <div class="pic-transform">
+                        <p class="text-display reset-font-small">
+                            Firma: @innerUmbracoHelper.Field("JobOfferFirm", removeParagraphTags: true) <br />
+                            Stanowisko: @innerUmbracoHelper.Field("JobOfferPosition", removeParagraphTags: true)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title text-center">
+                                @innerUmbracoHelper.Field("JobOfferShortDesc", removeParagraphTags: true)
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("JobOfferImg").ToString()).Url" class="img-responsive">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="button-reset-default black" data-dismiss="modal">zamknij</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
