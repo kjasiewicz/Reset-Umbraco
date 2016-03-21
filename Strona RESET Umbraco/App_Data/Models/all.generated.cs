@@ -163,24 +163,6 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// AktualnosciDesc: Podpis pod tytułem strony
-		///</summary>
-		[ImplementPropertyType("aktualnosciDesc")]
-		public IHtmlString AktualnosciDesc
-		{
-			get { return this.GetPropertyValue<IHtmlString>("aktualnosciDesc"); }
-		}
-
-		///<summary>
-		/// AktualnosciHeader: Tytuł podstrony
-		///</summary>
-		[ImplementPropertyType("aktualnosciHeader")]
-		public IHtmlString AktualnosciHeader
-		{
-			get { return this.GetPropertyValue<IHtmlString>("aktualnosciHeader"); }
-		}
 	}
 
 	/// <summary>AktualnosciSzczegoly</summary>
@@ -272,7 +254,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Infografika
+		/// Infografika: Infografika 900x900 [px]
 		///</summary>
 		[ImplementPropertyType("shortIcon")]
 		public object ShortIcon
@@ -308,7 +290,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Zdjęcie prelegenta 1: Zdjęcie prelegenta 1
+		/// Zdjęcie prelegenta 1: Zdjęcie prelegenta 1  450x450 [px]
 		///</summary>
 		[ImplementPropertyType("speaker1Img")]
 		public object Speaker1Img
@@ -371,7 +353,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Zdjęcie prelegenta 2: Zdjęcie prelegenta 2
+		/// Zdjęcie prelegenta 2: Zdjęcie prelegenta 2 450x450 [px]
 		///</summary>
 		[ImplementPropertyType("speaker2Img")]
 		public object Speaker2Img
@@ -434,7 +416,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Zdjęcie prelegenta 3: Zdjęcie prelegenta 3
+		/// Zdjęcie prelegenta 3: Zdjęcie prelegenta 3 450x450 [px]
 		///</summary>
 		[ImplementPropertyType("speaker3Img")]
 		public object Speaker3Img
@@ -594,7 +576,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Projekt Banner: Baner z np. screenem aplikacji
+		/// Projekt Banner: Baner z np. screenem aplikacji 1920x500 [px]
 		///</summary>
 		[ImplementPropertyType("projectBigImg")]
 		public object ProjectBigImg
@@ -639,7 +621,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Projekt Logo: Logo aplikacji
+		/// Projekt Logo: Logo aplikacji 300x300 [px]
 		///</summary>
 		[ImplementPropertyType("projectLogo")]
 		public object ProjectLogo
@@ -648,7 +630,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Projekt Grafika: Grafika poszczególnego projektu na głównej stronie projektów
+		/// Projekt Grafika: Grafika poszczególnego projektu na głównej stronie projektów 600x450 [px]
 		///</summary>
 		[ImplementPropertyType("projectMainImg")]
 		public object ProjectMainImg
@@ -675,7 +657,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Projekt Screen: Mockup ze screenem aplikacji/systemu
+		/// Projekt Screen: Mockup ze screenem aplikacji/systemu 800x282 [px]
 		///</summary>
 		[ImplementPropertyType("projectScreen")]
 		public object ProjectScreen
@@ -880,7 +862,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Zdjęcie kontaktu: Zdjęcie kontaktu
+		/// Zdjęcie kontaktu: Zdjęcie kontaktu 600x700 [px]
 		///</summary>
 		[ImplementPropertyType("contactImg")]
 		public object ContactImg
@@ -1004,7 +986,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// OfertaPracyImg: Oferta Pracy - grafika, zdjęcie
+		/// OfertaPracyImg: Oferta Pracy - grafika, zdjęcie [rozmiar dowolny]
 		///</summary>
 		[ImplementPropertyType("JobOfferImg")]
 		public object JobOfferImg
@@ -1013,7 +995,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// OfertaPracyInfografika: Główna infografika oferty pracy
+		/// OfertaPracyInfografika: Główna infografika oferty pracy 500x300 [px]
 		///</summary>
 		[ImplementPropertyType("JobOfferMainImg")]
 		public object JobOfferMainImg
