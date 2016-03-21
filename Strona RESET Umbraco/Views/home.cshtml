@@ -5,8 +5,7 @@
 @{
     Layout = "Layout.cshtml";
     ViewBag.ActivePage = 0;
-    DynamicPublishedContentList test = CurrentPage.Parent.Children;
-    var aktualnosciChildren = test.First(x => x.Name == "Aktualnosci").Children;
+    var childrens = CurrentPage.Children;
 }
 
 <!-- Start Services Section -->
@@ -22,7 +21,7 @@
                     <li class="filter-button gray filter" data-filter=".category-lectures">WYKŁADY</li>
                     <li class="filter-button gray filter" data-filter=".category-conference">KONFERENCJE</li>
                     <li class="filter-button gray filter" data-filter=".category-success">SUKCESY</li>
-				    <li class="filter-button gray filter" data-filter=".category-another">INNE</li>
+                    <li class="filter-button gray filter" data-filter=".category-another">INNE</li>
 
                 </ul>
             </div>
@@ -30,7 +29,7 @@
 
         <div class="row" id="sortList">
             <!-- Start Service Icon 1 -->
-            @foreach (var children in aktualnosciChildren)
+            @foreach (var children in childrens)
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
                 <div class="service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) @("year-"+innerUmbracoHelper.Field("yearDropdown", removeParagraphTags: true)) all" data-animation="fadeIn" data-animation-delay="01" style="display:table">
@@ -50,7 +49,7 @@
                         <div class="read-more-box">
                             <a href="@children.Url">
                                 <p class="news-details hvr-float">
-                                    SZCZEGÓŁY                                    
+                                    SZCZEGÓŁY
                                     <i class="fa fa-angle-double-right">
                                     </i>
                                 </p>
@@ -65,4 +64,13 @@
         <!-- .container -->
     </div>
 </div>
+
+@section Scripts{
+    <script>
+        debugger;
+        $.get("/umbraco/surface/LazyNews/Index", function(data) {
+
+        });
+    </script>
+}
 

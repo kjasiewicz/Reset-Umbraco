@@ -17,7 +17,7 @@
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
                 <div class="col-md-6">
-                    <img class="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("galleryMainImg").ToString()).Url" alt="">
+                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("galleryMainImg").ToString()).Url" alt="">
                 </div>
                 <div class="col-md-6">
                     <h3 class="reset-font-medium">@innerUmbracoHelper.Field("galleryTitle", removeParagraphTags: true)</h3>

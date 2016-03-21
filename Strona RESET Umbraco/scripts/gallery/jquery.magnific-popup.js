@@ -1171,7 +1171,6 @@ $.magnificPopup.registerModule('image', {
 						'<div class="mfp-img"></div>'+
 						'<figcaption>'+
 							'<div class="mfp-bottom-bar">'+
-								'<div class="mfp-title"></div>'+
 								'<div class="mfp-counter"></div>'+
 							'</div>'+
 						'</figcaption>'+
@@ -1718,7 +1717,7 @@ $.magnificPopup.registerModule('gallery', {
 
 		tPrev: 'Previous (Left arrow key)',
 		tNext: 'Next (Right arrow key)',
-		tCounter: '%curr% of %total%'
+		tCounter: '%curr% z %total%'
 	},
 
 	proto: {
