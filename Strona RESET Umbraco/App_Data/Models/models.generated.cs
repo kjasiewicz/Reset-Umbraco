@@ -519,15 +519,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Zdjęcie podgląd: Zdjęcie w podglądzie galerii
-		///</summary>
-		[ImplementPropertyType("galleryPhotosMini")]
-		public string GalleryPhotosMini
-		{
-			get { return this.GetPropertyValue<string>("galleryPhotosMini"); }
-		}
-
-		///<summary>
 		/// Nazwa galerii: Nazwa wydarzenia, z którego pochodzi galeria
 		///</summary>
 		[ImplementPropertyType("galleryTitle")]

@@ -12,9 +12,9 @@
     <div class="container popup-gallery">
         <div class="row zoom-gallery">
             <div class="col-lg-12 text-center">
-                <h1 class="reset-font-large">lksdnkjd</h1>
+                <h1 class="reset-font-large">@Umbraco.Field("galleryTitle", removeParagraphTags: true)</h1>
                 <br/>
-                <h3 class="reset-font-small">drglkndkjg</h3>
+                <h3 class="reset-font-small">@Umbraco.Field("galleryDate", removeParagraphTags: true)</h3>
             </div>
             @foreach (var image in imagesInGallery)
             {

@@ -14,7 +14,7 @@
         @foreach (var children in childrens)
         {
             var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
-            <div class="col-md-4" data-toggle="modal" data-target="@("#oferta"+children.Id)" href="">
+            <div class="col-md-6" data-toggle="modal" data-target="@("#oferta"+children.Id)" href="">
                 <div id="picture">
                     <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("JobOfferMainImg").ToString()).Url" class="img-responsive">
                     <div class="pic-transform">

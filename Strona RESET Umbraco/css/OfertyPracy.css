@@ -23,7 +23,7 @@
     background-color: white;
 }
 
-@media screen and (min-width: 768px) {
+@media(min-width: 768px) {
     .modal-dialog {
         right: auto;
         left: 50%;
@@ -33,19 +33,36 @@
     }
 }
 
-.pic-transform {
-    transition-duration: 0.75s;
-    -webkit-transition-duration: 0.75s;
-    -moz-transition-duration: 0.75s;
-    -o-transition-duration: 0.75s;
-    overflow: hidden;
-    height: 0;
-    margin-bottom: 10px;
+@media(max-width: 991px) {
+
+    .pic-transform {
+        transition-duration: 0.75s;
+        -webkit-transition-duration: 0.75s;
+        -moz-transition-duration: 0.75s;
+        -o-transition-duration: 0.75s;
+        margin-bottom: 10px;
+        height: auto;
+    }
 }
 
-#picture:hover .pic-transform {
-    height: 90px;
+@media(min-width: 992px) {
+    .pic-transform {
+        transition-duration: 0.75s;
+        -webkit-transition-duration: 0.75s;
+        -moz-transition-duration: 0.75s;
+        -o-transition-duration: 0.75s;
+        overflow: hidden;
+        height: 0;
+        margin-bottom: 10px;
+    }
+
+    #picture:hover .pic-transform {
+        height: 90px;
+    }
 }
+
+
+
 
 .text-display {
     color: #fff;
