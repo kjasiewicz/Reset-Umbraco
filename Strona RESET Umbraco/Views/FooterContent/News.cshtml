@@ -1,0 +1,25 @@
+﻿@model List<IContent>
+
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+    @{
+        var test = Model.Content.
+        var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
+    }
+
+    <div class="footer-widget twitter-widget">
+        <h4>OSTATNIE AKTUALNOŚCI<span class="head-line"></span></h4>
+        <ul>
+            <li>
+                <p><a href="#">Rafał Łopatka </a> Nie powtarzaj się !Czyli o AOP słów kilka.</p>
+                <span>15 GRUDNIA 2015</span>
+            </li>
+            <li>
+                <p><a href="#">Rafał Łopatka </a> Nie powtarzaj się !Czyli o AOP słów kilka.</p>
+                <span>15 GRUDNIA 2015</span>
+            </li>
+            <li>
+                <p><a href="#">Rafał Łopatka </a> Nie powtarzaj się !Czyli o AOP słów kilka.</p>
+                <span>15 GRUDNIA 2015</span>
+            </li>
+        </ul>
+    </div>

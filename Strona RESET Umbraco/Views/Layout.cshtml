@@ -82,7 +82,7 @@
                                 </li>
                                 <li>
                                     <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="https://twitter.com/resetath"><i class="fa fa-twitter"></i></a>
-                                </li>                          
+                                </li>
                             </ul>
                             <!-- End Social Links -->
                         </div>
@@ -121,20 +121,20 @@
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="/home" class="@(ViewBag.ActivePage==0 ? "active" : "")"><i class="fa fa-home"></i></a>
+                                <a href="/home" class="@(ViewBag.ActivePage == 0 ? "active" : "")"><i class="fa fa-home"></i></a>
                             </li>
                             <li>
-                                <a href="/galeria" class="@(ViewBag.ActivePage==2 ? "active" : "")">GALERIA</a>
+                                <a href="/galeria" class="@(ViewBag.ActivePage == 2 ? "active" : "")">GALERIA</a>
                             </li>
 
                             <li>
-                                <a href="/projekty" class="@(ViewBag.ActivePage==4 ? "active" : "")">PROJEKTY</a>
+                                <a href="/projekty" class="@(ViewBag.ActivePage == 4 ? "active" : "")">PROJEKTY</a>
                             </li>
                             <li>
-                                <a href="/kontakt" class="@(ViewBag.ActivePage==3 ? "active" : "")">KONTAKT</a>
+                                <a href="/kontakt" class="@(ViewBag.ActivePage == 3 ? "active" : "")">KONTAKT</a>
                             </li>
                             <li>
-                                <a href="/ofertypracy" class="@(ViewBag.ActivePage==5 ? "active" : "")">OFERTY PRACY</a>
+                                <a href="/ofertypracy" class="@(ViewBag.ActivePage == 5 ? "active" : "")">OFERTY PRACY</a>
                             </li>
                         </ul>
                         <!-- End Navigation List -->
@@ -143,19 +143,19 @@
                 <!-- Mobile Menu Start -->
                 <ul class="wpb-mobile-menu">
                     <li>
-                        <a href="/home" class="@(ViewBag.ActivePage==0 ? "active" : "")"><i class="fa fa-home"></i></a>
+                        <a href="/home" class="@(ViewBag.ActivePage == 0 ? "active" : "")"><i class="fa fa-home"></i></a>
                     </li>
                     <li>
-                        <a href="/galeria" class="@(ViewBag.ActivePage==2 ? "active" : "")">GALERIA</a>
+                        <a href="/galeria" class="@(ViewBag.ActivePage == 2 ? "active" : "")">GALERIA</a>
                     </li>
                     <li>
-                        <a href="/projekty" class="@(ViewBag.ActivePage==4 ? "active" : "")">PROJEKTY</a>
+                        <a href="/projekty" class="@(ViewBag.ActivePage == 4 ? "active" : "")">PROJEKTY</a>
                     </li>
                     <li>
-                        <a href="/kontakt" class="@(ViewBag.ActivePage==3 ? "active" : "")">KONTAKT</a>
+                        <a href="/kontakt" class="@(ViewBag.ActivePage == 3 ? "active" : "")">KONTAKT</a>
                     </li>
                     <li>
-                        <a href="/ofertypracy" class="@(ViewBag.ActivePage==5 ? "active" : "")">OFERTY PRACY</a>
+                        <a href="/ofertypracy" class="@(ViewBag.ActivePage == 5 ? "active" : "")">OFERTY PRACY</a>
                     </li>
                 </ul>
                 <!-- Mobile Menu End -->
@@ -262,7 +262,7 @@
                                 <li>
                                     <a class="twitter" href="https://twitter.com/resetath"><i class="fa fa-twitter"></i></a>
                                 </li>
-                            
+
                             </ul>
                         </div>
                     </div>
@@ -270,23 +270,7 @@
                     <!-- End Subscribe & Social Links Widget -->
                     <!-- Start Twitter Widget -->
                     <div class="col-md-3 col-xs-12">
-                        <div class="footer-widget twitter-widget">
-                            <h4>OSTATNIE WYDARZENIA<span class="head-line"></span></h4>
-                            <ul>
-                                <li>
-                                    <p><a href="#">Rafał Łopatka </a> Nie powtarzaj się !Czyli o AOP słów kilka.</p>
-                                    <span>15 GRUDNIA 2015</span>
-                                </li>
-                                <li>
-                                    <p><a href="#">Rafał Łopatka </a> Nie powtarzaj się !Czyli o AOP słów kilka.</p>
-                                    <span>15 GRUDNIA 2015</span>
-                                </li>
-                                <li>
-                                    <p><a href="#">Rafał Łopatka </a> Nie powtarzaj się !Czyli o AOP słów kilka.</p>
-                                    <span>15 GRUDNIA 2015</span>
-                                </li>
-                            </ul>
-                        </div>
+                        @{Html.RenderAction("News", "FooterContent");}
                     </div>
                     <!-- .col-md-3 -->
                     <!-- End Twitter Widget -->
@@ -375,10 +359,10 @@
                         </div>
                         <!-- .col-md-6 -->
                         <div class="col-md-6">
-                            <ul class="footer-nav">                            
+                            <ul class="footer-nav">
                                 <li>
                                     <a href="/galeria">GALERIA</a>
-                                </li>                        
+                                </li>
                                 <li>
                                     <a href="/projekty">PROJEKTY</a>
                                 </li>
