@@ -1,6 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
+    Umbraco.Web.Models.DynamicPublishedContentList wtf = Umbraco.ContentAtRoot().First().Children;
+    var news = wtf.Where(x => x.Name == "Home").First().Children.OrderByDescending(a => a.CreateDate).Take(3);
+    var gallery = wtf.Where(x => x.Name == "Galeria").First().Children.OrderByDescending(a => a.CreateDate).Take(9);
+
 }
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -270,7 +274,28 @@
                     <!-- End Subscribe & Social Links Widget -->
                     <!-- Start Twitter Widget -->
                     <div class="col-md-3 col-xs-12">
-                        @{Html.RenderAction("News", "FooterContent");}
+                        <div class="footer-widget twitter-widget">
+                            <h4>OSTATNIE AKTUALNOŚCI<span class="head-line"></span></h4>
+                            <ul>
+                                @foreach (var item in news)
+                                {
+                                    var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, item);
+                                    <li>
+                                        <p>
+                                            <a href="@item.Url">
+                                                @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
+                                            </a><br />
+                                            @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
+                                        </p>
+                                        <span>
+                                            @innerUmbracoHelper.Field("shortDate", removeParagraphTags: true)
+                                        </span>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+
                     </div>
                     <!-- .col-md-3 -->
                     <!-- End Twitter Widget -->
@@ -279,51 +304,15 @@
                         <div class="footer-widget flickr-widget">
                             <h4>GALERIA<span class="head-line"></span></h4>
                             <ul class="flickr-list">
-                                <li>
-                                    <a href="~/content/images/Wyklad Gallery/_DSC5504.jpg" class="lightbox">
-                                        <img alt="" src="~/content/images/Wyklad Gallery/_DSC5504.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/content/images/Wyklad Gallery/_DSC5505.jpg" class="lightbox">
-                                        <img alt="" src="~/content/images/Wyklad Gallery/_DSC5505.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/content/images/Wyklad Gallery/_DSC5507.jpg" class="lightbox">
-                                        <img alt="" src="~/content/images/Wyklad Gallery/_DSC5507.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/content/images/Wyklad Gallery/_DSC5513.jpg" class="lightbox">
-                                        <img alt="" src="~/content/images/Wyklad Gallery/_DSC5513.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/content/images/Wyklad Gallery/_DSC5515.jpg" class="lightbox">
-                                        <img alt="" src="~/content/images/Wyklad Gallery/_DSC5515.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/content/images/Wyklad Gallery/_DSC5517.jpg" class="lightbox">
-                                        <img alt="" src="~/content/images/Wyklad Gallery/_DSC5517.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/content/images/Wyklad Gallery/_DSC5518.jpg" class="lightbox">
-                                        <img alt="" src="~/content/images/Wyklad Gallery/_DSC5518.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/content/images/Wyklad Gallery/_DSC5520.jpg" class="lightbox">
-                                        <img alt="" src="~/content/images/Wyklad Gallery/_DSC5520.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/content/images/Wyklad Gallery/_DSC5523.jpg" class="lightbox">
-                                        <img alt="" src="~/content/images/Wyklad Gallery/_DSC5523.jpg">
-                                    </a>
-                                </li>
+                                @foreach (var item in gallery)
+                                {
+                                    var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, item);
+                                    <li>
+                                        <a href="@item.Url">
+                                            <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("galleryMainImg").ToString()).Url" alt="">
+                                        </a>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>
