@@ -32,8 +32,8 @@
             @foreach (var children in Model.News)
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, children);
-                <div class="service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) all" data-animation="fadeIn" data-animation-delay="01" style="display:table">
-                    <div class="col-sm-3 col-xs-12 news-img hidden-xs" style="display:table-cell !important">
+                <div class="service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) all" data-animation="fadeIn" data-animation-delay="01" style="display: table">
+                    <div class="col-sm-3 col-xs-12 news-img hidden-xs" style="display: table-cell !important">
                         <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("shortIcon").ToString()).Url" class="img-responsive">
                     </div>
                     <div class="col-sm-8 col-sm-offset-1 col-xs-12 news-box">
@@ -56,20 +56,26 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
             }
+            <a id="loadNextIndicator">next</a>
             <!-- .row -->
         </div>
         <!-- .container -->
     </div>
 </div>
 
+@Html.Hidden("lazyPage", 1)
+
 @section Scripts{
     <script>
-        debugger;
-        $.get("/umbraco/surface/LazyNews/Index", function(data) {
-
+        $("#sortList").delegate("#loadNextIndicator", "click", function () {
+            var page = parseInt($("#lazyPage").val()) + 1;
+            $.get("/umbraco/surface/Lazy/GetNews?page=" + page, function (data) {
+                $("#loadNextIndicator").remove();
+                $("#sortList").append(data);
+                $("#lazyPage").val(page);
+            });
         });
     </script>
 }

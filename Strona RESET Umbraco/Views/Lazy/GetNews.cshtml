@@ -1,0 +1,37 @@
+﻿@using Strona_RESET_Umbraco.FrontendHelpers
+@model IEnumerable<Strona_RESET_Umbraco.SurfaceControllers.NewsAjaxModel>
+
+@foreach (var children in Model)
+            {
+    <div class="service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(children.type) all" data-animation="fadeIn" data-animation-delay="01" style="display: table; margin-top:5px">
+        <div class="col-sm-3 col-xs-12 news-img hidden-xs" style="display: table-cell !important">
+            <img src="@children.shortIconUrl" class="img-responsive">
+        </div>
+        <div class="col-sm-8 col-sm-offset-1 col-xs-12 news-box">
+            <p class="news-title">
+                @Html.Raw(children.shortTitle)
+            </p>
+            <p class="news-date">
+                @children.shortDate
+            </p>
+            <p class="news-desc">
+                @Html.Raw(children.shortDesc)
+            </p>
+            <div class="read-more-box">
+                <a href="@children.url">
+                    <p class="news-details hvr-float">
+                        SZCZEGÓŁY
+                        <i class="fa fa-angle-double-right">
+                        </i>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model.Any())
+{
+    <a id="loadNextIndicator">next</a>
+}
+

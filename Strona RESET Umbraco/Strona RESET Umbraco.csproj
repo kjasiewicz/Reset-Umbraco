@@ -783,6 +783,8 @@
     <Content Include="Views\FooterContent\News.cshtml" />
     <Content Include="Views\FooterContent\Gallery.cshtml" />
     <Content Include="App_Plugins\ZipUpload\zipUpload.config" />
+    <Content Include="Views\Home\GetNews.cshtml" />
+    <Content Include="Views\Lazy\GetNews.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3431,6 +3433,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CustomStartupHandler.cs" />
     <Compile Include="FrontendHelpers\NewsCssClassResolver.cs" />
     <Compile Include="Models\NewsRequestModel.cs" />
     <Compile Include="Models\NewsReturnModel.cs" />

@@ -8,7 +8,7 @@
             get
             {
                 //Const value
-                return 3;
+                return 5;
             }
         }
     }
