@@ -4,6 +4,8 @@
     Layout = "Layout.cshtml";
     ViewBag.ActivePage = 1;
     var date = DateTime.Parse(Umbraco.Field("dateAndHour", removeParagraphTags: true).ToString());
+    var japierdole = Umbraco.Field("zipPackage");
+    var jvjhv = "gjhb";
 }
 <link href="/css/NewsDetails.css" rel="stylesheet" />
 <div class="container">
@@ -15,6 +17,16 @@
             <div class="reset-font-small lecture-description">
                 @Umbraco.Field("mainDesc", removeParagraphTags: true)
             </div>
+            @if (!Umbraco.Field("zipPackage").ToString().IsEmpty())
+            {
+                <div class="reset-font-small" style="color: dodgerblue">
+                    <a href="@Url.Content(Umbraco.Field("zipPackage").ToString())">
+                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true">
+                        </span>
+                        Pobierz materiały z wykładu
+                    </a>
+                </div>
+            }
         </div>
         <div class="row">
             <div class="lecture-time-box ">
@@ -142,7 +154,6 @@
 
 
         }
-
     </div>
     <div class="section purchase3 ">
         <div class="container text-center">
@@ -157,7 +168,6 @@
                 <br />
                 <br />
                 <br />
-
             </h2>
             <a href="@Umbraco.Field("eventFbLink", removeParagraphTags: true)">
                 <div class=" reset-font-medium button-reset-default">
@@ -168,4 +178,3 @@
         <!-- .container -->
     </div>
 }
-

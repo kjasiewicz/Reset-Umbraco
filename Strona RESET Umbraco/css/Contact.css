@@ -1,4 +1,7 @@
-﻿
+﻿section.contact{
+    padding-top:50px;
+    padding-bottom: 50px;
+}
 .profile{
 	margin-top: 25px;
 }
@@ -79,7 +82,7 @@ a{
 }
 a:hover{
     text-decoration:none;
-    color:#519548;
+    color:#BC0213;
 }
 i.red{
     color:#BC0213;

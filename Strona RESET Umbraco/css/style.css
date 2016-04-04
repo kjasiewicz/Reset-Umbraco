@@ -148,7 +148,7 @@
         color: #999 !important;
         border-bottom: 1px solid rgba(0, 0, 0,0.1);
         padding-bottom: 5px;
-        margin-top: 100px;
+        margin-top: 10px;
         margin-bottom: 30px;
         text-align:center;
     }
@@ -264,13 +264,13 @@
 }
 
 
-.description {
+.pageNameHeader {
     font-weight: bold;
     letter-spacing: 2px;
     color: #999 !important;
     border-bottom: 1px solid rgba(0, 0, 0,0.1);
     padding-bottom: 5px;
-    margin-top: 100px;
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 

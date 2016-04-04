@@ -468,6 +468,15 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue("typeDropdown"); }
 		}
+
+		///<summary>
+		/// MaterialyDoPobrania: Materiały z wydarzenia do pobrania
+		///</summary>
+		[ImplementPropertyType("zipPackage")]
+		public object ZipPackage
+		{
+			get { return this.GetPropertyValue("zipPackage"); }
+		}
 	}
 
 	/// <summary>GaleriaSzczegoly</summary>
@@ -737,7 +746,34 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Baner 1: Baner nr 1
+		/// Banner1Link: Podlinkowanie banera: np. do galerii, do innej strony, do wydarzenia na FB
+		///</summary>
+		[ImplementPropertyType("banner1Link")]
+		public string Banner1Link
+		{
+			get { return this.GetPropertyValue<string>("banner1Link"); }
+		}
+
+		///<summary>
+		/// Banner2Link: Podlinkowanie banera: np. do galerii, do innej strony, do wydarzenia na FB
+		///</summary>
+		[ImplementPropertyType("banner2Link")]
+		public string Banner2Link
+		{
+			get { return this.GetPropertyValue<string>("banner2Link"); }
+		}
+
+		///<summary>
+		/// Banner3Link: Podlinkowanie banera: np. do galerii, do innej strony, do wydarzenia na FB
+		///</summary>
+		[ImplementPropertyType("banner3Link")]
+		public string Banner3Link
+		{
+			get { return this.GetPropertyValue<string>("banner3Link"); }
+		}
+
+		///<summary>
+		/// Baner 1: Baner1 image
 		///</summary>
 		[ImplementPropertyType("bannerSlideImage1")]
 		public object BannerSlideImage1
