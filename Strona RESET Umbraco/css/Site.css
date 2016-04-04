@@ -2,3 +2,15 @@
 #sortList .mix{
 	display: none;
 }
+
+.loader-ajax {
+    z-index: 999999
+}
+
+.spinner-ajax {
+    width: 40px;
+    height: 40px;
+    -webkit-animation: rotatee 2.0s infinite linear;
+    animation: rotatee 2.0s infinite linear;
+    margin: auto;
+}

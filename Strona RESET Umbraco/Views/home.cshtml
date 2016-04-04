@@ -58,13 +58,21 @@
                     </div>
                 </div>
             }
-            <div class="col-xs-12 text-center reset-font-medium" style="margin-top:20px">
-                <a id="loadNextIndicator">
+            <div class="col-xs-12 text-center reset-font-medium" style="margin-top: 20px" id="parentLoad">
+                <a id="loadNextIndicator" href="">
                     zobacz następne<br />
                     <i class="fa fa-angle-double-down"></i>
                 </a>
             </div>
+
+
             <!-- .row -->
+        </div>
+        <div class="loader-ajax" style="display: none; margin-top: 20px">
+            <div class="spinner-ajax">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
         </div>
         <!-- .container -->
     </div>
@@ -74,12 +82,16 @@
 
 @section Scripts{
     <script>
-        $("#sortList").delegate("#loadNextIndicator", "click", function () {
+        $("#sortList").delegate("#loadNextIndicator", "click", function (e) {
+            e.preventDefault();
+            $(".loader-ajax").show();
+            $("#parentLoad").hide();
             var page = parseInt($("#lazyPage").val()) + 1;
             $.get("/umbraco/surface/Lazy/GetNews?page=" + page, function (data) {
-                $("#loadNextIndicator").remove();
+                $("#parentLoad").remove();
                 $("#sortList").append(data);
                 $("#lazyPage").val(page);
+                $(".loader-ajax").hide();
             });
         });
     </script>
