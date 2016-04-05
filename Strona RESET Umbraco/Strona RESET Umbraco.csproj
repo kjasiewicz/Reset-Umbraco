@@ -308,6 +308,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\OfertyPracy.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="media\1133\bg-03.png" />
     <Content Include="media\1133\bg-03_big-thumb.jpg" />
     <Content Include="media\1133\bg-03_big-thumb.png" />
@@ -785,6 +787,23 @@
     <Content Include="App_Plugins\ZipUpload\zipUpload.config" />
     <Content Include="Views\Home\GetNews.cshtml" />
     <Content Include="Views\Lazy\GetNews.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\Montserrat-Black.otf" />
+    <Content Include="fonts\Montserrat-Bold.otf" />
+    <Content Include="fonts\Montserrat-ExtraBold.otf" />
+    <Content Include="fonts\Montserrat-Hairline.otf" />
+    <Content Include="fonts\Montserrat-Light.otf" />
+    <Content Include="fonts\Montserrat-Regular.otf" />
+    <Content Include="fonts\Montserrat-SemiBold.otf" />
+    <Content Include="fonts\Montserrat-UltraLight.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using Strona_RESET_Umbraco.SurfaceControllers
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
     Umbraco.Web.Models.DynamicPublishedContentList wtf = Umbraco.ContentAtRoot().First().Children;
@@ -267,7 +268,7 @@
                                     <li>
                                         <p>
                                             <a href="@item.Url">
-                                                @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
+                                                @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true).ToString().RemoveSpanParagraphs()
                                             </a><br />
                                             @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
                                         </p>

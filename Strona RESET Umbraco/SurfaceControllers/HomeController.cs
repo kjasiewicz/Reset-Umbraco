@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Strona_RESET_Umbraco.Models;
 using umbraco;
 using Umbraco.Web;
+using Umbraco.Web.Models;
 
 namespace Strona_RESET_Umbraco.SurfaceControllers
 {
@@ -19,20 +20,34 @@ namespace Strona_RESET_Umbraco.SurfaceControllers
 
         public ActionResult Index(NewsReturnModel model)
         {
-            
+            model.PinnedNews = model.Content.Children
+                .Where(a => Convert.ToBoolean(a.Properties.First(x => x.PropertyTypeAlias == "pinPost").Value))
+                .OrderByDescending(x => x.CreateDate)
+                .FirstOrDefault();
+
             model.News = model.Content.Children.OrderByDescending(x => x.CreateDate)
                 .Skip((Page - 1) * PageSize)
-                .Take(PageSize).ToList();
+                .Take(PageSize)
+                .Where(x => model.PinnedNews == null || x.Id != model.PinnedNews.Id).ToList();
+
             return CurrentTemplate(model);
         }
     }
 
 
+    public class LayoutController : RenderMvcController
+    {
+        public override ActionResult Index(RenderModel model)
+        {
+            return Redirect("/home");
+        }
+    }
+
     public class LazyController : SurfaceController
     {
         private const int PageSize = 3;
 
-        public PartialViewResult GetNews(int page)
+        public PartialViewResult GetNews(int page, int? pinnedPostId = null)
         {
             var news = Services.ContentService.GetChildrenByName(Services.ContentService.GetRootContent().First().Id, "Home")
                 .First()
@@ -40,10 +55,10 @@ namespace Strona_RESET_Umbraco.SurfaceControllers
                 .OrderByDescending(x => x.CreateDate)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize)
+                .Where(x => pinnedPostId == null || x.Id != pinnedPostId.Value)
                 .ToList();
 
             var model = PrepareModel(news);
-
             return PartialView(model);
         }
 
@@ -79,6 +94,11 @@ namespace Strona_RESET_Umbraco.SurfaceControllers
         public static string RemoveParagraphs(this string val)
         {
             return val.Replace("<p>", "").Replace("</p>", "");
+        }
+
+        public static string RemoveSpanParagraphs(this string val)
+        {
+            return val.Replace("<span>", "").Replace("</span>", "");
         }
     }
 }

@@ -47,7 +47,7 @@
 
 @media(min-width: 768px) {
     .news-details {
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 14px;
         color: #549093;
         position: absolute;
@@ -70,7 +70,7 @@
     }
 
     .news-title {
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 24px;
         color: black;
         text-align: left;
@@ -78,7 +78,7 @@
     }
 
     .news-date {
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 14px;
         color: gray;
         text-align: left;
@@ -86,7 +86,7 @@
     }
 
     .news-desc {
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 16px;
         color: gray;
         text-align: left;
@@ -101,7 +101,7 @@
 
 @media(max-width: 768px) {
     .news-details {
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 14px;
         color: #549093;
         text-align: center;
@@ -115,7 +115,7 @@
     }
 
     .news-title {
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 24px;
         color: black;
         text-align: center;
@@ -123,7 +123,7 @@
     }
 
     .news-date {
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 14px;
         color: gray;
         text-align: center;
@@ -131,7 +131,7 @@
     }
 
     .news-desc {
-        font-family: Montserrat;
+        font-family: Montserrat-Regular;
         font-size: 16px;
         color: gray;
         text-align: center;

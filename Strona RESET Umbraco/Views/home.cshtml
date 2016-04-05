@@ -28,6 +28,38 @@
             </div>*@
 
         <div class="row" id="sortList">
+            @if (Model.PinnedNews != null)
+            {
+                <input type="hidden" value="@Model.PinnedNews.Id" id="pinnedPostIdInput" />
+                var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Model.PinnedNews);
+                <div class="service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) all" data-animation="fadeIn" data-animation-delay="01" style="display: table">
+                    <div class="col-sm-3 col-xs-12 news-img hidden-xs" style="display: table-cell !important">
+                        <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("shortIcon").ToString()).Url" class="img-responsive">
+                    </div>
+                    <div class="col-sm-8 col-sm-offset-1 col-xs-12 news-box">
+                        <p class="news-title">
+                            <i class="fa fa-star" style="color:darkorange"></i>
+                            @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
+
+                        </p>
+                        <p class="news-date">
+                            @innerUmbracoHelper.Field("shortDate", removeParagraphTags: true)
+                        </p>
+                        <p class="news-desc">
+                            @innerUmbracoHelper.Field("shortDesc", removeParagraphTags: true)
+                        </p>
+                        <div class="read-more-box">
+                            <a href="@Model.PinnedNews.Url">
+                                <p class="news-details hvr-float">
+                                    SZCZEGÓŁY
+                                    <i class="fa fa-angle-double-right">
+                                    </i>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
             <!-- Start Service Icon 1 -->
             @foreach (var children in Model.News)
             {
@@ -38,9 +70,7 @@
                     </div>
                     <div class="col-sm-8 col-sm-offset-1 col-xs-12 news-box">
                         <p class="news-title">
-                            <i class="fa fa-star" style="color:darkorange"></i>
                             @innerUmbracoHelper.Field("shortTitle", removeParagraphTags: true)
-
                         </p>
                         <p class="news-date">
                             @innerUmbracoHelper.Field("shortDate", removeParagraphTags: true)
@@ -86,10 +116,12 @@
     <script>
         $("#sortList").delegate("#loadNextIndicator", "click", function (e) {
             e.preventDefault();
+            var pinnedPostId = parseInt($("#pinnedPostIdInput").val());
             $(".loader-ajax").show();
             $("#parentLoad").hide();
             var page = parseInt($("#lazyPage").val()) + 1;
-            $.get("/umbraco/surface/Lazy/GetNews?page=" + page, function (data) {
+
+            $.get(pinnedPostId == undefined ? "/umbraco/surface/Lazy/GetNews?page=" + page : "/umbraco/surface/Lazy/GetNews?page=" + page + "&pinnedPostId=" + pinnedPostId, function (data) {
                 $("#parentLoad").remove();
                 $("#sortList").append(data);
                 $("#lazyPage").val(page);

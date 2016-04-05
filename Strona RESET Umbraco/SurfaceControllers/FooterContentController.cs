@@ -8,16 +8,16 @@ namespace Strona_RESET_Umbraco.SurfaceControllers
     public class FooterContentController : SurfaceController
     {
         // GET: FooterContent
-        public PartialViewResult News()
-        {
-            var homeContentType = ApplicationContext.Current.Services.ContentTypeService.GetContentType("home");
+        //public PartialViewResult News()
+        //{
+        //    //var homeContentType = ApplicationContext.Current.Services.ContentTypeService.GetContentType("home");
 
-            var homeContent = ApplicationContext.Current.Services.ContentService.GetContentOfContentType(homeContentType.Id).First();
-            var childrens = ApplicationContext.Current.Services.ContentService.GetChildren(homeContent.Id)
-                .OrderByDescending(x => x.CreateDate)
-                .Take(3);
+        //    //var homeContent = ApplicationContext.Current.Services.ContentService.GetContentOfContentType(homeContentType.Id).First();
+        //    //var childrens = ApplicationContext.Current.Services.ContentService.GetChildren(homeContent.Id)
+        //    //    .OrderByDescending(x => x.CreateDate)
+        //    //    .Take(3);
                 
-            return PartialView();
-        }
+        //    return PartialView();
+        //}
     }
 }
