@@ -14,7 +14,7 @@ namespace Strona_RESET_Umbraco.SurfaceControllers
     //[Route("~/Home")]
     public class HomeController : RenderMvcController
     {
-        private const int PageSize = 1;
+        private const int PageSize = 3;
         private const int Page = 1;
 
         public ActionResult Index(NewsReturnModel model)
@@ -30,7 +30,7 @@ namespace Strona_RESET_Umbraco.SurfaceControllers
 
     public class LazyController : SurfaceController
     {
-        private const int PageSize = 1;
+        private const int PageSize = 3;
 
         public PartialViewResult GetNews(int page)
         {

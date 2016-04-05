@@ -171,10 +171,7 @@
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <a href="@Umbraco.Field("banner1Link", recursive: true)">
-                            <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage1", recursive: true).ToString()).Url" alt="slider">
-                        </a>
-
+                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage1", recursive: true).ToString()).Url" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
@@ -188,7 +185,10 @@
                     </div>
                     <!--/ Carousel item end -->
                     <div class="item">
-                        <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage2", recursive: true).ToString()).Url" alt="slider">
+                        <a href="http://smartparkath.azurewebsites.net/" target="_blank">
+                            <img class="img-responsive" src="@Umbraco.TypedMedia(Umbraco.Field("bannerSlideImage2", recursive: true).ToString()).Url" alt="slider">
+                        </a>
+
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h2 class="animated2">
@@ -196,7 +196,7 @@
                                 </h2>
                                 <h3 class="animated3">
                                     <span>@Umbraco.Field("bannerText2Inner", recursive: true)</span>
-                                </h3>                                
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                                 </h2>
                                 <h3 class="animated3">
                                     <span>@Umbraco.Field("bannerText3Inner", recursive: true)</span>
-                                </h3>         
+                                </h3>
                             </div>
                         </div>
                     </div>

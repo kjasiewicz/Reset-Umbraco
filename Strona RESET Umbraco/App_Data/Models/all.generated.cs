@@ -236,6 +236,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// PrzypnijPost: Przypięcie posta sprawi, że będzie on wyświetlał się zawsze na samej górze aktualności
+		///</summary>
+		[ImplementPropertyType("pinPost")]
+		public bool PinPost
+		{
+			get { return this.GetPropertyValue<bool>("pinPost"); }
+		}
+
+		///<summary>
 		/// Data: Data, kiedy odbywa się wydarzenie
 		///</summary>
 		[ImplementPropertyType("shortDate")]

@@ -1,10 +1,10 @@
 ﻿
-#sortList .mix{
+/*#sortList .mix{
 	display: none;
-}
+}*/
 
 .loader-ajax {
-    z-index: 999999
+    z-index: 999999;
 }
 
 .spinner-ajax {
