@@ -27,6 +27,15 @@
                     </a>
                 </div>
             }
+            @if (!Umbraco.Field("galleryLink").ToString().IsEmpty())
+            {
+                <div class="reset-font-small" style="color: dodgerblue">
+                    <a href="@Url.Content(Umbraco.Field("galleryLink").ToString())">
+                        <i class="fa fa-camera"></i>
+                        Obejrzyj zdjęcia z wydarzenia
+                    </a>
+                </div>
+            }
         </div>
         <div class="row">
             <div class="lecture-time-box ">

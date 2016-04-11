@@ -205,6 +205,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// LinkDoGalerii: Link do galerii z danego wydarzenia
+		///</summary>
+		[ImplementPropertyType("galleryLink")]
+		public string GalleryLink
+		{
+			get { return this.GetPropertyValue<string>("galleryLink"); }
+		}
+
+		///<summary>
 		/// Opis aktualności: Opis aktualności w szczegółach
 		///</summary>
 		[ImplementPropertyType("mainDesc")]

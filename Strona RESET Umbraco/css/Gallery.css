@@ -1,4 +1,16 @@
-﻿.gallery{
-    padding-top:50px;
+﻿.gallery {
+    padding-top: 50px;
     padding-bottom: 50px;
+}
+
+
+@media(min-width: 768px) {
+    .gallery-details {
+        font-family: Montserrat-Regular;
+        font-size: 14px;
+        color: #549093;
+        position: absolute;     
+        text-align: left;
+        margin-top: 10px;
+    }
 }

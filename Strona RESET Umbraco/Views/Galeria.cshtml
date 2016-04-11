@@ -23,11 +23,17 @@
                     <h3 class="reset-font-medium">@innerUmbracoHelper.Field("galleryTitle", removeParagraphTags: true)</h3>
                     <h4 class="reset-font-small">@innerUmbracoHelper.Field("galleryDate", removeParagraphTags: true)</h4>
                     <p>@innerUmbracoHelper.Field("galleryDesc", removeParagraphTags: true)</p>
-                    <a class="button-reset-default black" href="@children.Url">ZOBACZ GALERIĘ<span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a href="@children.Url">
+                        <p class="gallery-details hvr-float">
+                            SZCZEGÓŁY
+                            <i class="fa fa-angle-double-right">
+                            </i>
+                        </p>
+                    </a>
                 </div>
             }
         </div>
-            <hr>
-        </div>
+        <hr>
+    </div>
 
-    </section>
+</section>
