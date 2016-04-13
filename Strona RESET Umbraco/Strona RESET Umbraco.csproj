@@ -300,7 +300,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Umbraco.sdf" />
     <Content Include="App_Plugins\ZipUpload\Nibble.Umb.ZipUpload.dll" />
     <Content Include="App_Plugins\ZipUpload\package.xml" />
     <Content Include="App_Plugins\ZipUpload\zipupload.ascx" />
@@ -810,6 +809,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="media\1262\test.zip" />
     <None Include="Properties\PublishProfiles\resetath - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\resetath - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\resetath - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -819,89 +819,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\cache\0\2\a\a\d\9\02aad9de804688799c7fb6d865522d6a0e41dedb.jpg" />
-    <Content Include="App_Data\cache\0\8\0\d\9\a\080d9a63dc92846c8eef9deb7e415492c3088b57.png" />
-    <Content Include="App_Data\cache\0\e\5\3\2\7\0e53277e6dbcb9dc81ee7962d7e4eb0544c8bb6c.jpg" />
-    <Content Include="App_Data\cache\1\1\9\1\3\3\11913397f071c0a41c045b4f87b100694d61f77c.png" />
-    <Content Include="App_Data\cache\1\1\c\9\0\9\11c9092cd24af461cb417e8d7dca6e66d7a62ea7.jpg" />
-    <Content Include="App_Data\cache\1\2\c\b\0\9\12cb0941f278744560372f04e242181297161166.png" />
-    <Content Include="App_Data\cache\1\4\f\8\a\f\14f8af4dca257ec70c9c43f6631cf9cc91e744ac.jpg" />
-    <Content Include="App_Data\cache\1\5\e\3\2\a\15e32a09667997fdec8fbb5974f67b99613f915c.jpg" />
-    <Content Include="App_Data\cache\1\c\1\d\2\b\1c1d2b79807e3aeee94fa8b28655fe7d779ab9a7.png" />
-    <Content Include="App_Data\cache\1\e\8\0\5\b\1e805b4b9d8e8e288093673550766d603e456cf4.png" />
-    <Content Include="App_Data\cache\2\3\9\1\9\9\2391992e18736e12783465eb9f681c7278c1710e.jpg" />
-    <Content Include="App_Data\cache\2\6\7\4\1\1\2674115043675f15e71444599ebbf3019cbcbf8d.jpg" />
-    <Content Include="App_Data\cache\2\9\8\6\a\3\2986a3ba9cae5a6b249705188d38f425b12f2648.png" />
-    <Content Include="App_Data\cache\2\d\1\b\c\c\2d1bcc65e4d1cbf6792b7914886a026d85974f28.png" />
-    <Content Include="App_Data\cache\3\1\9\1\d\0\3191d0365988d7a6d0a6da4657c5162dead472bd.jpg" />
-    <Content Include="App_Data\cache\3\4\f\6\c\7\34f6c7465154f610860170f8c4e7d31625b4c533.jpg" />
-    <Content Include="App_Data\cache\4\3\2\7\8\0\4327809d4ed527ce02206fd2885c158450c5202f.jpg" />
-    <Content Include="App_Data\cache\4\4\6\b\2\7\446b272082b948109c130520d21ae15deb39d217.png" />
-    <Content Include="App_Data\cache\4\6\9\2\3\9\469239062b7750045b19ca9cb2c9636f6b859aa0.png" />
-    <Content Include="App_Data\cache\4\6\b\6\c\b\46b6cbbcfb1dace12e94d023b8d23c3659219567.jpg" />
-    <Content Include="App_Data\cache\4\7\6\9\5\8\476958f0d4c9a23c4feb018d343467766a9e0870.jpg" />
-    <Content Include="App_Data\cache\4\7\8\b\e\2\478be2ae24568490e95ca94d74312af4578194b1.jpg" />
-    <Content Include="App_Data\cache\4\8\6\7\6\f\48676fe83e52616d1a05cb7020b3b66e90ba33d3.jpg" />
-    <Content Include="App_Data\cache\4\a\c\5\0\5\4ac505492a08d2e87402f55e3822f73cbe79dbc7.jpg" />
-    <Content Include="App_Data\cache\4\d\d\8\1\6\4dd816afe791e46e369ca3906c255fd645ed2c68.png" />
-    <Content Include="App_Data\cache\5\1\2\4\3\7\5124374ecdc871f357df2dfd09bbf2d657f60d0a.jpg" />
-    <Content Include="App_Data\cache\5\1\4\6\0\3\51460390dfad3d407052420d9e664f61365cf69a.png" />
-    <Content Include="App_Data\cache\5\1\a\3\c\f\51a3cf3c7e351595b64754052bb7d96422411ea1.jpg" />
-    <Content Include="App_Data\cache\5\2\c\7\2\8\52c728e5f6f0d24d264d6ce540c94fad94ce44c2.jpg" />
-    <Content Include="App_Data\cache\5\4\b\e\a\c\54beacccc994671fe8329309cb7567aafb072ffe.jpg" />
-    <Content Include="App_Data\cache\5\7\d\0\1\2\57d012739cf43c4599dba502d61f75e23c3da8cb.jpg" />
-    <Content Include="App_Data\cache\5\b\f\b\e\6\5bfbe650ec1248bad40a3c10dae990797777cf09.png" />
-    <Content Include="App_Data\cache\5\d\e\1\9\e\5de19e08ad25f68e453dffc5a5a39d32be09008a.jpg" />
-    <Content Include="App_Data\cache\5\f\2\0\f\b\5f20fbb88eee9510ae559888458d2fa86ee297cb.jpg" />
-    <Content Include="App_Data\cache\5\f\8\f\b\a\5f8fba0f58c24f6d2409e2cdd7a94623f3bb4c74.jpg" />
-    <Content Include="App_Data\cache\5\f\a\8\5\b\5fa85be7ee3b9f69199af29c5cd66efc0a3b21cc.png" />
-    <Content Include="App_Data\cache\6\1\7\7\5\8\617758b3ee9b478946f013ae5e33333f6d7c757e.jpg" />
-    <Content Include="App_Data\cache\6\1\c\5\b\1\61c5b1586864346d99f9289465504b22ace7bd49.png" />
-    <Content Include="App_Data\cache\6\5\0\7\4\e\65074e804f745b1e507405e978e53a97501fd16c.jpg" />
-    <Content Include="App_Data\cache\6\f\9\a\d\1\6f9ad18c2379cd2612c05b3d1d627c6125eec6cc.png" />
-    <Content Include="App_Data\cache\6\f\a\a\d\a\6faadaf181ee807317adaf5249c5ddec6cb02d47.jpg" />
-    <Content Include="App_Data\cache\7\3\0\7\f\2\7307f2b1d564b566fc78adec361b2641469bdf24.png" />
-    <Content Include="App_Data\cache\7\6\7\0\f\b\7670fb2f0cbca3491f7b3385f60e1c94ecfe5691.jpg" />
-    <Content Include="App_Data\cache\7\8\7\7\7\f\78777ff9e893939224654e7ef394ce387c1d74f6.jpg" />
-    <Content Include="App_Data\cache\7\9\f\0\0\9\79f009b3687d101bed8f5b038d7369f9eb7077d4.jpg" />
-    <Content Include="App_Data\cache\7\a\5\6\7\6\7a56768d62b9eb0f2641a1ea8217ef346bb0123b.jpg" />
-    <Content Include="App_Data\cache\7\e\3\2\e\4\7e32e4c76480bd036e11c3382391032c82ec3fc3.png" />
-    <Content Include="App_Data\cache\7\e\b\b\5\7\7ebb57373401284079fc6fa83c0d015cc568795b.jpg" />
-    <Content Include="App_Data\cache\7\f\0\5\1\2\7f0512aa984fdd2acd62f71cf5f1b5300f79af28.jpg" />
-    <Content Include="App_Data\cache\8\6\7\e\e\2\867ee242c4ff9eb10290aae0acf276f09fbfda68.png" />
-    <Content Include="App_Data\cache\8\7\6\b\9\7\876b97a9bad7589b64ffc95eeb5788d94ff0dde3.jpg" />
-    <Content Include="App_Data\cache\8\c\f\a\9\a\8cfa9a78b5091b3378c7d4ab7f2111b6949379fd.jpg" />
-    <Content Include="App_Data\cache\8\d\4\f\9\f\8d4f9fad841422c36902455c854ac03aae5465e3.jpg" />
-    <Content Include="App_Data\cache\9\0\1\4\e\7\9014e747e6a32f301910aef2d5df3d6d1c37c312.jpg" />
-    <Content Include="App_Data\cache\9\0\a\6\d\5\90a6d5dbe59a36be98750f3f1bc93093f493eb45.png" />
-    <Content Include="App_Data\cache\9\0\c\0\e\e\90c0ee027d1f268e6387f7eea3e02a2e61f55df6.jpg" />
-    <Content Include="App_Data\cache\9\3\5\3\e\b\9353ebdf645aaaafe8052b02f239c44fd3ffe34f.jpg" />
-    <Content Include="App_Data\cache\9\9\d\2\9\4\99d2944e1bf05d905fd46e3176badf704fc8b0d2.jpg" />
-    <Content Include="App_Data\cache\a\0\c\e\2\8\a0ce28e0b105c58d8379a2870267ac7c7c07af2c.jpg" />
-    <Content Include="App_Data\cache\a\0\d\7\7\1\a0d77172d1cce7330824a709b1fd06c4ee47b7ba.png" />
-    <Content Include="App_Data\cache\a\6\e\4\5\5\a6e45599d570f3c5e00c1bf0301ef209494da26d.png" />
-    <Content Include="App_Data\cache\a\c\5\7\c\a\ac57ca1f0167b7121b42efe8ade2e9996b8aedeb.jpg" />
-    <Content Include="App_Data\cache\a\d\4\d\f\a\ad4dfa025189268a8d4510e1ba390f9c10f2a645.png" />
-    <Content Include="App_Data\cache\a\f\b\e\e\8\afbee8653813ab60a68cf877bc7fad93bf322276.png" />
-    <Content Include="App_Data\cache\b\4\d\9\1\1\b4d9116e718557ef74458822f64a95603a8ea6da.jpg" />
-    <Content Include="App_Data\cache\b\e\6\9\0\5\be69051818796a55aea6c9c1b3fea82b317e76bc.jpg" />
-    <Content Include="App_Data\cache\c\a\1\a\7\c\ca1a7ca6d0a24b8b2eb828f9a31b19ef4531e5cc.jpg" />
-    <Content Include="App_Data\cache\c\a\4\4\7\b\ca447b7786b08fddf05f942b5abc5337be997b56.jpg" />
-    <Content Include="App_Data\cache\c\c\d\7\6\6\ccd766336536527fa45d0872e00e72a7a11bfdbb.png" />
-    <Content Include="App_Data\cache\c\d\9\e\3\3\cd9e33032835a74f0b75f41fcfdbb3c66bf9e9c1.png" />
-    <Content Include="App_Data\cache\d\0\0\c\2\b\d00c2baebe37f637e41588230b114a416f86f7bf.jpg" />
-    <Content Include="App_Data\cache\d\3\e\1\6\1\d3e161d05ab0c24772f5e1a0994397731cac86c6.jpg" />
-    <Content Include="App_Data\cache\d\6\5\4\d\b\d654dbefc7117e98abd353c873a4c6d83739086e.jpg" />
-    <Content Include="App_Data\cache\d\7\3\8\d\9\d738d93145ea9801cc2c7791b60c28186f39dcc6.jpg" />
-    <Content Include="App_Data\cache\d\9\9\d\7\2\d99d7289e3db1d5a7f13cc285aeb9b0d7342f2a5.jpg" />
-    <Content Include="App_Data\cache\d\a\c\2\5\c\dac25c54e35db3d9b11fa372f1fbd63795feff0c.jpg" />
-    <Content Include="App_Data\cache\e\5\4\5\a\8\e545a8a8cafb1aa62424b9453f816d96e8462f35.png" />
-    <Content Include="App_Data\cache\e\8\4\2\1\9\e842194eac8861eca6074e05e8d1657ae7f886d2.png" />
-    <Content Include="App_Data\cache\f\0\6\d\6\e\f06d6ebccf930cd937baf8411d4822d6d173b211.jpg" />
-    <Content Include="App_Data\cache\f\1\a\6\7\8\f1a678f3e2c4420654b99fb4c8202721d9584c4e.png" />
-    <Content Include="App_Data\cache\f\6\c\a\7\c\f6ca7cf469fcda7f858fc5ed03f5a2f44c43a4df.jpg" />
-    <Content Include="App_Data\cache\f\a\f\c\f\5\fafcf5d89f3d5ed1e27df99f770e0169dc4174d1.jpg" />
-    <Content Include="App_Data\cache\f\c\d\8\6\7\fcd8670bc7af334eaa7e5584426f18f78d51dd33.jpg" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -982,7 +899,6 @@
     <Content Include="scripts\gallery\customGallery.js" />
     <Content Include="scripts\gallery\jquery.magnific-popup.js" />
     <Content Include="scripts\gallery\jquery.magnific-popup.min.js" />
-    <Content Include="App_Data\Models\models.hash" />
     <Content Include="App_Browsers\Form.browser" />
     <Content Include="App_Browsers\w3cvalidator.browser" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
@@ -3470,8 +3386,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\packages\created\" />
-    <Folder Include="App_Data\packages\installed\" />
+    <Folder Include="App_Data\" />
     <Folder Include="scripts\js\" />
     <Folder Include="Views\LazyNews\" />
   </ItemGroup>
