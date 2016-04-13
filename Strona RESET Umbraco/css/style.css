@@ -26,20 +26,7 @@
 /*   13 - Plugins Styles 	  	   */
 
 
-@font-face {
-    font-family: 'Montserrat-Regular';
-    src: url('../fonts/Montserrat-Regular.otf') format('opentype');
-}
 
-@font-face {
-    font-family: 'Montserrat-SemiBold';
-    src: url('../fonts/Montserrat-SemiBold.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'Montserrat-Bold';
-    src: url('../fonts/Montserrat-Bold.otf') format('opentype');
-}
 /*------------------------------------------*/
 /*	     01 - General & Basic Styles
 /*------------------------------------------*/
@@ -47,7 +34,7 @@
 
 @media(min-width: 768px) {
     .news-details {
-        font-family: Montserrat-Regular;
+font-family: 'Biryani', sans-serif;
         font-size: 14px;
         color: #549093;
         position: absolute;
@@ -70,7 +57,7 @@
     }
 
     .news-title {
-        font-family: Montserrat-Regular;
+font-family: 'Biryani', sans-serif;
         font-size: 24px;
         color: black;
         text-align: left;
@@ -78,7 +65,7 @@
     }
 
     .news-date {
-        font-family: Montserrat-Regular;
+font-family: 'Biryani', sans-serif;
         font-size: 14px;
         color: gray;
         text-align: left;
@@ -86,7 +73,7 @@
     }
 
     .news-desc {
-        font-family: Montserrat-Regular;
+font-family: 'Biryani', sans-serif;
         font-size: 16px;
         color: gray;
         text-align: left;
@@ -101,7 +88,7 @@
 
 @media(max-width: 768px) {
     .news-details {
-        font-family: Montserrat-Regular;
+font-family: 'Biryani', sans-serif;
         font-size: 14px;
         color: #549093;
         text-align: center;
@@ -115,7 +102,7 @@
     }
 
     .news-title {
-        font-family: Montserrat-Regular;
+font-family: 'Biryani', sans-serif;
         font-size: 24px;
         color: black;
         text-align: center;
@@ -123,7 +110,7 @@
     }
 
     .news-date {
-        font-family: Montserrat-Regular;
+font-family: 'Biryani', sans-serif;
         font-size: 14px;
         color: gray;
         text-align: center;
@@ -131,7 +118,7 @@
     }
 
     .news-desc {
-        font-family: Montserrat-Regular;
+font-family: 'Biryani', sans-serif;
         font-size: 16px;
         color: gray;
         text-align: center;
@@ -276,31 +263,31 @@
 
 
 .reset-font-large {
-    font-family: Montserrat-Regular;
+    font-family: 'Biryani', sans-serif;
     font-size: 36px;
     color: black;
 }
 
 .reset-font-large-bold {
-    font-family: Montserrat-Bold;
+    font-family: Biryani-Bold;
     font-size: 36px;
     color: black;
 }
 
 .reset-font-medium {
-    font-family: Montserrat-Regular;
+    font-family: 'Biryani', sans-serif;
     font-size: 20px;
     color: black;
 }
 
 .reset-font-small, .reset-font-small p {
-    font-family: Montserrat-Regular;
+    font-family: 'Biryani', sans-serif;
     font-size: 16px;
     color: black;
 }
 
 .reset-font-extra-small {
-    font-family: Montserrat-Regular;
+    font-family: 'Biryani', sans-serif;
     font-size: 14px;
     color: black;
 }
