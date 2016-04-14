@@ -12,10 +12,10 @@
                 <div class="pageNameHeader reset-font-medium">GALERIA</div>
             </div>
         </div>
-        <div class="row">
-            @foreach (var children in childrens)
+        @foreach (var children in childrens)
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
+            <div class="row">
                 <div class="col-md-6">
                     <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("galleryMainImg").ToString()).Url" alt="">
                 </div>
@@ -31,9 +31,9 @@
                         </p>
                     </a>
                 </div>
-            }
-        </div>
-        <hr>
+            </div>
+                <hr>
+        }
     </div>
 
 </section>

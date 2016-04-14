@@ -22,25 +22,34 @@
                         var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
                         if (innerUmbracoHelper.Field("contactType").ToString() == "Zarząd")
                         {
-                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 profile">
                                 <div class="img-box">
                                     <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("contactImg").ToString()).Url" class="img-responsive">
                                     <ul class="text-center">
-                                        <li>
-                                            <a href="@innerUmbracoHelper.Field("contactFbLink", removeParagraphTags: true)">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="@innerUmbracoHelper.Field("contactTwitterLink",removeParagraphTags: true)">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="@innerUmbracoHelper.Field("contactLinkedInLink", removeParagraphTags: true)">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
+                                        @if (!innerUmbracoHelper.Field("contactFbLink").ToString().IsEmpty())
+                                        {
+                                            <li>
+                                                <a href="@innerUmbracoHelper.Field("contactFbLink", removeParagraphTags: true)">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                        }
+                                        @if (!innerUmbracoHelper.Field("contactTwitterLink").ToString().IsEmpty())
+                                        {
+                                            <li>
+                                                <a href="@innerUmbracoHelper.Field("contactTwitterLink",removeParagraphTags: true)">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                        }
+                                        @if (!innerUmbracoHelper.Field("contactLinkedInLink").ToString().IsEmpty())
+                                        {
+                                            <li>
+                                                <a href="@innerUmbracoHelper.Field("contactLinkedInLink", removeParagraphTags: true)">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                        }
                                     </ul>
                                 </div>
                                 <h1 class="reset-font-extra-small">@innerUmbracoHelper.Field("contactName", removeParagraphTags: true)</h1>
@@ -55,46 +64,56 @@
             </div>
         </div>
 
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="pageNameHeader reset-font-medium">CZŁONKOWIE KOŁA <strong>RESET ATH</strong></div>
-            <div class="row pt-md text-center">
-                @foreach (var children in childrens)
-                {
-                    var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
-                    if (innerUmbracoHelper.Field("contactType").ToString() == "Członek")
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="pageNameHeader reset-font-medium">CZŁONKOWIE KOŁA <strong>RESET ATH</strong></div>
+                <div class="row pt-md text-center">
+                    @foreach (var children in childrens)
                     {
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                            <div class="img-box">
-                                <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("contactImg").ToString()).Url" class="img-responsive">
-                                <ul class="text-center">
-                                    <li>
-                                        <a href="@innerUmbracoHelper.Field("contactFbLink", removeParagraphTags: true)">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="@innerUmbracoHelper.Field("contactTwitterLink",removeParagraphTags: true)">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="@innerUmbracoHelper.Field("contactLinkedInLink", removeParagraphTags: true)">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h1 class="reset-font-extra-small">@innerUmbracoHelper.Field("contactName", removeParagraphTags: true)</h1>
-                            <h2 class="reset-font-extra-small">@innerUmbracoHelper.Field("contactRole", removeParagraphTags: true)</h2>
-                            <p>@innerUmbracoHelper.Field("contactMail", removeParagraphTags: true)</p>
-                        </div>
+                        var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
+                        if (innerUmbracoHelper.Field("contactType").ToString() == "Członek")
+                        {
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+                                <div class="img-box">
+                                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("contactImg").ToString()).Url" class="img-responsive">
+                                    <ul class="text-center">
+                                        @if (!innerUmbracoHelper.Field("contactFbLink").ToString().IsEmpty())
+                                        {
+                                            <li>
+                                                <a href="@innerUmbracoHelper.Field("contactFbLink", removeParagraphTags: true)">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                        }
+                                        @if (!innerUmbracoHelper.Field("contactTwitterLink").ToString().IsEmpty())
+                                        {
+                                            <li>
+                                                <a href="@innerUmbracoHelper.Field("contactTwitterLink",removeParagraphTags: true)">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                        }
+                                        @if (!innerUmbracoHelper.Field("contactLinkedInLink").ToString().IsEmpty())
+                                        {
+                                            <li>
+                                                <a href="@innerUmbracoHelper.Field("contactLinkedInLink", removeParagraphTags: true)">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                        }
+                                      
+                                    </ul>
+                                    </div>
+                                    <h1 class="reset-font-extra-small">@innerUmbracoHelper.Field("contactName", removeParagraphTags: true)</h1>
+                                    <h2 class="reset-font-extra-small">@innerUmbracoHelper.Field("contactRole", removeParagraphTags: true)</h2>
+                                    <p>@innerUmbracoHelper.Field("contactMail", removeParagraphTags: true)</p>
+                                </div>
+                        }
+
                     }
 
-                }
-
+                </div>
             </div>
-        </div>
 
         </div>
     </div>

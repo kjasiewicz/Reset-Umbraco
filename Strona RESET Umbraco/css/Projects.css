@@ -112,13 +112,16 @@
 .img-box a:hover li{
 	border-color: #fff;
 	color: #ee3733;
+    font-family: 'Biryani', sans-serif;
 }
 a{
     color:#ee3733;
+    font-family: 'Biryani', sans-serif;
+    font-size: 36px;
 }
 a:hover{
     text-decoration:none;
-    color:black;
+    color:#ee3733;
 }
 i.red{
     color:#ee3733;
