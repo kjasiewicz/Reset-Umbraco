@@ -33,54 +33,12 @@
     }
 }
 
-@media(max-width: 991px) {
-
-    .pic-transform {
-        transition-duration: 0.75s;
-        -webkit-transition-duration: 0.75s;
-        -moz-transition-duration: 0.75s;
-        -o-transition-duration: 0.75s;
-        margin-bottom: 10px;
-        height: auto;
-    }
-}
-
-@media(min-width: 992px) {
-    .pic-transform {
-        transition-duration: 0.75s;
-        -webkit-transition-duration: 0.75s;
-        -moz-transition-duration: 0.75s;
-        -o-transition-duration: 0.75s;
-        overflow: hidden;
-        height: 0;
-        margin-bottom: 10px;
-    }
-
-    #picture:hover .pic-transform {
-        height: 90px;
-    }
-}
-
-
-
-
 .text-display {
     color: #fff;
     height: 100%;
     background-color: #E05038;
     text-align: center;
     padding: 10px;
+    margin-bottom:50px;
 }
 
-#picture:hover .text-display {
-    color: #fff;
-    height: 100%;
-    background-color: #E05038;
-    text-align: center;
-    padding: 10px;
-}
-
-.oferta-img:hover {
-    background-color: white;
-    opacity: 0.75;
-}

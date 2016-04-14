@@ -1,35 +1,38 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
-	Layout = "Layout.cshtml";
-	ViewBag.ActivePage = 4;
+    Layout = "Layout.cshtml";
+    ViewBag.ActivePage = 4;
 }
 <link href="/css/Projects.css" rel="stylesheet" />
-
 <div class="container ptb">
     <div class="row">
-        <h2 class="centered mb reset-font-medium">@Umbraco.Field("projectMainTitle", removeParagraphTags: true)</h2>
-        <div class="col-md-4">
+        <div class="col-xs-12 centered">
+            <img src="@Umbraco.TypedMedia(Umbraco.Field("projectLogo").ToString()).Url" width="200" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="centered mb projectMainTitle">@Umbraco.Field("projectMainTitle", removeParagraphTags: true)</h1>
+        <div class="col-md-4 projectShortInfo">
             <h5 class="reset-font-medium"><b>CO TO TAKIEGO?</b></h5>
             <p class="reset-font-extra-small">@Umbraco.Field("projectCoTo", removeParagraphTags: true)</p>
         </div><!--/col-md-4-->
-        <div class="col-md-4">
+        <div class="col-md-4 projectShortInfo">
             <h5 class="reset-font-medium"><b>DLA KOGO?</b></h5>
             <p class="reset-font-extra-small">@Umbraco.Field("projectDlaKogo", removeParagraphTags: true)</p>
         </div><!--/col-md-4-->
-        <div class="col-md-4">
+        <div class="col-md-4 projectShortInfo">
             <h5 class="reset-font-medium"><b>PO CO?</b></h5>
             <p class="reset-font-extra-small">@Umbraco.Field("projectPoco", removeParagraphTags: true)</p>
         </div><!--/col-md-4-->
     </div><!--/row-->
 </div><!-- /.container -->
-<div class="col-xs-12 section">
+<div class="col-sm-8 col-sm-offset-2">
     <img src="@Umbraco.TypedMedia(Umbraco.Field("projectBigImg").ToString()).Url" alt="" class="img-responsive" />
 </div>
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1 centered">
-            <img src="@Umbraco.TypedMedia(Umbraco.Field("projectLogo").ToString()).Url" width="200" alt="">
             <div class="row">
                 <div class="col-sm-4">
                     <h2><b>@Umbraco.Field("projectFirstDetails", removeParagraphTags: true)</b></h2>
@@ -41,7 +44,7 @@
                 </div><!--/col-sm-4-->
                 <div class="col-sm-4">
                     <h2><b>@Umbraco.Field("projectThirdDetails", removeParagraphTags: true)</b></h2>
-                    <h6>@Umbraco.Field("projectThirdDetailsDesc", removeParagraphTags:true)</h6>
+                    <h6>@Umbraco.Field("projectThirdDetailsDesc", removeParagraphTags: true)</h6>
                 </div><!--/col-sm-4-->
             </div><!--/.row-->
         </div><!--/col-md-10-->

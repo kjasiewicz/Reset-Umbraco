@@ -117,7 +117,6 @@
 a{
     color:#ee3733;
     font-family: 'Biryani', sans-serif;
-    font-size: 36px;
 }
 a:hover{
     text-decoration:none;
@@ -125,4 +124,14 @@ a:hover{
 }
 i.red{
     color:#ee3733;
+}
+.projectMainTitle{
+    font-size: 36px;
+    color:black;
+}
+.projectMainTitle a{
+    font-size: 36px;
+}
+.projectShortInfo{
+    text-align:center;
 }

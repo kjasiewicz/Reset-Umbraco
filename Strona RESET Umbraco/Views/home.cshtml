@@ -32,7 +32,7 @@
             {
                 <input type="hidden" value="@Model.PinnedNews.Id" id="pinnedPostIdInput" />
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Model.PinnedNews);
-                <div class="service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) all" data-animation="fadeIn" data-animation-delay="01" style="display: table">
+                <div class="service-center margin-60 mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) all" data-animation="fadeIn" data-animation-delay="01" style="display: table">
                     <div class="col-sm-3 col-xs-12 news-img hidden-xs" style="display: table-cell !important">
                         <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("shortIcon").ToString()).Url" class="img-responsive">
                     </div>
@@ -64,7 +64,7 @@
             @foreach (var children in Model.News)
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, children);
-                <div class="service-center mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) all" data-animation="fadeIn" data-animation-delay="01" style="display: table">
+                <div class="service-center margin-60 mix @NewsCssClassResolver.GetMixItUpCategoryCssClass(innerUmbracoHelper.Field("typeDropdown", removeParagraphTags: true).ToString()) all" data-animation="fadeIn" data-animation-delay="01" style="display: table">
                     <div class="col-sm-3 col-xs-12 news-img hidden-xs" style="display: table-cell !important">
                         <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("shortIcon").ToString()).Url" class="img-responsive">
                     </div>

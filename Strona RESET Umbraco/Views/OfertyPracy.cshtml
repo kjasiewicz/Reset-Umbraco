@@ -15,15 +15,13 @@
         {
             var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
             <div class="col-md-6" data-toggle="modal" data-target="@("#oferta"+children.Id)" href="">
-                <div id="picture">
+                <a href="" id="picture">
                     <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("JobOfferMainImg").ToString()).Url" class="img-responsive">
-                    <div class="pic-transform">
                         <p class="text-display reset-font-small">
                             Firma: @innerUmbracoHelper.Field("JobOfferFirm", removeParagraphTags: true) <br />
                             Stanowisko: @innerUmbracoHelper.Field("JobOfferPosition", removeParagraphTags: true)
                         </p>
-                    </div>
-                </div>
+                </a>
             </div>
             <div id="@("oferta"+children.Id)" class="modal fade" role="dialog">
                 <div class="modal-dialog">
