@@ -1,32 +1,4 @@
-﻿.centered {
-    text-align: center;
-}
-
-.mt {
-    margin-top: 50px;
-}
-
-.mb {
-    margin-bottom: 50px;
-}
-
-.mtb {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.mtb2 {
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-
-.ptb {
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-
-
-.portfolio {
+﻿.portfolio {
     margin-top: 50px;
 }
 
@@ -112,11 +84,11 @@
 .img-box a:hover li{
 	border-color: #fff;
 	color: #ee3733;
-    font-family: 'Biryani', sans-serif;
+
 }
 a{
     color:#ee3733;
-    font-family: 'Biryani', sans-serif;
+
 }
 a:hover{
     text-decoration:none;

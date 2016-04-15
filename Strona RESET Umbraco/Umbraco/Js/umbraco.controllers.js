@@ -5370,7 +5370,7 @@ function examineMgmtController($scope, umbRequestHelper, $log, $http, $q, $timeo
 
     function checkProcessing(indexer, checkActionName) {
         umbRequestHelper.resourcePromise(
-                $http.post(umbRequestHelper.getApiUrl("examineMgmtBaseUrl", checkActionName, { indexerName: indexer.name })),
+                $http.post(umbRequestHelper.getApiUrl("examineMgmtb-50-50aseUrl", checkActionName, { indexerName: indexer.name })),
                 'Failed to check index processing')
             .then(function(data) {
 
@@ -5405,7 +5405,7 @@ function examineMgmtController($scope, umbRequestHelper, $log, $http, $q, $timeo
         }
 
         umbRequestHelper.resourcePromise(
-                $http.get(umbRequestHelper.getApiUrl("examineMgmtBaseUrl", "GetSearchResults", {
+                $http.get(umbRequestHelper.getApiUrl("examineMgmtb-50-50aseUrl", "GetSearchResults", {
                     searcherName: searcher.name,
                     query: encodeURIComponent(searcher.searchText),
                     queryType: searcher.searchType
@@ -5436,7 +5436,7 @@ function examineMgmtController($scope, umbRequestHelper, $log, $http, $q, $timeo
             indexer.processingAttempts = 0;
 
             umbRequestHelper.resourcePromise(
-                    $http.post(umbRequestHelper.getApiUrl("examineMgmtBaseUrl", "PostRebuildIndex", { indexerName: indexer.name })),
+                    $http.post(umbRequestHelper.getApiUrl("examineMgmtb-50-50aseUrl", "PostRebuildIndex", { indexerName: indexer.name })),
                     'Failed to rebuild index')
                 .then(function () {
 
@@ -5457,7 +5457,7 @@ function examineMgmtController($scope, umbRequestHelper, $log, $http, $q, $timeo
             indexer.isProcessing = true;
 
             umbRequestHelper.resourcePromise(
-                    $http.post(umbRequestHelper.getApiUrl("examineMgmtBaseUrl", "PostOptimizeIndex", { indexerName: indexer.name })),
+                    $http.post(umbRequestHelper.getApiUrl("examineMgmtb-50-50aseUrl", "PostOptimizeIndex", { indexerName: indexer.name })),
                     'Failed to optimize index')
                 .then(function () {
 
@@ -5483,7 +5483,7 @@ function examineMgmtController($scope, umbRequestHelper, $log, $http, $q, $timeo
 
         //get the indexer details
         umbRequestHelper.resourcePromise(
-            $http.get(umbRequestHelper.getApiUrl("examineMgmtBaseUrl", "GetIndexerDetails")),
+            $http.get(umbRequestHelper.getApiUrl("examineMgmtb-50-50aseUrl", "GetIndexerDetails")),
             'Failed to retrieve indexer details')
         .then(function(data) {
             $scope.indexerDetails = data; 
@@ -5491,7 +5491,7 @@ function examineMgmtController($scope, umbRequestHelper, $log, $http, $q, $timeo
 
         //get the searcher details
         umbRequestHelper.resourcePromise(
-            $http.get(umbRequestHelper.getApiUrl("examineMgmtBaseUrl", "GetSearcherDetails")),
+            $http.get(umbRequestHelper.getApiUrl("examineMgmtb-50-50aseUrl", "GetSearcherDetails")),
             'Failed to retrieve searcher details')
         .then(function(data) {
             $scope.searcherDetails = data;
@@ -14292,7 +14292,8 @@ angular.module("umbraco")
         });
 
     }
-);
+);
+
 //this controller simply tells the dialogs service to open a mediaPicker window
 //with a specified callback, this callback will receive an object with a selection on it
 angular.module('umbraco').controller("Umbraco.PropertyEditors.EmbeddedContentController",

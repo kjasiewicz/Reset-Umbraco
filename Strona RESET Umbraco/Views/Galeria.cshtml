@@ -5,35 +5,31 @@
     var childrens = CurrentPage.Children;
 }
 <link href="/css/Gallery.css" rel="stylesheet" />
-<section class="gallery">
+<section class="mtb-50">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="pageNameHeader reset-font-medium">GALERIA</div>
-            </div>
-        </div>
-        @foreach (var children in childrens)
+        <div class="pageNameHeader reset-font-medium">GALERIA</div>
+    @foreach (var children in childrens)
             {
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Umbraco.Content(children.Id));
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("galleryMainImg").ToString()).Url" alt="">
-                </div>
-                <div class="col-md-6">
-                    <h3 class="reset-font-medium">@innerUmbracoHelper.Field("galleryTitle", removeParagraphTags: true)</h3>
-                    <h4 class="reset-font-small">@innerUmbracoHelper.Field("galleryDate", removeParagraphTags: true)</h4>
-                    <p>@innerUmbracoHelper.Field("galleryDesc", removeParagraphTags: true)</p>
-                    <a href="@children.Url">
-                        <p class="gallery-details hvr-float">
-                            SZCZEGÓŁY
-                            <i class="fa fa-angle-double-right">
-                            </i>
-                        </p>
-                    </a>
-                </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("galleryMainImg").ToString()).Url" alt="">
             </div>
-                <hr>
-        }
+            <div class="col-md-6">
+                <h3 class="reset-font-medium">@innerUmbracoHelper.Field("galleryTitle", removeParagraphTags: true)</h3>
+                <h4 class="reset-font-small">@innerUmbracoHelper.Field("galleryDate", removeParagraphTags: true)</h4>
+                <p>@innerUmbracoHelper.Field("galleryDesc", removeParagraphTags: true)</p>
+                <a href="@children.Url">
+                    <p class="gallery-details hvr-float">
+                        SZCZEGÓŁY
+                        <i class="fa fa-angle-double-right">
+                        </i>
+                    </p>
+                </a>
+            </div>
+        </div>
+            <hr>
+    }
     </div>
 
 </section>
