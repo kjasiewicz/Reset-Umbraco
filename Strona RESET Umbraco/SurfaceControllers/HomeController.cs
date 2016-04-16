@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using Umbraco.Web.Mvc;
 using Umbraco.Core.Models;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Strona_RESET_Umbraco.Models;
 using umbraco;
 using Umbraco.Web;
@@ -100,5 +101,10 @@ namespace Strona_RESET_Umbraco.SurfaceControllers
         {
             return val.Replace("<span>", "").Replace("</span>", "");
         }
+        public static string RemoveHtmlTags(this string val)
+        {
+            return Regex.Replace(val, "<.*?>", string.Empty);
+        }
+
     }
 }

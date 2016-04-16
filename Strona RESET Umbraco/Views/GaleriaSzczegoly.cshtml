@@ -1,9 +1,14 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using Strona_RESET_Umbraco.Core
+@using Strona_RESET_Umbraco.SurfaceControllers
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
     Layout = "Layout.cshtml";
     var imagesInGallery = Umbraco.Field("galleryPhotos").ToString().Split(new []{','},StringSplitOptions.RemoveEmptyEntries).ToList();
     ViewBag.ActivePage = 2;
+    ViewBag.ResetTags = ResetCustomTagResolver.GetTagsString(Model);
+    ViewBag.Title = "Reset ATH - Galeria - " + Umbraco.Field("galleryTitle", removeParagraphTags: true).ToString().RemoveHtmlTags();
+    ViewBag.Description = Umbraco.Field("galleryDesc", removeParagraphTags: true).ToString().RemoveHtmlTags().Substring(0, 300);
 }
 <link href="/css/magnific-popup.css" rel="stylesheet" />
 <link href="/css/Gallery.css" rel="stylesheet" />

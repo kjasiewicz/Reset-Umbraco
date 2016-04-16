@@ -1,11 +1,13 @@
-﻿@using Strona_RESET_Umbraco.FrontendHelpers
+﻿@using Strona_RESET_Umbraco.Core
+@using Strona_RESET_Umbraco.SurfaceControllers
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Layout.cshtml";
     ViewBag.ActivePage = 1;
     var date = DateTime.Parse(Umbraco.Field("dateAndHour", removeParagraphTags: true).ToString());
-    var japierdole = Umbraco.Field("zipPackage");
-    var jvjhv = "gjhb";
+    ViewBag.ResetTags = ResetCustomTagResolver.GetTagsString(Model);
+    ViewBag.Title = "Reset ATH - Aktualności - " + Umbraco.Field("shortTitle", removeParagraphTags: true).ToString().RemoveHtmlTags();
+    ViewBag.Description = Umbraco.Field("mainDesc", removeParagraphTags: true).ToString().RemoveHtmlTags().Substring(0,300);
 }
 <link href="/css/NewsDetails.css" rel="stylesheet" />
 <div class="container">

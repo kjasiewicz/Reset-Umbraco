@@ -479,6 +479,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Tagi aktualności: Tagi dla danej aktualności
+		///</summary>
+		[ImplementPropertyType("tags")]
+		public object Tags
+		{
+			get { return this.GetPropertyValue("tags"); }
+		}
+
+		///<summary>
 		/// Kategoria: Kategoria aktualności
 		///</summary>
 		[ImplementPropertyType("typeDropdown")]
@@ -565,6 +574,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string GalleryTitle
 		{
 			get { return this.GetPropertyValue<string>("galleryTitle"); }
+		}
+
+		///<summary>
+		/// Tagi do galerii: Tagi dla danej galerii
+		///</summary>
+		[ImplementPropertyType("tags")]
+		public object Tags
+		{
+			get { return this.GetPropertyValue("tags"); }
 		}
 	}
 
@@ -735,6 +753,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ProjectTitle
 		{
 			get { return this.GetPropertyValue<string>("projectTitle"); }
+		}
+
+		///<summary>
+		/// Tagi: Tagi dla danego projektu
+		///</summary>
+		[ImplementPropertyType("tags")]
+		public object Tags
+		{
+			get { return this.GetPropertyValue("tags"); }
 		}
 	}
 
@@ -1064,6 +1091,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString JobOfferShortDesc
 		{
 			get { return this.GetPropertyValue<IHtmlString>("JobOfferShortDesc"); }
+		}
+
+		///<summary>
+		/// Tagi: Tagi dla ofert pracy
+		///</summary>
+		[ImplementPropertyType("tags")]
+		public object Tags
+		{
+			get { return this.GetPropertyValue("tags"); }
 		}
 	}
 

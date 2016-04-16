@@ -1,8 +1,13 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using Strona_RESET_Umbraco.Core
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Layout.cshtml";
     ViewBag.ActivePage = 2;
     var childrens = CurrentPage.Children;
+    ViewBag.ResetTags = ResetCustomTagResolver.GetTagsString(Model);
+    ViewBag.Title = "Reset ATH - Galeria";
+    ViewBag.Description = "RESET jest zrzeszonym kołem naukowym studentów Informatyki, którzy pragną rozwijać swoją wiedzę, umiejętności oraz doświadczenie w zakresie programowania, systemów operacyjnych oraz wielu innych, bardzo ciekawych aspektów informatyki. Koło dzieli się na trzy sekcje: Technologie.NET(opiekun: Szymon Tengler), Systemy operacyjne (opiekun: Tomasz Gancarczyk), Technologie mobilne: (opiekun: Paweł Fałat)";
+
 }
 <link href="/css/Gallery.css" rel="stylesheet" />
 <section class="mtb-50">

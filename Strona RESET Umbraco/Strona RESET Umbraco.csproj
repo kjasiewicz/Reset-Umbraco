@@ -863,7 +863,6 @@
     <Content Include="Views\OfertyPracy.cshtml" />
     <Content Include="Views\OfertyPracyNode.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\FooterContent\News.cshtml" />
     <Content Include="Views\FooterContent\Gallery.cshtml" />
     <Content Include="App_Plugins\ZipUpload\zipUpload.config" />
@@ -3447,6 +3446,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\CustomStartupHandler.cs" />
+    <Compile Include="Core\ResetCustomTagResolver.cs" />
     <Compile Include="FrontendHelpers\NewsCssClassResolver.cs" />
     <Compile Include="Models\NewsRequestModel.cs" />
     <Compile Include="Models\NewsReturnModel.cs" />
