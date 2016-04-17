@@ -85,12 +85,10 @@
         border: 1px solid #e0e0e0;
         padding: 30px;
         float: none;
-        display: table-cell;
     }
 
     .news-img {
         float: none;
-        display: table-cell !important;
         vertical-align: top;
     }
 

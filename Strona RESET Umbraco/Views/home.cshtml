@@ -20,7 +20,7 @@
             {
                 <input type="hidden" value="@Model.PinnedNews.Id" id="pinnedPostIdInput" />
                 var innerUmbracoHelper = new UmbracoHelper(UmbracoContext, Model.PinnedNews);
-                <div class="service-center margin-60" data-animation="fadeIn" data-animation-delay="01" style="display: table">
+                <div class="service-center margin-60" data-animation="fadeIn" data-animation-delay="01">
                     <div class="col-sm-3 col-xs-12 news-img">
                         <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("shortIcon").ToString()).Url" class="img-responsive">
                     </div>
