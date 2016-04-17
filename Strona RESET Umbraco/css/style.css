@@ -84,11 +84,9 @@
     .news-box {
         border: 1px solid #e0e0e0;
         padding: 30px;
-        float: none;
     }
 
     .news-img {
-        float: none;
         vertical-align: top;
     }
 
@@ -1637,10 +1635,7 @@ ul.icons-list {
     padding-bottom: 80px;
 }
 
-.service {
-    //padding-top: 80px;
-    //padding-bottom: 60px;
-}
+    
 
 .icon-small {
     font-size: 2em;
