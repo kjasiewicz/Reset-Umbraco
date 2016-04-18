@@ -986,9 +986,6 @@
     <Content Include="scripts\jquery.isotope.min.js" />
     <Content Include="scripts\jquery.lettering.js" />
     <Content Include="scripts\jquery.migrate.js" />
-    <Content Include="scripts\jquery.mixitup.js" />
-    <Content Include="scripts\jquery.nicescroll.js" />
-    <Content Include="scripts\jquery.nicescroll.min.js" />
     <Content Include="scripts\jquery.parallax.js" />
     <Content Include="scripts\jquery.slicknav.js" />
     <Content Include="scripts\jquery.textillate.js" />
