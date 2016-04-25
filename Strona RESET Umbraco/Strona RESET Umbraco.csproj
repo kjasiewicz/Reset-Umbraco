@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -231,6 +236,10 @@
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
@@ -298,14 +307,15 @@
       <HintPath>..\packages\UrlRewritingNet.2.0.7\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\ZipUpload\Nibble.Umb.ZipUpload.dll" />
     <Content Include="App_Plugins\ZipUpload\package.xml" />
     <Content Include="App_Plugins\ZipUpload\zipupload.ascx" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
     <Content Include="css\OfertyPracy.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -863,10 +873,7 @@
     <Content Include="Views\OfertyPracy.cshtml" />
     <Content Include="Views\OfertyPracyNode.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\FooterContent\News.cshtml" />
-    <Content Include="Views\FooterContent\Gallery.cshtml" />
     <Content Include="App_Plugins\ZipUpload\zipUpload.config" />
-    <Content Include="Views\Home\GetNews.cshtml" />
     <Content Include="Views\Lazy\GetNews.cshtml" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -916,18 +923,7 @@
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\colors\beige.css" />
-    <Content Include="css\colors\blue.css" />
-    <Content Include="css\colors\cyan.css" />
-    <Content Include="css\colors\green.css" />
-    <Content Include="css\colors\jade.css" />
-    <Content Include="css\colors\orange.css" />
-    <Content Include="css\colors\peach.css" />
-    <Content Include="css\colors\pink.css" />
-    <Content Include="css\colors\purple.css" />
-    <Content Include="css\colors\red.css" />
-    <Content Include="css\colors\sky-blue.css" />
-    <Content Include="css\colors\yellow.css" />
+    <Content Include="css\red.css" />
     <Content Include="css\Contact.css" />
     <Content Include="css\Events.css" />
     <Content Include="css\fanoe.css" />
@@ -947,8 +943,6 @@
     <Content Include="css\style.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\jquery.min.js" />
     <Content Include="media\1087\konferencja_itad2015.jpg" />
     <Content Include="media\1087\konferencja_itad2015_thumb.jpg" />
     <Content Include="media\1089\logo_itad.png" />
@@ -3442,6 +3436,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\BundleConfig.cs" />
     <Compile Include="Core\CustomStartupHandler.cs" />
     <Compile Include="Core\ResetCustomTagResolver.cs" />
     <Compile Include="FrontendHelpers\NewsCssClassResolver.cs" />
@@ -3457,8 +3452,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="scripts\js\" />
-    <Folder Include="Views\LazyNews\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

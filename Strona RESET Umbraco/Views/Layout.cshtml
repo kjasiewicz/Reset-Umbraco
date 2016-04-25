@@ -1,10 +1,11 @@
-﻿@using Strona_RESET_Umbraco.SurfaceControllers
+﻿@using System.Web.Optimization
+@using Strona_RESET_Umbraco.SurfaceControllers
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
     Umbraco.Web.Models.DynamicPublishedContentList wtf = Umbraco.ContentAtRoot().First().Children;
-    var news = wtf.Where(x => x.Name == "Home").First().Children.OrderByDescending(a => a.CreateDate).Take(3);
-    var gallery = wtf.Where(x => x.Name == "Galeria").First().Children.OrderByDescending(a => a.CreateDate).Take(9);
+    var news = wtf.First(x => x.Name == "Home").Children.OrderByDescending(a => a.CreateDate).Take(3);
+    var gallery = wtf.First(x => x.Name == "Galeria").Children.OrderByDescending(a => a.CreateDate).Take(9);
 
 }
 <!doctype html>
@@ -23,21 +24,7 @@
     <meta name="author" content="Reset ATH - Akademia Techniczno Humanistyczna">
     <meta name="tags" content="@ViewBag.ResetTags">
     <link href='http://fonts.googleapis.com/css?family=Biryani&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <!-- Bootstrap CSS  -->
-    <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css" media="screen">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css" media="screen">
-    <!-- Slicknav -->
-    <link rel="stylesheet" type="text/css" href="~/css/slicknav.css" media="screen">
-    <!-- Margo CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" media="screen">
-    <!-- Responsive CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="~/css/responsive.css" media="screen">
-    <!-- Css3 Transitions Styles  -->
-    <link rel="stylesheet" type="text/css" href="~/css/animate.css" media="screen">
-    <!-- Color CSS Styles  -->
-    <link rel="stylesheet" type="text/css" href="~/css/colors/red.css" title="red" media="screen" />
-    <link rel="stylesheet" href="~/css/hover.css" />
+    @Styles.Render("~/bundles/css")
 
     <link rel="apple-touch-icon" sizes="57x57" href="~/Favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="~/Favicons/apple-icon-60x60.png">
@@ -56,7 +43,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="~/Favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link href="~/css/Site.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/modernizrr.js"></script>
 </head>
 <body>
     <!-- Full Body Container -->
@@ -369,26 +356,10 @@
             <div class="dot2"></div>
         </div>
     </div>
-    <!-- Margo JS  -->
-    <script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.migrate.js"></script>
-    <script type="text/javascript" src="~/Scripts/modernizrr.js"></script>
-    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="~/Scripts/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.appear.js"></script>
-    @*<script type="text/javascript" src="~/Scripts/jquery.textillate.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.lettering.js"></script>*@
-    <script type="text/javascript" src="~/Scripts/jquery.parallax.js"></script>
-    @*<script type="text/javascript" src="~/Scripts/mediaelement-and-player.js"></script>*@
-    <script type="text/javascript" src="~/Scripts/jquery.slicknav.js"></script>
+    @Scripts.Render("~/bundles/js")
 
     <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-    <script type="text/javascript" src="~/scripts/script.js"></script>
-    <script src="~/scripts/custom.js"></script>
 
     @RenderSection("Scripts", false)
 </body>

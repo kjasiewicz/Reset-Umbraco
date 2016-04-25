@@ -1,25 +1,16 @@
-﻿//using System.Web.Mvc;
-//using System.Web.Routing;
-//using Umbraco.Core;
-//using Umbraco.Web;
+﻿using System.Web.Optimization;
+using Umbraco.Core;
 
-//namespace Strona_RESET_Umbraco.Core
-//{
-//    public class MyStartupHandler : ApplicationEventHandler
-//    {
-//        protected override void ApplicationStarted(
-//            UmbracoApplicationBase umbracoApplication,
-//            ApplicationContext applicationContext)
-//        {
-//            ////Create a custom route
-//            //RouteTable.Routes.MapUmbracoRoute(
-//            //    "Base",
-//            //    "",
-//            //    new
-//            //    {
-//            //        controller = "Home",
-//            //        action = "Index"
-//            //    }, new MvcRouteHandler());
-//        }
-//    }
-//}
+namespace Strona_RESET_Umbraco.Core
+{
+    public class MyStartupHandler : ApplicationEventHandler
+    {
+        protected override void ApplicationStarted(
+            UmbracoApplicationBase umbracoApplication,
+            ApplicationContext applicationContext)
+        {
+            base.ApplicationStarted(umbracoApplication,applicationContext);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+    }
+}
