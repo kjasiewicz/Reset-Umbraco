@@ -16,9 +16,9 @@ namespace Strona_RESET_Umbraco.Core
                         "~/Scripts/jquery.isotope.js",
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/nivo-lightbox.js",
-                        "~/Scripts/script.js", 
-                        "~/Scripts/custom.js"
-                       ));
+                        "~/Scripts/custom.js",
+                        "~/Scripts/script.js"
+                    ));
 
 
             bundles.Add(new StyleBundle("~/bundles/css").Include(
@@ -27,11 +27,17 @@ namespace Strona_RESET_Umbraco.Core
                          "~/css/slicknav.css",
                          "~/css/style.css",
                          "~/css/hover.css",
+                         "~/css/Site.css",
                          "~/css/responsive.css",
                          "~/css/animate.css",
-                         "~/css/red.css"));
+                         "~/css/red.css"
+                    ));
 
+#if DEBUG
+            BundleTable.EnableOptimizations = false;
+#else
             BundleTable.EnableOptimizations = true;
+#endif
         }
     }
 }

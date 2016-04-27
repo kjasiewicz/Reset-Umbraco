@@ -3436,6 +3436,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ApplicationEventHandler.cs" />
     <Compile Include="Core\BundleConfig.cs" />
     <Compile Include="Core\CustomStartupHandler.cs" />
     <Compile Include="Core\ResetCustomTagResolver.cs" />
@@ -3443,8 +3444,15 @@
     <Compile Include="Models\NewsRequestModel.cs" />
     <Compile Include="Models\NewsReturnModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SurfaceControllers\FooterContentController.cs" />
+    <Compile Include="SurfaceControllers\GaleriaController.cs" />
     <Compile Include="SurfaceControllers\HomeController.cs" />
+    <Compile Include="SurfaceControllers\LayoutController.cs" />
+    <Compile Include="SurfaceControllers\LazyController.cs" />
+    <Compile Include="Core\NewsAjaxModel.cs" />
+    <Compile Include="Core\StringExtensions.cs" />
+    <Compile Include="SurfaceControllers\KontaktController.cs" />
+    <Compile Include="SurfaceControllers\OfertyPracyController.cs" />
+    <Compile Include="SurfaceControllers\ProjektyController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
@@ -3452,6 +3460,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Projekty\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
