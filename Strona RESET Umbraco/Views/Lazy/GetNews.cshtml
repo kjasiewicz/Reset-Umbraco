@@ -1,9 +1,8 @@
-﻿@using Strona_RESET_Umbraco.FrontendHelpers
-@model IEnumerable<Strona_RESET_Umbraco.Core.NewsAjaxModel>
+﻿@model IEnumerable<Strona_RESET_Umbraco.Core.NewsAjaxModel>
 
 @foreach (var children in Model)
             {
-    <div class="row service-center margin-60" data-animation="fadeIn" data-animation-delay="01">
+    <div class="row service-center margin-60">
         <div class="col-sm-3 col-xs-12 news-img">
             <img src="@children.shortIconUrl" class="img-responsive">
         </div>

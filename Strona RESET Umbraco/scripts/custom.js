@@ -1,8 +1,15 @@
 ﻿$(document).ready(function () {
-    resizeNews();
+        resizeNews();
+   
     $(window).resize(function () {
         resizeNews();
     });
+});
+
+$(window).load(function () {
+    "use strict";
+    $('#loader').fadeOut();
+    resizeNews();
 });
 
 function resizeNews() {
@@ -29,7 +36,9 @@ $("#sortList").delegate("#loadNextIndicator", "click", function (e) {
         $("#sortList").append(data);
         $("#lazyPage").val(page);
         $(".loader-ajax").hide();
-        resizeNews();
+        setTimeout(function () {
+            resizeNews();
+        }, 100);
     });
 });
 

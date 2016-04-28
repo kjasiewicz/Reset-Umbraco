@@ -7,7 +7,8 @@
     ViewBag.ActivePage = 4;
     ViewBag.ResetTags = ResetCustomTagResolver.GetTagsString(Model);
     ViewBag.Title = "Reset ATH - Projekty - " + Umbraco.Field("projectMainTitle", removeParagraphTags: true).ToString().RemoveHtmlTags();
-    ViewBag.Description = Umbraco.Field("projectCoTo", removeParagraphTags: true).ToString().RemoveHtmlTags().Substring(0, 300);
+    var description = Umbraco.Field("projectCoTo", removeParagraphTags: true).ToString().RemoveHtmlTags();
+    ViewBag.Description = Umbraco.Field("projectCoTo", removeParagraphTags: true).ToString().RemoveHtmlTags().Substring(0, description.Length < 300 ? description.Length : 300);
 }
 <link href="/css/Projects.css" rel="stylesheet" />
 <div class="container ptb-80">

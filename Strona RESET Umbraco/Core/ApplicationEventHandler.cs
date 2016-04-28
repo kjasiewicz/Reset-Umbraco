@@ -75,14 +75,12 @@ namespace Strona_RESET_Umbraco.Core
                 switch (publishedContentEnum)
                 {
                     case ResetUmbracoContentTypesEnum.aktualnosciSzczegoly:
-                        var id = umbraco.library.NiceUrl(node.Id);
                         ClearRelatedCache(publishedContentEnum);
                         ClearLazyNewsCache();
                         break;
                     case ResetUmbracoContentTypesEnum.galeriaSzczegoly:
                     case ResetUmbracoContentTypesEnum.projektySzczegoly:
-                        var id1 = umbraco.library.NiceUrl(node.Id);
-
+                
                         ClearRelatedCache(publishedContentEnum);
                         break;
                     case ResetUmbracoContentTypesEnum.galeria:
@@ -110,7 +108,7 @@ namespace Strona_RESET_Umbraco.Core
             {
                 HttpResponse.RemoveOutputCacheItem(key);
             }
-            if (childArg != null)
+            if (childArg != null && childArg != "#")
             {
                 HttpResponse.RemoveOutputCacheItem(childArg);
             }

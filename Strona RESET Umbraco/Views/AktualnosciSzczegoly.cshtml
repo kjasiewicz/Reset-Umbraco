@@ -81,14 +81,17 @@
         </div>
     </div>
 </div>
-@if (Umbraco.Field("speaker1Name", removeParagraphTags: true).ToString() != "")
+@if (Umbraco.Field("speaker1Name", removeParagraphTags: true).ToString() != "" 
+    || Umbraco.Field("speaker2Name", removeParagraphTags: true).ToString() != "" 
+    || Umbraco.Field("speaker3Name", removeParagraphTags: true).ToString() != "")
 {
     <div class="teacher-box" id="about">
-        <!-- start about us -->
+        @if (Umbraco.Field("speaker1Name", removeParagraphTags: true).ToString() != "")
+        {
         <div class="container">
             <div class="row about">
                 <div class="col-md-3 teacher_img">
-                    <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker1Img").ToString()).Url" alt="" class="img-circle img-responsive" />
+                    <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker1Img").ToString()).Url" alt="" class="img-circle img-responsive"/>
                 </div>
                 <div class="col-md-9 about_text">
                     <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker1Name", removeParagraphTags: true)</p>
@@ -115,12 +118,13 @@
                 </div>
             </div>
         </div>
+        }
         @if (Umbraco.Field("speaker2Name", removeParagraphTags: true).ToString() != "")
         {
             <div class="container">
                 <div class="row about">
                     <div class="col-md-3 teacher_img">
-                        <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker2Img").ToString()).Url" alt="" class="img-circle img-responsive" />
+                        <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker2Img").ToString()).Url" alt="" class="img-circle img-responsive"/>
                     </div>
                     <div class="col-md-9 about_text">
                         <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker2Name", removeParagraphTags: true)</p>
@@ -144,7 +148,7 @@
             <div class="container">
                 <div class="row about">
                     <div class="col-md-3 teacher_img">
-                        <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker3Img").ToString()).Url" alt="" class="img-circle img-responsive" />
+                        <img src="@Umbraco.TypedMedia(Umbraco.Field("speaker3Img").ToString()).Url" alt="" class="img-circle img-responsive"/>
                     </div>
                     <div class="col-md-9 about_text">
                         <p class="reset-font-medium"><strong>Prelegent: </strong>@Umbraco.Field("speaker3Name", removeParagraphTags: true)</p>
@@ -166,6 +170,9 @@
 
         }
     </div>
+}
+@if (Umbraco.Field("eventFbLink", removeParagraphTags: true).ToString() != "")
+{
     <div class="section purchase3 ">
         <div class="container text-center">
             <div class="fb-icon hvr-wobble-vertical">
