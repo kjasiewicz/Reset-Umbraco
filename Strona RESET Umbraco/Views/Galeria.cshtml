@@ -20,7 +20,7 @@
             <div class="col-md-6">
                 <img src="@innerUmbracoHelper.TypedMedia(innerUmbracoHelper.Field("galleryMainImg").ToString()).Url" alt="">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 gallery-title">
                 <h3 class="reset-font-medium">@innerUmbracoHelper.Field("galleryTitle", removeParagraphTags: true)</h3>
                 <h4 class="reset-font-small">@innerUmbracoHelper.Field("galleryDate", removeParagraphTags: true)</h4>
                 <p>@innerUmbracoHelper.Field("galleryDesc", removeParagraphTags: true)</p>
