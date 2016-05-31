@@ -890,6 +890,7 @@
     <None Include="Properties\PublishProfiles\resetath - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\resetath - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\resetath - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ResetFTP.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3433,10 +3434,14 @@
     <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Umbraco_Client\Ui\ui-lightness\jquery-ui.custom.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ActionRedirectionFilter.cs" />
     <Compile Include="Core\ApplicationEventHandler.cs" />
+    <Compile Include="Core\AppMain.cs" />
     <Compile Include="Core\BundleConfig.cs" />
     <Compile Include="Core\CustomStartupHandler.cs" />
     <Compile Include="Core\ResetCustomTagResolver.cs" />

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Web;
-using ClientDependency.Core;
-using Microsoft.Ajax.Utilities;
-using StackExchange.Profiling;
-using umbraco.cms.businesslogic;
 using Umbraco.Core;
 using Umbraco.Core.Events;
 using Umbraco.Core.Models;
@@ -29,7 +22,9 @@ namespace Strona_RESET_Umbraco.Core
             {ResetUmbracoContentTypesEnum.layout, new[] {"/layout"}},
             {ResetUmbracoContentTypesEnum.projekty, new[] {"/projekty"}},
             {ResetUmbracoContentTypesEnum.projektySzczegoly, new[] {"/projekty"}},
-            {ResetUmbracoContentTypesEnum.ofertyPracy, new[] {"/oferty-pracy"}}
+            {ResetUmbracoContentTypesEnum.ofertyPracy, new[] {"/oferty-pracy"}},
+            {ResetUmbracoContentTypesEnum.kontaktNode, new[] {"/kontakt"}},
+            {ResetUmbracoContentTypesEnum.ofertyPracyNode, new[] {"/oferty-pracy"}}
          };
 
         protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
@@ -51,6 +46,8 @@ namespace Strona_RESET_Umbraco.Core
                         break;
                     case ResetUmbracoContentTypesEnum.galeriaSzczegoly:
                     case ResetUmbracoContentTypesEnum.projektySzczegoly:
+                    case ResetUmbracoContentTypesEnum.kontaktNode:
+                    case ResetUmbracoContentTypesEnum.ofertyPracyNode:
                         ClearRelatedCache(publishedContentEnum, umbraco.library.NiceUrl(node.Id));
                         break;
                     case ResetUmbracoContentTypesEnum.galeria:
@@ -80,7 +77,8 @@ namespace Strona_RESET_Umbraco.Core
                         break;
                     case ResetUmbracoContentTypesEnum.galeriaSzczegoly:
                     case ResetUmbracoContentTypesEnum.projektySzczegoly:
-                
+                    case ResetUmbracoContentTypesEnum.kontaktNode:
+                    case ResetUmbracoContentTypesEnum.ofertyPracyNode:
                         ClearRelatedCache(publishedContentEnum);
                         break;
                     case ResetUmbracoContentTypesEnum.galeria:
@@ -98,8 +96,6 @@ namespace Strona_RESET_Umbraco.Core
         }
 
         private const string UmbraceLazyNewsControllerBaseUrl = "/umbraco/surface/Lazy/GetNews";
-        //private const string LazyCacheGlobalName = "Lazy/GetNews";
-        //private const string PageIndicator = "page=";
 
 
         private static void ClearRelatedCache(ResetUmbracoContentTypesEnum publishedContent, string childArg = null)
@@ -116,23 +112,7 @@ namespace Strona_RESET_Umbraco.Core
 
         private static void ClearLazyNewsCache()
         {
-            //var lazyCacheKeys = new List<string>();
-            //IDictionaryEnumerator enumerator = HttpContext.Current.Cache.GetEnumerator();
-            //while (enumerator.MoveNext())
-            //{
-            //    var miniProfilerCacheEntry = enumerator.Value as MiniProfiler;
-            //    if (miniProfilerCacheEntry != null && miniProfilerCacheEntry.Name.Contains(LazyCacheGlobalName))
-            //    {
-            //        var startIndexOf = miniProfilerCacheEntry.Root.Name.IndexOf(UmbraceLazyNewsControllerBaseUrl);
-            //        var endIndexOf = miniProfilerCacheEntry.Root.Name.IndexOf(PageIndicator);
-            //        lazyCacheKeys.Add(miniProfilerCacheEntry.Root.Name.Substring(startIndexOf, endIndexOf + PageIndicator.Length + 1 - startIndexOf));
-            //    }
-            //}
             HttpResponse.RemoveOutputCacheItem(UmbraceLazyNewsControllerBaseUrl);
-            //HttpResponse.RemoveOutputCacheItem("/umbraco/surface/Lazy/GetNews?page=2&pinnedPostId=1357");
-            //HttpResponse.RemoveOutputCacheItem("/umbraco/surface/Lazy/GetNews?page=3&pinnedPostId=1357");
-
-            //lazyCacheKeys.ForEach(HttpResponse.RemoveOutputCacheItem);
         }
 
         public enum ResetUmbracoContentTypesEnum
@@ -145,7 +125,9 @@ namespace Strona_RESET_Umbraco.Core
             layout,
             ofertyPracy,
             projekty,
-            projektySzczegoly
+            projektySzczegoly,
+            kontaktNode,
+            ofertyPracyNode
         }
     }
 }
