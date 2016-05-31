@@ -6,11 +6,17 @@
 
 @media(min-width: 768px) {
     .gallery-details {
-font-family: 'Biryani', sans-serif;
+        font-family: 'Biryani', sans-serif;
         font-size: 14px;
         color: #549093;
-        position: absolute;     
+        position: absolute;
         text-align: left;
         margin-top: 10px;
+    }
+}
+
+@media(min-width: 992px) {
+    .gallery-title {
+        margin-top: 50px;
     }
 }
