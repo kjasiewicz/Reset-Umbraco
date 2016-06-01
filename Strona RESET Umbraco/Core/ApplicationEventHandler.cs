@@ -19,7 +19,7 @@ namespace Strona_RESET_Umbraco.Core
             {ResetUmbracoContentTypesEnum.galeriaSzczegoly, new[] {"/galeria"}},
             {ResetUmbracoContentTypesEnum.kontakt, new[] {"/kontakt"}},
             {ResetUmbracoContentTypesEnum.home, new[] {"/home"}},
-            {ResetUmbracoContentTypesEnum.layout, new[] {"/layout"}},
+            {ResetUmbracoContentTypesEnum.layout, new[] { "/home", "/galeria", "/kontakt", "/projekty", "/oferty-pracy"}},
             {ResetUmbracoContentTypesEnum.projekty, new[] {"/projekty"}},
             {ResetUmbracoContentTypesEnum.projektySzczegoly, new[] {"/projekty"}},
             {ResetUmbracoContentTypesEnum.ofertyPracy, new[] {"/oferty-pracy"}},
