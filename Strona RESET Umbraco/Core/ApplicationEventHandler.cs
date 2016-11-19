@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
 using Umbraco.Core;
 using Umbraco.Core.Events;
 using Umbraco.Core.Models;
 using Umbraco.Core.Publishing;
 using Umbraco.Core.Services;
+using Umbraco.Web;
+using Umbraco.Web.Mvc;
 
 namespace Strona_RESET_Umbraco.Core
 {
@@ -14,12 +18,12 @@ namespace Strona_RESET_Umbraco.Core
         private static readonly Dictionary<ResetUmbracoContentTypesEnum, string[]> CacheKeys = new Dictionary
             <ResetUmbracoContentTypesEnum, string[]>
         {
-            {ResetUmbracoContentTypesEnum.aktualnosciSzczegoly, new[] {"/home"}},
+            {ResetUmbracoContentTypesEnum.aktualnosciSzczegoly, new[] {"/"}},
             {ResetUmbracoContentTypesEnum.galeria, new[] {"/galeria"}},
             {ResetUmbracoContentTypesEnum.galeriaSzczegoly, new[] {"/galeria"}},
             {ResetUmbracoContentTypesEnum.kontakt, new[] {"/kontakt"}},
-            {ResetUmbracoContentTypesEnum.home, new[] {"/home"}},
-            {ResetUmbracoContentTypesEnum.layout, new[] { "/home", "/galeria", "/kontakt", "/projekty", "/oferty-pracy"}},
+            {ResetUmbracoContentTypesEnum.home, new[] {"/"}},
+            {ResetUmbracoContentTypesEnum.layout, new[] { "/", "/galeria", "/kontakt", "/projekty", "/oferty-pracy"}},
             {ResetUmbracoContentTypesEnum.projekty, new[] {"/projekty"}},
             {ResetUmbracoContentTypesEnum.projektySzczegoly, new[] {"/projekty"}},
             {ResetUmbracoContentTypesEnum.ofertyPracy, new[] {"/oferty-pracy"}},
@@ -31,13 +35,24 @@ namespace Strona_RESET_Umbraco.Core
         {
             ContentService.Published += ContentServicePublished;
             ContentService.UnPublished += ContentServiceUnPublished;
+
+            const int homePublishedContentId = 1307;
+
+            RouteTable.Routes.MapUmbracoRoute(
+                "homeOverride",
+                "",
+                new
+                {
+                    controller = "Home",
+                    action = "Index"
+                }, new UmbracoVirtualNodeByIdRouteHandler(homePublishedContentId));
         }
 
         private static void ContentServicePublished(IPublishingStrategy sender, PublishEventArgs<IContent> args)
         {
             foreach (var node in args.PublishedEntities)
             {
-                var publishedContentEnum = (ResetUmbracoContentTypesEnum)Enum.Parse(typeof (ResetUmbracoContentTypesEnum), node.ContentType.Alias);
+                var publishedContentEnum = (ResetUmbracoContentTypesEnum)Enum.Parse(typeof(ResetUmbracoContentTypesEnum), node.ContentType.Alias);
                 switch (publishedContentEnum)
                 {
                     case ResetUmbracoContentTypesEnum.aktualnosciSzczegoly:

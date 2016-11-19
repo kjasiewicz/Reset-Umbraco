@@ -3451,7 +3451,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SurfaceControllers\GaleriaController.cs" />
     <Compile Include="SurfaceControllers\HomeController.cs" />
-    <Compile Include="SurfaceControllers\LayoutController.cs" />
     <Compile Include="SurfaceControllers\LazyController.cs" />
     <Compile Include="Core\NewsAjaxModel.cs" />
     <Compile Include="Core\StringExtensions.cs" />

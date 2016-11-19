@@ -25,7 +25,7 @@ namespace Strona_RESET_Umbraco.SurfaceControllers
                 .Take(PageSize)
                 .Where(x => model.PinnedNews == null || x.Id != model.PinnedNews.Id).ToList();
 
-            return CurrentTemplate(model);
+            return View("home", model);
         }
     }
 }
